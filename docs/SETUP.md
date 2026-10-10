@@ -43,7 +43,7 @@ No first captured checkpoint is claimed yet. Automatic transcript pushing is dis
 
 ### Entire repository connection
 
-Entire CLI login works through Google. The GitHub identity authorization page kept its Authorize button disabled after a reload, so the GitHub identity/app connection is not confirmed. Connect GitHub and grant the Entire app access to only `raj921/neatloghackathon` before using the hosted checkpoint viewer or mirror. Preserve an accessible checkpoint link and ID for the final submission.
+Entire CLI login works through Google. The GitHub identity authorization page kept its Authorize button disabled after a reload, so the GitHub identity/app connection is not confirmed. A troubleshooting request was posted in `#neathack-entire`; response pending. Connect GitHub and grant the Entire app access to only `raj921/neatloghackathon` before using the hosted checkpoint viewer or mirror. Preserve an accessible checkpoint link and ID for the final submission.
 
 ### cfo.ai
 
