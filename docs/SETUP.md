@@ -46,11 +46,11 @@ No first captured checkpoint is claimed yet. Automatic transcript pushing is dis
 
 Entire CLI login works through Google. The GitHub identity authorization page kept its Authorize button disabled after a reload, so the GitHub identity/app connection is not confirmed. A troubleshooting request was posted in `#neathack-entire`; response pending. Connect GitHub and grant the Entire app access to only `raj921/neatloghackathon` before using the hosted checkpoint viewer or mirror. Preserve an accessible checkpoint link and ID for the final submission.
 
-### cfo.ai
+## cfo.ai: completion reported by the user
 
-Signed in with the registered Google account. Reached Startup trial signup and the payment verification form. No card was submitted, no subscription activated, and no cancellation is claimed.
+Raj confirmed on October 10 that he completed cfo.ai setup directly. Record this as user-confirmed completion; it supersedes the earlier pending payment-verification status. The agent did not submit payment information.
 
-Complete payment verification directly in the browser if using the trial. The team email instructs immediate cancellation in **Settings → Billing** after signup; verify cancellation before considering this step complete. The neatHack team says it will supply credits directly. A card-free activation question was posted in `#neathack-cfo-ai` at 11:49 AM IST; response pending.
+Subscription status, event-credit balance, and trial cancellation have not been independently verified. The browser session is now under user control, so automated checks remain paused. The team email instructs immediate cancellation in **Settings → Billing** after signup and says event credits will be supplied directly.
 
 ## AWS event access: claimed
 
