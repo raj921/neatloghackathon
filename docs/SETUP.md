@@ -15,14 +15,15 @@ Checked on October 10, 2026, IST. Team: **rajkumar guthla**. Team-leader account
 | Entire | CLI 0.11.4 installed and signed in using the registered Google identity; token in macOS Keychain. Enabled for Codex in this repository. |
 | GitHub | Private setup repository: https://github.com/raj921/neatloghackathon. |
 | Discord | Signed in as Rajkumar; official neatlogs server and sponsor channels accessible. |
-| AWS tooling | AWS CLI 2.31.39 installed; existing default profile passed STS identity verification. This does **not** establish event-credit eligibility. |
+| AWS | Team's shared **$25 allowance** claimed through the private allocation page. Console sign-in succeeded; CLI/SDK profile `neathack` passed STS verification against the assigned IAM user and account. Region `us-east-1`. Existing hackathon VPC and six subnets verified. |
 
 ## Credentials and local files
 
 - `.env`: actual Neatlogs project SDK key and Crustdata API key, with file permissions `600`.
 - `.secrets/crustdata-account.json`: email and generated Crustdata password, ignored by Git, permissions `600`.
 - Neatlogs OAuth and Entire CLI tokens: macOS Keychain.
-- Existing AWS credentials: existing AWS configuration; never copied into Git or a new project key file.
+- AWS event keys: `~/.aws/credentials`, separate `neathack` profile; region in `~/.aws/config`. Files have permissions `600`. Existing default profile retained.
+- `.secrets/aws-access.json`: event console login and CLI credentials, ignored by Git, permissions `600`. Private invitation is also stored locally with permissions `600`; it expires 24 hours after delivery.
 - `tooling/`: dependency manifest and lockfile for local setup tools.
 - `.codex/hooks.json`: Entire hooks and Neatlogs coding-session hooks. Neatlogs hooks load this project's `.env` through `scripts/neatlogs-codex`; no project secret is embedded in the hook definitions.
 
@@ -51,11 +52,18 @@ Signed in with the registered Google account. Reached Startup trial signup and t
 
 Complete payment verification directly in the browser if using the trial. The team email instructs immediate cancellation in **Settings → Billing** after signup; verify cancellation before considering this step complete. The neatHack team says it will supply credits directly. A card-free activation question was posted in `#neathack-cfo-ai` at 11:49 AM IST; response pending.
 
-### AWS event access
+## AWS event access: claimed
 
-The 11:26 AM IST organiser email extended eligibility to the first 400 checked-in teams. No event activation email or credentials were found in the team-leader inbox. A request was posted in `#neathack-aws` at 11:43 AM IST for eligibility confirmation and private delivery of activation details; response pending.
+The organiser's **12:23 PM IST** email, “Your team's $25 AWS access — neatHack”, supplies a private allocation link. Credentials were revealed and securely saved; AWS console sign-in succeeded. Read-only SDK checks confirm the assigned IAM identity, EC2 access, and the existing hackathon network. No infrastructure was provisioned. The allowance comes through this event AWS login; no credit code, new account, or card is required. It is separate from the user's personal AWS account.
 
-The AWS sponsor channel says the allowance is **$25 per team** for the approved services listed in its activation email, and **Bedrock is excluded**. Do not assume this allowance applies to the user's existing default AWS account. Once the organiser provides details, configure a separate `neathack` profile and set `AWS_PROFILE=neathack` in `.env`. Use the region and authentication method in that email. Do not provision infrastructure until account, allowance, and permitted services are confirmed.
+- Shared allowance: **$25 for the whole team**, not per member. The access page does not meter spending; $25 is the organiser's allocation, not an independently measured remaining balance.
+- Region: **us-east-1 only**. `.env` selects `AWS_PROFILE=neathack` and `AWS_REGION=us-east-1`; `scripts/tool.py aws` explicitly selects both.
+- Approved services: **EC2, Lambda, IAM roles, and load balancers only**. Roles and attached policies are permitted. Bedrock is excluded.
+- VPC: use the pre-provisioned **`Hackathon_VPC-vpc-vpc`**, ID `vpc-0ae3d3f0fe495c0f8`, for EC2 and load balancers. This is the actual Name tag for the email's `Hackathon_VPC`. Six existing subnets were found. Do not create a new VPC.
+- EC2: **one instance per supplied IAM user, shared by the team**. Terminate an existing instance before launching its replacement; automation terminates additional instances. Allowed families are `t2`, `t3`, and `t3a`, sizes `nano`, `micro`, `small`, `medium`, and `large` only.
+- EBS: each volume must be **50 GB or less**. Stop resources when finished and stay within the allowance.
+
+Non-secret verification evidence: `docs/aws-access-check.json`. The original Discord request no longer blocks AWS setup. Private login links and credentials must never be shared in Discord, Git, screenshots, or public chats.
 
 ### Model provider
 

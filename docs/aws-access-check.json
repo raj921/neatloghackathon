@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-10-10",
+  "profile": "neathack",
+  "region": "us-east-1",
+  "identity_matches_allocation": true,
+  "allowance_usd": 25,
+  "source": "neatHack allocation email; not a measured balance",
+  "resources_provisioned_by_setup": false,
+  "hackathon_vpcs": [
+    {
+      "vpc_id": "vpc-0ae3d3f0fe495c0f8",
+      "name": "Hackathon_VPC-vpc-vpc",
+      "state": "available",
+      "cidr": "10.0.0.0/16"
+    }
+  ],
+  "visible_ec2_instance_count": 0,
+  "hackathon_subnets": [
+    {
+      "subnet_id": "subnet-00965961a79ee6adc",
+      "availability_zone": "us-east-1b",
+      "state": "available"
+    },
+    {
+      "subnet_id": "subnet-0edea60bc5d2c7a54",
+      "availability_zone": "us-east-1a",
+      "state": "available"
+    },
+    {
+      "subnet_id": "subnet-0e94ce8d7f2a0fa9c",
+      "availability_zone": "us-east-1c",
+      "state": "available"
+    },
+    {
+      "subnet_id": "subnet-0b3c0531307abec5d",
+      "availability_zone": "us-east-1a",
+      "state": "available"
+    },
+    {
+      "subnet_id": "subnet-00d89dc1323ee363b",
+      "availability_zone": "us-east-1b",
+      "state": "available"
+    },
+    {
+      "subnet_id": "subnet-08e0424da9248b86d",
+      "availability_zone": "us-east-1c",
+      "state": "available"
+    }
+  ]
+}

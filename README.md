@@ -23,6 +23,7 @@ These commands load `.env` without displaying credential values:
 .venv/bin/python scripts/tool.py crustdata account credits --format json
 sh scripts/neatlogs-codex doctor --project
 entire status
+.venv/bin/python scripts/tool.py aws sts get-caller-identity
 ```
 
 `doctor --probe --json` sends a synthetic diagnostic trace to the configured Neatlogs project. It proves setup transport and readback, not application behavior.
@@ -32,3 +33,5 @@ To reinstall local tools, run `sh scripts/bootstrap.sh`. Reinstalling tools does
 ## Credentials
 
 `.env`, `.secrets/`, `.local/`, and `.venv/` are ignored by Git. Neatlogs and Entire CLI login tokens use macOS Keychain. Do not add secrets, login links, transcripts, or credential screenshots to the repository.
+
+AWS event access is configured in the separate `neathack` profile, restricted to `us-east-1`. The AWS tool command explicitly selects this profile and region. The organiser provides one shared $25 allowance for the team. See the setup record for permitted services and resource limits.
