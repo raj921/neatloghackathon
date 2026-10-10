@@ -1,0 +1,10 @@
+{
+  "name": "neathack-setup-tools",
+  "private": true,
+  "description": "Setup tools only; no application or product framework.",
+  "dependencies": {
+    "@neatlogs/codex": "0.1.1",
+    "neatlogs-cli": "0.2.0",
+    "node": "22.23.3"
+  }
+}

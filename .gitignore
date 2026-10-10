@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.secrets/
+.venv/
+node_modules/
+.local/
+__pycache__/
+.DS_Store
+.entire/settings.local.json
+.entire/logs/
