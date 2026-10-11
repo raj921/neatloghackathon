@@ -1,0 +1,283 @@
+{
+  "upstream_repository": "https://github.com/phosphor-icons/core",
+  "upstream_commit": "2b75f3ad12b420c9504ef05df8d2564a28f8500e",
+  "weight": "bold",
+  "retrieved_at_utc": "2026-10-11T15:49:32+00:00",
+  "sprite_path": "phosphor.svg",
+  "sprite_sha256": "2250b48be43ef1505b9398d42bf086299a2bb61c89200a1110e45fffb5750a91",
+  "license_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/LICENSE",
+  "license_sha256": "b5b1f1da112d18ea2147decfd48ddc1bf2b5aeb6c265381579340e95b15a2bb2",
+  "geometry_hash_format": "SHA-256 of UTF-8 JSON array of upstream path d strings, compact separators, in original document order",
+  "icons": [
+    {
+      "id": "squares-four",
+      "upstream_path": "assets/bold/squares-four-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/squares-four-bold.svg",
+      "source_sha256": "db99890c7157c19dce8f9db2c9ef812c50e7ae31e3cd8fa112004eb191c8b952",
+      "geometry_sha256": "6c7dc4240f161f32b726205260bd665d2162faf03888c2577cafb94147f4435c",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "clock-counter-clockwise",
+      "upstream_path": "assets/bold/clock-counter-clockwise-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/clock-counter-clockwise-bold.svg",
+      "source_sha256": "dea67a02f38b4f17e6c23143b4d2daa7f417714585450a32dbc2a8bcc98485a1",
+      "geometry_sha256": "7077187f4095c55903c7fdab4dde32602f454623edc4204cbed8cd7a69719dfa",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "file-text",
+      "upstream_path": "assets/bold/file-text-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/file-text-bold.svg",
+      "source_sha256": "388d1e2b234abb5a509c86e08d85e077b77518b31ef61c87bfece8dbb361e2cd",
+      "geometry_sha256": "e0775aa14cae7c2d7677b1bb705719809a77147c0710932550a530a3ee1a4653",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "sliders-horizontal",
+      "upstream_path": "assets/bold/sliders-horizontal-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/sliders-horizontal-bold.svg",
+      "source_sha256": "e409a5fb3c2c134e46d51e48ac395e392223e04535c5ec664253f3e7e78cd7a9",
+      "geometry_sha256": "0dc0e2dd4620db4223d38f282e7d5fbbe6b666c1c95511c54e14b40e5f33fe2a",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "magnifying-glass",
+      "upstream_path": "assets/bold/magnifying-glass-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/magnifying-glass-bold.svg",
+      "source_sha256": "b73e393b20bff0aaee96b9e325d0276fe1ab5fc81b5080633a95827bd14ebae6",
+      "geometry_sha256": "0527fb7317ac09685ec1def1bdffb1d8bdbb1ea1a4215f24665c2933c3b78025",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "plus",
+      "upstream_path": "assets/bold/plus-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/plus-bold.svg",
+      "source_sha256": "3d20a4b2e00657baeb922bed94f13fbfa288968b738991d047dd252cb64005d8",
+      "geometry_sha256": "ee7d3b50f1728071f3e2fba814c347c3e430253536915bf0f21827cd3608de2d",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "arrow-right",
+      "upstream_path": "assets/bold/arrow-right-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/arrow-right-bold.svg",
+      "source_sha256": "aa0f883acecf63d9140ad7cd51910fa4b723671c400772a3c621c9cc16b1687b",
+      "geometry_sha256": "7f7b04e52986e8a4124429ce7038b728484525ff07f61128716cba932fdc5c68",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "arrow-down",
+      "upstream_path": "assets/bold/arrow-down-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/arrow-down-bold.svg",
+      "source_sha256": "193222b87a796f1c56336f51cb041cfd2a6c899ae0a027248a63fc183758a364",
+      "geometry_sha256": "14bfd090ad7ac8d20163baddd69fca58b0926f2f9093c5d06d4a71a35fc2fd22",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "arrow-up-right",
+      "upstream_path": "assets/bold/arrow-up-right-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/arrow-up-right-bold.svg",
+      "source_sha256": "28687c40e5980d0321a33fe5021d2060fa49633d65127f80009f8c44cbe95418",
+      "geometry_sha256": "e141a1b0ee2725b266178e3976b433ed9d02a3eae56ac795d952b30eeccc1132",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "arrow-left",
+      "upstream_path": "assets/bold/arrow-left-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/arrow-left-bold.svg",
+      "source_sha256": "7588792d7824e7c5337bca7b5de96ad0685ddea0a5732dfb62701d163a076563",
+      "geometry_sha256": "0eb7c908b3ac92017c16b9d7ab7a3cb05726e24cf176527035e6f658bc9336ef",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "check-circle",
+      "upstream_path": "assets/bold/check-circle-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/check-circle-bold.svg",
+      "source_sha256": "f176d6bdb54b124a6da9141515984d698b5c35dbe727dda7f8c1b22a2d130e2e",
+      "geometry_sha256": "4302f87b574c84ada6ed4c7c57653c73ead34c74f878ed75671cc205f68a3395",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "warning-circle",
+      "upstream_path": "assets/bold/warning-circle-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/warning-circle-bold.svg",
+      "source_sha256": "82a1a5cad112a89581d11f44affb41433a1a8b804a9d77556a5c2b97b23784aa",
+      "geometry_sha256": "2545bc4d60f5ef79d9181bfe9c7f660c31322e73aed31aec61e1a50d39088dce",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "x-circle",
+      "upstream_path": "assets/bold/x-circle-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/x-circle-bold.svg",
+      "source_sha256": "c2e88b5a115034e324ff72bcca8eb758a05001cfb528ed4251723dacb1d4e59c",
+      "geometry_sha256": "83b740cb168ebf1ccde081598adc229bfbb7818f3d8f688f1be14ace3fdef821",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "x",
+      "upstream_path": "assets/bold/x-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/x-bold.svg",
+      "source_sha256": "d540487912a267d83c495954b24ca07981002fda05ee2ea0b492d8fc188d1c3e",
+      "geometry_sha256": "45a81d20a8b9856cb7c82a82f447a67eda0060f9b3f0243bed5bf0b6f1ebab8a",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "copy",
+      "upstream_path": "assets/bold/copy-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/copy-bold.svg",
+      "source_sha256": "204e84365593c418c71d9ce0674be3dd3e5ff13d0dc13e1f728249ef9571bf9e",
+      "geometry_sha256": "20fa67afd45644d13665a4b4cfeea80019db46c13b61e3feb93dc0f60ff6846c",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "code",
+      "upstream_path": "assets/bold/code-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/code-bold.svg",
+      "source_sha256": "9ea667d9633ab1e91b17f5779ad379e2bf46f24baca533f5267dd61d8fea7056",
+      "geometry_sha256": "e97f5798d9ac3581978b239ec0e8fdbef1afa22179cbfb22935b419243a3d007",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "git-diff",
+      "upstream_path": "assets/bold/git-diff-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/git-diff-bold.svg",
+      "source_sha256": "557433fe15fad63522d44e06dba7ef8f27fe070528464bf08940d13f43ca9941",
+      "geometry_sha256": "ead8ce75e403205aa3c0ee8cba8c2b7fb12c224a77b9b6f11770ca8f6cbf213f",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "play",
+      "upstream_path": "assets/bold/play-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/play-bold.svg",
+      "source_sha256": "f54e774d80d2b4d134a4babd3c03ee2a217aa4856566ed0a288e48e1a2f29d16",
+      "geometry_sha256": "5975f6fa0b81c0cb94e6b9d3aa83c011efe26904e7cc8a7f33b7c8dca02c1702",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "lightning",
+      "upstream_path": "assets/bold/lightning-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/lightning-bold.svg",
+      "source_sha256": "8b9fe64519b0b2e3dfccefa18d0c76d4a8a8aa3e93ae00437705aaed084c0e3d",
+      "geometry_sha256": "e8884bd7949c2ab0b1f3218d982b7157fca09966f23f5c0b6450b7e3c1c5a05a",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "circle-notch",
+      "upstream_path": "assets/bold/circle-notch-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/circle-notch-bold.svg",
+      "source_sha256": "c185c2e3e16f9ff8c2c942bdaa8e33d7a1bffe7fc4e34a7cfa9ba8d4bd52c6f6",
+      "geometry_sha256": "2da724a4971b3e12acca443d21725ae82d9106a8402173aaa9f350a6a4804f2a",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "caret-right",
+      "upstream_path": "assets/bold/caret-right-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/caret-right-bold.svg",
+      "source_sha256": "03cadd956d715541432ec8dc2eda1c53ca341af7d3ccecb8dd32c5b9747e290f",
+      "geometry_sha256": "20641a21ac4fbffe687a7d6ea4a2e108260267ab2725cee151c1b7bf3f784393",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "caret-down",
+      "upstream_path": "assets/bold/caret-down-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/caret-down-bold.svg",
+      "source_sha256": "76a97545e1b923bc13bcc15d7bcbb7f5530105e6eaa98a18c1e30d23e3622843",
+      "geometry_sha256": "83395101ab626405395ebd9f849e6733ef8246654a3b08733175685aa75302af",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "moon",
+      "upstream_path": "assets/bold/moon-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/moon-bold.svg",
+      "source_sha256": "a7c2585ba405cda2f7d20620244bb68955b93928f671f853a82451458c72b10c",
+      "geometry_sha256": "a9fd56389b47b6e02ceb26e3bae4722dc135e64d67bc361b3844334058749eaf",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "sun",
+      "upstream_path": "assets/bold/sun-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/sun-bold.svg",
+      "source_sha256": "b1949871cab00cfea93d083ea5c3966b8f9618b5ac408767c6f9b3651805bf2d",
+      "geometry_sha256": "455bb85fffe21b88f2a2f5a7f0e6e4ac1b6ff16076e5630ecfb7104db42e1866",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "database",
+      "upstream_path": "assets/bold/database-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/database-bold.svg",
+      "source_sha256": "f0b769c621d9263dbea9122d65188224be8474f6b124dac06a485eec83dd2bce",
+      "geometry_sha256": "d465424cc011008f5ac8bf4800b82affb99a6e47c6a49714eea35ad927e8e33a",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "download-simple",
+      "upstream_path": "assets/bold/download-simple-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/download-simple-bold.svg",
+      "source_sha256": "3ca0b8bba15633eb29f9818fe3670d6438bcbc897649c767e491a411e696e2d3",
+      "geometry_sha256": "61e480b8daa4af0bf735ddb1b63fa5f49b58161a975860a56cb03ce61d9c0374",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "checks",
+      "upstream_path": "assets/bold/checks-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/checks-bold.svg",
+      "source_sha256": "ecd08cd342446630311d76513a40706d1bc540837e7d630a54777dcb66a22ed4",
+      "geometry_sha256": "96f72a6e25b1dfbd8d70192b940fa6b005acc4b8ef4b950dbbc9e78b537221b4",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "seal-check",
+      "upstream_path": "assets/bold/seal-check-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/seal-check-bold.svg",
+      "source_sha256": "61559b0e0467180e127c4e3592960559644d380b743b6d0e3c38d81ce1008026",
+      "geometry_sha256": "ac8dfd3abcf1ca15aa8fdeb3c7af1c268b746a708259297061f80979367977b6",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "dots-three",
+      "upstream_path": "assets/bold/dots-three-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/dots-three-bold.svg",
+      "source_sha256": "5bd06c9754d075b409e3259350c9abc9ec106ffb3b6f3cd451f6419271163bc1",
+      "geometry_sha256": "4164e0fcfc556c1206d4440b6bd5775326163da226eeba70d492fede2d44ff28",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    },
+    {
+      "id": "shield-check",
+      "upstream_path": "assets/bold/shield-check-bold.svg",
+      "source_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/assets/bold/shield-check-bold.svg",
+      "source_sha256": "da3d313e3cec48b0cf45865d791f4838b5841df2ef564467d02b15ff20f507f3",
+      "geometry_sha256": "7927e9fa7903bc65248f9cd3a69a892255bda505d891ef9968dba5e213c5cf3e",
+      "path_count": 1,
+      "sprite_geometry_matches_source": true
+    }
+  ]
+}

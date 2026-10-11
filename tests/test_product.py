@@ -259,6 +259,15 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(large.status_code,413)
         self.assertEqual(self.client.get('/.env').status_code,404)
         self.assertEqual(self.client.get('/assets/../../.env').status_code,404)
+        sprite=self.client.get('/assets/icons/phosphor.svg')
+        self.assertEqual(sprite.status_code,200)
+        self.assertIn('image/svg+xml',sprite.headers['content-type'])
+        self.assertIn('id="check-circle"',sprite.text)
+        self.assertEqual(self.client.get('/assets/icons/originals/checks-bold.svg').status_code,200)
+        # Serving the two UI assets must not expose neighboring provenance or Python files.
+        self.assertEqual(self.client.get('/assets/icons/manifest.json').status_code,404)
+        self.assertEqual(self.client.get('/assets/icons/../app.js').status_code,200)
+        self.assertEqual(self.client.get('/assets/%2e%2e/main.py').status_code,404)
         self.assertEqual(self.client.get('/api/v1/config',headers={'Host':'attacker.example'}).status_code,400)
         self.assertIn("script-src 'self'",self.client.get('/').headers['content-security-policy'])
         # A spoofed loopback Host does not grant an unauthenticated remote client access.

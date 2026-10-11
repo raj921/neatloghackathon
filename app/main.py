@@ -309,7 +309,7 @@ def create_app(db_path: Path | None = None) -> FastAPI:
     @app.get('/assets/{filename:path}')
     def asset(filename: str):
         path=(WEB/filename).resolve()
-        if not path.is_relative_to(WEB) or not path.is_file() or filename not in {'app.js','style.css','fonts/uncut-sans.woff2','fonts/LICENSE.txt'}:
+        if not path.is_relative_to(WEB) or not path.is_file() or filename not in {'app.js','style.css','fonts/uncut-sans.woff2','fonts/LICENSE.txt','icons/phosphor.svg','icons/originals/checks-bold.svg'}:
             raise HTTPException(404,'Asset not found.')
         return FileResponse(path)
 

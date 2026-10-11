@@ -33,3 +33,18 @@ Required resources revisited: [tweakcn](https://tweakcn.com/), [Paper Shaders](h
 ## Inspection continuation
 
 Inspected live in Ego Browser, October 11: [21st.dev workspace search](https://21st.dev/) opens a grouped command dialog with search, destinations and keyboard navigation; [Prompt Kit Code Block · Julien Thibeaut](https://21st.dev/@ibelick/components/code-block) renders bounded, syntax-colored code and exposes the native component composition. These patterns inform the command search and read-only original/source panels. Adaptation uses our existing native stack, with exact-copy controls and real module fingerprints. No Copy prompt credit was consumed and no third-party component source was installed.
+
+## Minimal refinement · October 11
+
+Current pages inspected in Ego TaskSpace 5 before implementation:
+
+1. [Component Gallery — Tabs](https://component.gallery/components/tabs/): concise tabbed evidence with arrow/Home/End keyboard controls. Private screenshot `component-gallery-tabs.png`.
+2. [Component Gallery — Icon](https://component.gallery/components/icon/): conventional symbols with accessible names; preserve labels for ambiguous states.
+3. [Component Gallery — Accordion](https://component.gallery/components/accordion/): native summary/details for metadata, scope and optional inputs; important consent remains expanded.
+4. [Component Gallery — Progress bar](https://component.gallery/components/progress-bar/): completion progress differs from saved pass ratios; use accessible meters with real values.
+5. [Uncut](https://uncut.wtf/), [tweakcn](https://tweakcn.com/): keep licensed Uncut Sans; use quiet neutral tokens and tabular figures.
+6. [Design for B2B](https://www.designforb2b.com/) and [Minimal Gallery](https://minimal.gallery/): restrained spacing and hierarchy. Apply to an inspection workspace rather than copying a marketing layout.
+
+[Paper Shaders](https://shaders.paper.design/), [DialKit](https://www.dialkit.dev/) and [Number Flow](https://number-flow.barvian.me/) revisited live. No effects or new runtime packages added. Pinned official Phosphor icon provenance lives in `app/web/icons/SOURCE.md`.
+
+[Linear Docs](https://linear.app/docs) was also inspected live and captured privately as `linear-docs-reference.png`: compact navigation, quiet icon controls, simple type hierarchy. Its marketing/card layouts were not copied.
