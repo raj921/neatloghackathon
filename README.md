@@ -9,12 +9,13 @@ sh scripts/bootstrap-product.sh
 .venv/bin/python -m uvicorn app.main:create_app --factory --host 127.0.0.1 --port 8780 --workers 1 --no-access-log
 ```
 
-Local verification makes no model call. Live repair needs a private model key and explicit provider-data consent in the interface. Recorded examples are labelled and do not execute again when opened. The product includes durable history, input/source editing, comparison and mutation evidence, bounded repair, cancellation, review states, provider configuration and adapter/proof downloads.
+Local verification makes no model call. Live repair needs a private model key and explicit provider-data consent in the interface. Recorded examples are labelled and do not execute again when opened. The workbench includes original-source inspection with fingerprints, before/current matrix navigation, concrete difference paths, exact-copy controls and Cmd/Ctrl+K search. The product includes durable history, input/source editing, comparison and mutation evidence, bounded repair, cancellation, review states, provider configuration and adapter/proof downloads.
 
 - [Operating guide and API](docs/product/OPERATING.md)
 - [Architecture and trust boundaries](docs/product/ARCHITECTURE.md)
 - [Review and actual delivery evidence](docs/product/REVIEW.md)
 - [Acceptance ledger](docs/product/GATES.md)
+- [Latest UI and backend verification](docs/product/workbench-improvements/REVIEW.md)
 - [Design system](DESIGN.md) and [saved reference decisions](design-references/parity-medic/README.md)
 
 Neatlogs hosted readback confirms the product trace is finalized with three LLM calls and eight spans. Entire Graph supplied product source-review evidence. cfo.ai account setup was reported complete by the user; a verified cfo.ai product business plan, public deployment, demo video and final hackathon submission remain separate delivery work. No new cloud resource was provisioned for this product.

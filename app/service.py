@@ -57,7 +57,13 @@ class Service:
             if len(self.jobs) >= 5:
                 raise ValueError('Five attempts are already active. Wait or cancel an attempt.')
             self.jobs.add(run_id)
-        self.pool.submit(self.work, run_id, repair)
+        try:
+            self.pool.submit(self.work, run_id, repair)
+        except Exception:
+            # Release the reservation when the executor rejects work, including shutdown races.
+            with self.lock:
+                self.jobs.discard(run_id)
+            raise RuntimeError('Attempt could not be queued. Start a new attempt after the worker is available.') from None
 
     def alive(self, run_id: str) -> None:
         if self.store.get(run_id)['state'] == 'cancelled':

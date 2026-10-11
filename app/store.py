@@ -67,7 +67,21 @@ class Store:
 
     def list(self) -> list[dict]:
         with self.connection() as c:
-            return [dict(r) for r in c.execute('SELECT id,title,contract,state,created_at,updated_at FROM runs ORDER BY created_at DESC LIMIT 100')]
+            # Project measurements in one query without loading source, case payloads or event histories.
+            return [dict(r) for r in c.execute('''SELECT id,title,contract,state,created_at,updated_at,
+                json_extract(payload, '$.kind') AS kind,
+                json_extract(payload, '$.parent_id') AS parent_id,
+                CASE WHEN json_extract(payload, '$.result.decision') = 'needs_review'
+                    AND COALESCE(json_array_length(json_extract(payload, '$.result.cases')), 0)
+                        < COALESCE(json_extract(payload, '$.result.total'), 1)
+                    THEN NULL ELSE json_extract(payload, '$.result.passed') END AS passed,
+                CASE WHEN json_extract(payload, '$.result.decision') = 'needs_review'
+                    AND COALESCE(json_array_length(json_extract(payload, '$.result.cases')), 0)
+                        < COALESCE(json_extract(payload, '$.result.total'), 1)
+                    THEN NULL ELSE json_extract(payload, '$.result.total') END AS total,
+                json_extract(payload, '$.model_calls') AS model_calls,
+                json_extract(payload, '$.total_tokens') AS tokens
+                FROM runs ORDER BY created_at DESC LIMIT 100''')]
 
     def update(self, run_id: str, *, state: str | None = None, **changes) -> dict:
         with self.connection() as c:
@@ -75,9 +89,14 @@ class Store:
             r = c.execute('SELECT payload,state FROM runs WHERE id=?', (run_id,)).fetchone()
             if not r:
                 raise KeyError(run_id)
-            # Cancellation wins over a late worker/model response.
+            # Cancellation prevents accepting a late repair, but an in-flight paid response
+            # still has measured usage and trace delivery that must not disappear.
             if r['state'] == 'cancelled':
-                return self.get(run_id)
+                changes = {key: value for key, value in changes.items()
+                           if key in {'model_calls', 'total_tokens', 'usage', 'trace_delivery'}}
+                if not changes:
+                    return self.get(run_id)
+                state = None
             payload = json.loads(r['payload'])
             payload.update(changes)
             c.execute('UPDATE runs SET payload=?,state=?,updated_at=?,revision=revision+1 WHERE id=?',

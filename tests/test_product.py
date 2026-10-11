@@ -1,5 +1,6 @@
 """Acceptance checks exercise the real original app and HTTP trust boundaries; no paid calls."""
 import json
+import hashlib
 import os
 import tempfile
 import time
@@ -51,6 +52,43 @@ class OriginalBehaviorTests(unittest.TestCase):
 
 
 class RepairProtocolTests(unittest.TestCase):
+    def test_cancelled_inflight_response_keeps_usage_without_accepting_repair(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store=Store(Path(tmp)/'runs.sqlite3');service=Service(store)
+            source='function adapter(s){return s}'
+            record,_=store.create('Cancelled paid response','string',{'source':source,'seed':19,'model_calls':0,'total_tokens':0},'cancel-response','control')
+            baseline={'decision':'mismatch','passed':0,'total':1,'cases':[]}
+            def late_response(*_):
+                store.update(record['id'],state='cancelled')
+                return ({'role':'assistant','tool_calls':[{'id':'late','function':{'name':'submit_adapter','arguments':json.dumps({'source':'function adapter(){return "late"}'})}}]},
+                        {'prompt_tokens':12,'completion_tokens':5,'total_tokens':17})
+            try:
+                with patch('app.service.engine',side_effect=lambda mode, *_: {'identity':{'version':'4.2.1'},'verify':baseline,'graph':{}}[mode]) as verifier, \
+                        patch.object(service,'call_model',side_effect=late_response),patch('app.service.neatlogs.flush',return_value=True):
+                    service.work(record['id'],True)
+                result=store.get(record['id'])
+                self.assertEqual(result['state'],'cancelled')
+                self.assertEqual(result['source'],source)
+                self.assertEqual(result['result'],baseline)
+                self.assertEqual((result['model_calls'],result['total_tokens']),(1,17))
+                self.assertEqual(result['usage'][0]['completion_tokens'],5)
+                self.assertEqual(result['trace_delivery'],'flushed')
+                self.assertEqual([call.args[0] for call in verifier.call_args_list],['identity','verify','graph'])
+                store.update(record['id'],state='verified',source='late source',result={'decision':'verified'},total_tokens=17)
+                protected=store.get(record['id'])
+                self.assertEqual((protected['state'],protected['source'],protected['result']),('cancelled',source,baseline))
+            finally: service.pool.shutdown()
+
+    def test_executor_rejection_releases_queue_reservations(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            service=Service(Store(Path(tmp)/'runs.sqlite3'))
+            service.pool.shutdown()
+            # A stopped executor must not fill the five-attempt queue with phantom jobs.
+            for attempt in range(6):
+                with self.assertRaisesRegex(RuntimeError,'could not be queued'):
+                    service.enqueue('rejected-'+str(attempt))
+                self.assertEqual(service.jobs,set())
+
     def test_provider_requires_an_action_with_thinking_disabled(self):
         if 'api.deepseek.com' not in MODEL_ENDPOINT: self.skipTest('Provider-specific control')
         response=unittest.mock.MagicMock()
@@ -116,6 +154,99 @@ class ApiTests(unittest.TestCase):
         self.assertIn('export { adapter }',adapter.text)
         self.assertEqual(Store(Path(self.tmp.name)/'runs.sqlite3').get(run_id)['state'],'verified')
         self.assertEqual(self.client.get('/api/v1/runs/'+run_id+'/proof').json()['result']['decision'],'verified')
+        summary=next(r for r in self.client.get('/api/v1/runs').json()['runs'] if r['id']==run_id)
+        self.assertEqual((summary['kind'],summary['parent_id']),('local',None))
+        self.assertEqual((summary['passed'],summary['total'],summary['model_calls'],summary['tokens']),(40,40,0,0))
+        self.assertNotIn('source',summary)
+        self.assertNotIn('custom',summary)
+
+    def test_reference_exposes_real_pinned_modules_and_graph_identity(self):
+        for contract,path in [('request','src/ipc/network/interpolate-vars.js'),('string','src/ipc/network/interpolate-string.js')]:
+            with self.subTest(contract=contract):
+                response=self.client.get('/api/v1/reference/'+contract)
+                self.assertEqual(response.status_code,200)
+                reference=response.json()
+                self.assertEqual(reference['contract'],contract)
+                self.assertEqual(reference['version'],'4.2.1')
+                self.assertEqual(reference['artifact_sha256'],'fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767')
+                self.assertEqual(reference['path'],path)
+                self.assertEqual(reference['authority'],'shipped original source')
+                self.assertIn('module.exports',reference['source'])
+                self.assertEqual(reference['sha256'],hashlib.sha256(reference['source'].encode()).hexdigest())
+                self.assertEqual(reference['graph']['authority'],'static inference')
+                self.assertEqual(reference['graph']['selected_nodes'][0]['identity']['artifact_sha256'],reference['sha256'])
+        self.assertEqual(self.client.get('/api/v1/reference/.env').status_code,422)
+        self.assertEqual(self.client.get('/api/v1/reference/interpolation').status_code,422)
+
+    def test_unsupported_review_does_not_report_unrun_cases_as_measurements(self):
+        result=engine('verify',{'contract':'string','source':'function adapter(s){return s}',
+                               'custom':{'str':'{{$randomUUID}}','options':{}},'count':10})
+        self.assertEqual(result['decision'],'needs_review')
+        self.assertEqual(result['cases'],[])
+        run,_=self.app.state.store.create('Unmeasured review','string',{'kind':'local','result':result},'review-history','control')
+        self.app.state.store.update(run['id'],state='needs_review')
+        summary=next(r for r in self.client.get('/api/v1/runs').json()['runs'] if r['id']==run['id'])
+        self.assertIsNone(summary['passed'])
+        self.assertIsNone(summary['total'])
+        self.assertIsNone(summary['model_calls'])
+        self.assertIsNone(summary['tokens'])
+        # Negative fixture: the oracle stops after one comparison, so its declared total is incomplete.
+        partial=result|{'reasons':['Original behavior could not be executed: fixture failure'],
+                        'cases':[{'id':'partial-control','match':True}]}
+        self.app.state.store.update(run['id'],result=partial)
+        summary=next(r for r in self.client.get('/api/v1/runs').json()['runs'] if r['id']==run['id'])
+        self.assertIsNone(summary['passed'])
+        self.assertIsNone(summary['total'])
+
+    def test_reference_unavailable_and_source_digest_mismatch_fail_closed(self):
+        with patch('app.main.engine',side_effect=RuntimeError('private path and raw diagnostic')):
+            response=self.client.get('/api/v1/reference/request')
+        self.assertEqual(response.status_code,503)
+        self.assertNotIn('private path',response.text)
+        with patch('app.main.engine',side_effect=[{'version':'4.2.1','sha256':'archive'},
+                {'source':'tampered','sha256':'wrong','path':'src/ipc/network/interpolate-vars.js'},
+                {'selected_nodes':[{'identity':{'artifact_sha256':'wrong'}}]}]):
+            response=self.client.get('/api/v1/reference/request')
+        self.assertEqual(response.status_code,503)
+        self.assertNotIn('tampered',response.text)
+
+    def test_every_repair_requires_consent_before_creating_or_enqueuing(self):
+        before=len(self.app.state.store.list())
+        with patch.dict(os.environ,{'PARITY_MODEL_API_KEY':'synthetic-test-key'}),patch.object(self.app.state.service,'enqueue') as enqueue:
+            for index,custom in enumerate([None,{'str':'{{name}}','options':{'envVars':{'name':'local'}}}]):
+                body={'contract':'string','source':'function adapter(s){return s}','action':'repair','custom':custom}
+                denied=self.post('/runs',body,key='denied-'+str(index))
+                self.assertEqual(denied.status_code,422)
+                self.assertIn('Confirm sending adapter source',denied.json()['error']['message'])
+            self.assertEqual(len(self.app.state.store.list()),before)
+            enqueue.assert_not_called()
+            accepted=self.post('/runs',body|{'custom':None,'send_data':True},key='consented')
+            self.assertEqual(accepted.status_code,202)
+            self.assertEqual(accepted.json()['kind'],'live')
+            enqueue.assert_called_once()
+            parent,_=self.app.state.store.create('Repair parent','string',{'source':'function adapter(s){return s}','kind':'local'},'parent','parent')
+            self.app.state.store.update(parent['id'],state='mismatch')
+            enqueue.reset_mock()
+            self.assertEqual(self.post('/runs/'+parent['id']+'/repair',{},key='parent-denied').status_code,422)
+            enqueue.assert_not_called()
+            accepted=self.post('/runs/'+parent['id']+'/repair',{'send_data':True},key='parent-consented')
+            self.assertEqual(accepted.status_code,202)
+            self.assertEqual(accepted.json()['parent_id'],parent['id'])
+            enqueue.assert_called_once()
+
+    def test_rejected_worker_submission_is_durable_and_history_is_unmeasured(self):
+        self.app.state.service.pool.shutdown()
+        response=self.post('/runs',{'title':'Stopped worker'},key='stopped-worker')
+        self.assertEqual(response.status_code,503)
+        record=next(r for r in self.client.get('/api/v1/runs').json()['runs'] if r['title']=='Stopped worker')
+        self.assertEqual(record['state'],'failed')
+        self.assertIsNone(record['passed'])
+        self.assertIsNone(record['total'])
+        saved=self.app.state.store.get(record['id'])
+        self.assertEqual(saved['events'][-1]['kind'],'failed')
+        self.assertIn('could not be queued',saved['error'])
+        self.assertEqual(self.app.state.service.jobs,set())
+        self.assertEqual(self.post('/runs',{'title':'Stopped worker'},key='stopped-worker').json()['id'],record['id'])
 
     def test_origin_csrf_validation_and_path_controls(self):
         self.assertEqual(self.client.post('/api/v1/runs',json={}).status_code,403)
@@ -155,6 +286,9 @@ class ApiTests(unittest.TestCase):
                 sess=client.get('/api/v1/session').json()
                 self.assertFalse(sess['authenticated'])
                 self.assertEqual(client.get('/api/v1/runs').status_code,401)
+                with patch('app.main.engine') as verifier:
+                    self.assertEqual(client.get('/api/v1/reference/request').status_code,401)
+                    verifier.assert_not_called()
                 headers={'X-Parity-Csrf':sess['csrf']}
                 self.assertEqual(client.post('/api/v1/login',json={'token':'wrong'},headers=headers).status_code,401)
                 response=client.post('/api/v1/login',json={'token':'operator-test-token-24-characters'},headers=headers)

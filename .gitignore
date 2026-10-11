@@ -9,3 +9,6 @@ __pycache__/
 .DS_Store
 .entire/settings.local.json
 .entire/logs/
+
+# Local completion ledgers and coordination state
+.unlazy/

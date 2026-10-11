@@ -215,6 +215,26 @@ def create_app(db_path: Path | None = None) -> FastAPI:
     @app.get('/api/v1/runs')
     def runs(): return {'runs':store.list()}
 
+    @app.get('/api/v1/reference/{contract}')
+    def reference(contract: Literal['request', 'string']):
+        # A fixed module name prevents callers from selecting arbitrary archive or host paths.
+        name = 'request' if contract == 'request' else 'scopes'
+        try:
+            identity = engine('identity')
+            original = engine('source', {'name': name})
+            graph = engine('graph', {'contract': contract})
+            source_hash = hashlib.sha256(original['source'].encode()).hexdigest()
+            if (identity['version'] != '4.2.1' or original['sha256'] != source_hash
+                    or not graph['selected_nodes']
+                    or any(node['identity']['artifact_sha256'] != source_hash for node in graph['selected_nodes'])):
+                raise ValueError('Reference identity does not match its source.')
+        except (RuntimeError, ValueError, KeyError, TypeError, AttributeError):
+            # Verifier diagnostics may contain filesystem paths; only expose the actionable boundary.
+            raise HTTPException(503, 'Pinned original source is unavailable. Restore the verified Bruno artifact and research evidence before retrying.') from None
+        return {'contract': contract, 'version': identity['version'], 'artifact_sha256': identity['sha256'],
+                'path': original['path'], 'sha256': source_hash, 'source': original['source'],
+                'graph': graph, 'authority': 'shipped original source'}
+
     def get_run(run_id):
         run=store.get(run_id)
         if not run: raise HTTPException(404,'Attempt not found.')
@@ -227,7 +247,7 @@ def create_app(db_path: Path | None = None) -> FastAPI:
         if not key or len(key)>100: raise HTTPException(422,'A unique Idempotency-Key is required.')
         validate_case(body.contract,body.custom)
         if body.action=='repair':
-            if body.custom and not body.send_data: raise HTTPException(422,'Confirm sending your input to the model provider before repair.')
+            if not body.send_data: raise HTTPException(422,'Confirm sending adapter source and comparison inputs to the model provider before repair.')
             if not (os.getenv('PARITY_MODEL_API_KEY') or os.getenv('DEEPSEEK_API_KEY')): raise HTTPException(503,'Configure a model key on the server first.')
         source=body.source if body.source is not None else default_source(body.contract)
         if not source.strip(): raise HTTPException(422,'Adapter source cannot be empty.')
@@ -239,9 +259,10 @@ def create_app(db_path: Path | None = None) -> FastAPI:
         if created:
             store.event(result['id'],'queued','Live repair queued.' if body.action=='repair' else 'Local verification queued. No model call.')
             try: service.enqueue(result['id'],body.action=='repair')
-            except ValueError as e:
+            except (ValueError, RuntimeError) as e:
                 store.update(result['id'],state='failed',error=str(e))
-                raise HTTPException(429,str(e)) from None
+                store.event(result['id'],'failed',str(e))
+                raise HTTPException(429 if isinstance(e,ValueError) else 503,str(e)) from None
         return result
 
     @app.post('/api/v1/runs',status_code=202)
@@ -249,7 +270,7 @@ def create_app(db_path: Path | None = None) -> FastAPI:
         return start(body,idempotency_key)
 
     @app.post('/api/v1/runs/{run_id}/repair',status_code=202)
-    async def repair(run_id: str,options: RepairOptions,idempotency_key: str = Header(default='')):
+    def repair(run_id: str,options: RepairOptions,idempotency_key: str = Header(default='')):
         previous=get_run(run_id)
         if previous['state'] in {'queued','verifying','repairing'}: raise HTTPException(409,'This attempt is still active.')
         body=NewRun(title=previous['title'],contract=previous['contract'],source=previous['source'],custom=previous.get('custom'),action='repair',send_data=options.send_data)

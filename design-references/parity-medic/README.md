@@ -29,3 +29,7 @@ Inspected in Ego Browser on October 11, 2026. Relevant component previews were o
 6. [Uncut Sans](https://uncut.wtf/sans-serif/uncut-sans/): retain the existing licensed self-hosted typeface and use it for headings as well as interface text.
 
 Required resources revisited: [tweakcn](https://tweakcn.com/), [Paper Shaders](https://shaders.paper.design/), [DialKit](https://www.dialkit.dev/) and [Number Flow](https://number-flow.barvian.me/). Concrete applicability and omission decisions are in `DESIGN.md`. Private reference screenshots stay ignored in `.local/design/`.
+
+## Inspection continuation
+
+Inspected live in Ego Browser, October 11: [21st.dev workspace search](https://21st.dev/) opens a grouped command dialog with search, destinations and keyboard navigation; [Prompt Kit Code Block · Julien Thibeaut](https://21st.dev/@ibelick/components/code-block) renders bounded, syntax-colored code and exposes the native component composition. These patterns inform the command search and read-only original/source panels. Adaptation uses our existing native stack, with exact-copy controls and real module fingerprints. No Copy prompt credit was consumed and no third-party component source was installed.

@@ -27,3 +27,9 @@ Below 1000px navigation becomes a compact top row; below 760px comparison panels
 ## Resource decisions
 
 Uncut supplies readable typography; tweakcn's neutral/graphite theme approach informs consistent semantic tokens. Dark Design was inspected for dark hierarchy. Paper Shaders add no explanatory value to code comparisons and are omitted. DialKit's live tuning model informed browser spacing review; no production tuning overlay. Number Flow's accessible value changes are useful for live counters, but this app mostly displays immutable saved results, so no animation dependency is added.
+
+## Inspection improvements · October 11 continuation
+
+Retain graphite/orange and the current typography. Add a compact command dialog informed by 21st.dev's rendered search: one search field, grouped actual destinations/recent attempts, visible keyboard hint, native dialog focus and Escape. Never offer a fake command or trigger paid repair from search. Use code-block file headers, restrained copy buttons and independent scrolling to make original-source inspection useful. The original tab must display the shipped module path, module/archive SHA-256 and the static REA authority separately from executable verification.
+
+Comparison explicitly selects baseline or current matrix. Before and current matrices preserve their own input payloads; never assume matching IDs alone prove identical inputs. Differences filter applies to the displayed matrix. Show concrete output/input-after paths with expected and actual values, including missing keys and execution errors. Unsupported inputs have no measured pass/fail total. History shows stored result and call measurements, recorded/local/live kind, and parent lineage where present. Connection failures retain saved evidence and retry read-only polling with bounded backoff; live repairs never auto-restart.

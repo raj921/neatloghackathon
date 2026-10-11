@@ -11,7 +11,7 @@ sh scripts/bootstrap-product.sh
 .venv/bin/python -m uvicorn app.main:create_app --factory --host 127.0.0.1 --port 8780 --workers 1 --no-access-log
 ```
 
-Open http://127.0.0.1:8780. Opening recorded evidence makes no model request. New verification compares the sample or supplied source locally. A mismatch can be repaired after the provider disclosure. The HTTP API can also request `action: repair` so a violated contract triggers the loop automatically; an already matching or unsupported contract makes no model call.
+Open http://127.0.0.1:8780. Opening recorded evidence makes no model request. New verification compares the sample or supplied source locally. A mismatch can be repaired after the provider disclosure. The HTTP API can also request `action: repair` so a violated contract triggers the loop automatically; every live repair request requires `send_data: true`, and an already matching or unsupported contract makes no model call.
 
 Bootstrap installs a hash-locked Python environment and the committed npm dependency lock, downloads the official Bruno 4.2.1 release if absent, verifies both ZIP and ASAR digests, and extracts only the named archive member. It never launches Bruno, logs in to sponsors or provisions cloud resources. Downloads can take several minutes. A digest mismatch stops setup.
 
@@ -21,7 +21,7 @@ Copy `.env.example` to `.env` if necessary. Local verification needs no AI key. 
 
 Optional `NEATLOGS_API_KEY` and `NEATLOGS_ENDPOINT` enable metadata tracing. The browser receives readiness flags, not credentials. Custom source and inputs remain local for verification; live repair sends them and counterexamples to the model provider. Neatlogs receives event/usage metadata, not the source or custom input. Proof downloads contain the input and source: use synthetic data for shared records.
 
-Limits: one worker, at most five active attempts, eight model calls per repair, six tools per model response, 5,000 output tokens per call, 100,000-character model context and no automatic provider retry. A context or transport failure preserves a failed attempt. Cancellation prevents further calls and acceptance of an in-flight result; it cannot reverse provider charges already incurred. Provider cost in trace readback is the tracing service's estimate, not an invoice.
+Limits: one worker, at most five active attempts, eight model calls per repair, six tools per model response, 5,000 output tokens per call, 100,000-character model context and no automatic provider retry. A context or transport failure preserves a failed attempt. Cancellation preserves measured usage returned by an already in-flight call while preventing further calls and acceptance of its repair; it cannot reverse provider charges already incurred. Provider cost in trace readback is the tracing service's estimate, not an invoice.
 
 ## Storage, recovery and backup
 
@@ -44,10 +44,11 @@ Authenticated OpenAPI is at `/api/v1/openapi.json`. Main routes:
 | GET `/api/v1/session` | CSRF value and operator authentication state |
 | POST `/api/v1/login` | Operator-token login |
 | GET `/api/v1/config` | Readiness and declared scope |
-| GET `/api/v1/runs` | Most recent 100 attempts |
+| GET `/api/v1/runs` | Most recent 100 attempts with stored result, usage and parent summaries |
+| GET `/api/v1/reference/{contract}` | Read-only pinned shipped source and static REA selection for request or string |
 | POST `/api/v1/runs` | Verify or repair; requires unique `Idempotency-Key` |
 | GET `/api/v1/runs/{id}` | Full durable comparison and events |
-| POST `/api/v1/runs/{id}/repair` | New child repair; custom inputs need `send_data: true` |
+| POST `/api/v1/runs/{id}/repair` | New child repair; every repair needs `send_data: true` |
 | POST `/api/v1/runs/{id}/cancel` | Cancel active work |
 | GET `/api/v1/runs/{id}/adapter` | Export verified current source, with Bruno's full MIT notice |
 | GET `/api/v1/runs/{id}/proof` | Export source, measured outputs, mutations and scope |
@@ -64,3 +65,7 @@ The two acceptance commands were inspected and explicitly approved by the user. 
 ```
 
 The second command incurs provider usage; do not run it as a default startup or ordinary CI check. Local tests are appropriate for CI once the verified archive and pinned dependencies are available. See `GATES.md` and `REVIEW.md` for acceptance evidence and remaining boundaries.
+
+## Inspecting an attempt
+
+Workspace search opens with Cmd/Ctrl+K and navigates actual pages and recent attempts. Comparison distinguishes the before-repair matrix from current host verification. Differences applies to the selected matrix; each output uses its own displayed input. Exact mismatch paths include output and input mutation. The Original source tab reads the pinned shipped module and shows its module/archive fingerprints and static selection record. Copy controls preserve the source without line numbers. Unsupported or partially executed oracle matrices show unavailable pass/fail totals. Read-only status checks retry with bounded backoff after connection failure; paid repairs never restart automatically.
