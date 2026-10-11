@@ -276,7 +276,7 @@ def create_app(db_path: Path | None = None) -> FastAPI:
         if data.get('kind')=='recorded': raise HTTPException(409,'Reverify recorded research before exporting from this product.')
         if data['result'].get('source_sha256')!=hashlib.sha256(data['source'].encode()).hexdigest(): raise HTTPException(409,'Source digest no longer matches verification.')
         license_text=(ROOT/'prototypes/rea-parity/BRUNO-LICENSE.txt').read_text()
-        code='// Bruno-compatible experimental adapter. Finite scope: see accompanying proof.\n'+''.join('// '+line+'\n' for line in license_text.splitlines())+data['source']+'\nexport { adapter };\n'
+        code='// Bruno-compatible experimental adapter. Finite scope: see accompanying proof.\n'+''.join(('// '+line).rstrip()+'\n' for line in license_text.splitlines())+data['source']+'\nexport { adapter };\n'
         return Response(code,media_type='text/javascript',headers={'Content-Disposition':f'attachment; filename="parity-{run_id[:8]}-adapter.mjs"'})
 
     @app.get('/api/v1/openapi.json')

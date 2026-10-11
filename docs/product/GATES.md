@@ -11,7 +11,7 @@ Scope: a complete single-operator local product for supported Bruno deterministi
   CWD: ../..
   CHECK: .venv/bin/python -m unittest discover -s tests -v
   EXPECT: /^OK$/m
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/rajkumar/neatloghackathon; path=9fe063a82109/51 entries; EXPECT=matched; output-sha256=952829afa2ea49d599651d5b5292266d8dda2821cf65a1184e6c76dabc18fdce; output-bytes=2128
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/rajkumar/neatloghackathon; path=9fe063a82109/51 entries; EXPECT=matched; output-sha256=0ad143b4ca171ae9ecba4c98349a845e652be26fb166709f64d5681fc8ffe666; output-bytes=2128
 
 - [x] G3: A real request-workflow repair completes through the durable service and passes independent fresh cases, with honest remote tracing status.
   CWD: ../..
