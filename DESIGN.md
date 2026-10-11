@@ -1,20 +1,25 @@
-# Recall Relay: calm containment workbench
+# Parity Medic — an evidence workbench
 
-This direction serves one decision: which stock may be sold, which must be held, and what still needs physical evidence. Sources, uncertainty and action history matter more than decorative metrics. References: `design-references/README.md`.
+Read before each screen. References: `design-references/parity-medic/README.md`. Prior prototypes remain unchanged. Product: disagreement → original behavior → repair → finite verification → reusable export. Distinguish recorded research, local checks, live model work and human review.
 
-## Shared constraints
+## Direction and typography
 
-- Typography: system sans-serif; 16px body, 14px secondary, 36px title; line-height 1.5. Monospace only for identifiers. Tabular numerals for quantities.
-- Colors: background `#f5f5ef`, surface `#ffffff`, text `#202922`, muted `#59655d`, rule `#d8ded5`, one accent `#235b43`. Status labels include words; never rely on color alone.
-- Spacing: 8px base; 16px control gaps, 24px panels, 40px section gaps. Max content width 1120px with 24px outer gutters.
-- Shape: 8px cards, 4px controls, 1px borders; no shadows, gradients, shaders or decorative images.
-- Components: source panel; stock table; order dispositions; action ledger; free-play controls; guided scenario tabs. Mark the walkthrough **simulation** permanently. Real model-run results remain separate JSON evidence.
-- States: exact match means **Hold**; excluded means **Clear for this recall**; unknown means **Review, fulfilment blocked**. Case completion means containment with unresolved evidence, not a claim that every item is safe.
-- Interaction: native buttons, descriptive labels, visible 3px focus ring, 44px minimum targets. Actions announce their result in a polite live region. No animation or network calls in the HTML walkthrough.
-- Responsive: two-column source/state layout above 800px; single column below. Tables scroll inside their panel and controls wrap. No page-wide horizontal scrolling at 375px.
+Editorial engineering workbench: warm white canvas, forest green actions, quiet rail, expansive comparisons and precise rules. Refero's concrete specs inform hierarchy; cinematic bookmark references inform restraint. No fake illustration, decorative shader, fabricated metrics or simulated reasoning.
 
-## Prototype exception
+Self-hosted Uncut Sans 400–700, font-display swap, body 15px/1.55, helpers 13px. Georgia is a deliberate display exception: main result 42px/1.08 desktop, 32px mobile. Code ui-monospace 12px/1.65; identifiers wrap; tabular numbers. No fake count-up for saved results.
 
-The state HTML is a throwaway, self-contained learning artifact on `codex/recall-relay-prototype`, not a shipped application or a real-model dashboard. Its controls intentionally expose illegal transitions so people can test the rules. The backend proof calls DeepSeek and Neatlogs separately; no credentials enter the HTML.
+## Tokens
 
-The Parity Medic evidence viewer on `codex/rea-parity-spike` reuses these constraints. Its documented Georgia title exception and recorded-run components are in `prototypes/rea-parity/DESIGN.md`. Unlike the earlier simulation, it loads actual local run evidence and labels its measured scope permanently.
+Canvas #f7f8f5, surface #fff, rail #f0f3ed, ink #202b24, secondary #58645c, rule #dce2d8, accent #245a42, accent-soft #e7efe6. Error #9b382d on #faeeeb; review #795116 on #f8f0df. Status includes words.
+
+Dark mode entire app: canvas #151c18, surface #1e2821, rail #19231c, ink #ecf0e9, secondary #acb9ae, rules #354339, accent #afd4ae with dark button text. Code theme tokens.
+
+4px base; 8/12/16/24/32/48 spacing. Max 1360px; rail 232px; gutters 40px desktop/20px mobile. Control radius 8px, panel 12px, 1px border; shadow only dialogs/toasts.
+
+## Screens and states
+
+Functional destinations Workbench, Run history, Evidence, Settings. Main screen source breadcrumb, measured result, scope caption, primary action, input/adapter area, before/reference/after comparison. Tabs history/patch/proof. New verification uses labelled native dialog, contract selection, source, JSON, validation, provider disclosure and cost ceiling. History search/persistent rows/reopen without work. Settings expose readiness, never keys. Export includes hashes, inputs/seeds/counts/source; finite tests never mean universal compatibility.
+
+Buttons/links minimum 44px; visible 3px keyboard focus; native dialog Escape restores focus; polite status region. Real running labels may use Transitions.dev shimmer. 160–220ms opacity/transform, reduced-motion guard; no auto-scroll while reading. Errors preserve inputs/evidence. Cancel and review have distinct state. Downloads only for eligible artifacts.
+
+Under 900px rail becomes compact top navigation; comparisons stack. Code/table scroll internally; no page overflow at 390px; dialog fits 320px.

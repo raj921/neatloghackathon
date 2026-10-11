@@ -1,0 +1,194 @@
+{
+  "id": "933c545500994dfb909d9bd3c0a08057",
+  "state": "cancelled",
+  "error": null,
+  "trace_id": "cac16430f1c2700b61cb932e062f4c6a",
+  "model_calls": 5,
+  "total_tokens": 63223,
+  "usage": [
+    {
+      "prompt_tokens": 3067,
+      "completion_tokens": 89,
+      "total_tokens": 3156,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2427,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "prompt_tokens": 9941,
+      "completion_tokens": 5000,
+      "total_tokens": 14941,
+      "prompt_tokens_details": {
+        "cached_tokens": 3072
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5000
+      },
+      "prompt_cache_hit_tokens": 3072,
+      "prompt_cache_miss_tokens": 6869,
+      "finish_reason": "length"
+    },
+    {
+      "prompt_tokens": 9986,
+      "completion_tokens": 5000,
+      "total_tokens": 14986,
+      "prompt_tokens_details": {
+        "cached_tokens": 2944
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5000
+      },
+      "prompt_cache_hit_tokens": 2944,
+      "prompt_cache_miss_tokens": 7042,
+      "finish_reason": "length"
+    },
+    {
+      "prompt_tokens": 10042,
+      "completion_tokens": 5000,
+      "total_tokens": 15042,
+      "prompt_tokens_details": {
+        "cached_tokens": 9856
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5000
+      },
+      "prompt_cache_hit_tokens": 9856,
+      "prompt_cache_miss_tokens": 186,
+      "finish_reason": "length"
+    },
+    {
+      "prompt_tokens": 10098,
+      "completion_tokens": 5000,
+      "total_tokens": 15098,
+      "prompt_tokens_details": {
+        "cached_tokens": 9856
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5000
+      },
+      "prompt_cache_hit_tokens": 9856,
+      "prompt_cache_miss_tokens": 242,
+      "finish_reason": "length"
+    }
+  ],
+  "events": [
+    {
+      "seq": 2,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:02:55.496882+00:00",
+      "kind": "queued",
+      "message": "Live repair queued.",
+      "details": {}
+    },
+    {
+      "seq": 3,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:02:55.755604+00:00",
+      "kind": "identity",
+      "message": "Original Bruno release fingerprint checked.",
+      "details": {
+        "version": "4.2.1",
+        "sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767",
+        "available": true
+      }
+    },
+    {
+      "seq": 4,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:02:56.203704+00:00",
+      "kind": "verification",
+      "message": "Original comparison: 22/32 cases match.",
+      "details": {
+        "decision": "mismatch",
+        "passed": 22,
+        "total": 32
+      }
+    },
+    {
+      "seq": 5,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:02:57.840339+00:00",
+      "kind": "source",
+      "message": "Inspected original request source.",
+      "details": {
+        "path": "src/ipc/network/interpolate-vars.js",
+        "sha256": "561b6159c8ed0df35aa3301de343a7e1506238bde40627f553f1afbe3e83a2ef"
+      }
+    },
+    {
+      "seq": 6,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:02:58.090858+00:00",
+      "kind": "source",
+      "message": "Inspected original interpolation source.",
+      "details": {
+        "path": "node_modules/@usebruno/common/src/interpolate/index.ts",
+        "sha256": "4b4b56a518427fa7ad0603a9a2ebcb9cc4b88c29a733bf576382bb6536c73984"
+      }
+    },
+    {
+      "seq": 7,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:03:20.369930+00:00",
+      "kind": "provider",
+      "message": "The provider returned no tool action; the host requested an explicit submission.",
+      "details": {
+        "finish_reason": "length",
+        "content_characters": 0
+      }
+    },
+    {
+      "seq": 8,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:03:43.625121+00:00",
+      "kind": "provider",
+      "message": "The provider returned no tool action; the host requested an explicit submission.",
+      "details": {
+        "finish_reason": "length",
+        "content_characters": 0
+      }
+    },
+    {
+      "seq": 9,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:04:06.584079+00:00",
+      "kind": "provider",
+      "message": "The provider returned no tool action; the host requested an explicit submission.",
+      "details": {
+        "finish_reason": "length",
+        "content_characters": 0
+      }
+    },
+    {
+      "seq": 10,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:04:30.393343+00:00",
+      "kind": "provider",
+      "message": "The provider returned no tool action; the host requested an explicit submission.",
+      "details": {
+        "finish_reason": "length",
+        "content_characters": 0
+      }
+    },
+    {
+      "seq": 11,
+      "run_id": "933c545500994dfb909d9bd3c0a08057",
+      "created_at": "2026-10-11T10:04:47.992208+00:00",
+      "kind": "cancelled",
+      "message": "Stopped diagnostic attempt: thinking consumed the output budget. No candidate accepted.",
+      "details": {}
+    }
+  ],
+  "baseline": {
+    "decision": "mismatch",
+    "passed": 22,
+    "total": 32
+  },
+  "explanation": "Diagnostic attempt stopped because DeepSeek thinking consumed the entire output budget before tool submission. No repair accepted. Subsequent real run disabled thinking and passed independent comparison."
+}

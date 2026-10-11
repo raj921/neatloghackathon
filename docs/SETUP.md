@@ -94,3 +94,6 @@ Recent event emails in the registered Gmail account were reviewed, including the
 - [cfo.ai sponsor channel](https://discord.com/channels/1528866100207419472/1558110926064975966)
 
 October 11 update: a real model-driven Recall Relay spike and a separate simulated state walkthrough now exist on the prototype branch. The store, receiving observations and orders are synthetic; the official recall is real. Neatlogs readback for actual runs is recorded in `docs/evidence/`. A production product, Entire checkpoint, cfo.ai product business plan, demo video, public build post and final submission are still outstanding. The live event page now labels October 12 11:55 PM IST as a **planned close**, with the final cutoff announced on Discord.
+
+
+October 11 product delivery: Parity Medic now has a complete local single-operator workbench, durable request repair, real 55/80 → 80/80 proof, independent 80/80 replay and finalized Neatlogs readback. See `docs/product/REVIEW.md`. Entire Graph product review evidence exists; a checkpoint is still not claimed. Public hosting, cfo.ai-generated product plan, demo video and final submission remain separate. A prepared cfo.ai input is in `docs/product/BUSINESS-PLAN-INPUT.md`.

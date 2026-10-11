@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS operations;
+DROP TABLE IF EXISTS events;
+DROP TABLE IF EXISTS runs;
+PRAGMA user_version = 0;

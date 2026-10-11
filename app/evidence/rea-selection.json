@@ -1,0 +1,180 @@
+{
+  "evidence_id": "ev_786fcdaf7943541b950452d849d9b0e3525832cbfaffaa91b1778e4b25bc0037",
+  "graph_id": "jag_f8e347cf3c12717ce1e0d59e78a5743a96c65db1395362fe537de21dea8c3fc3",
+  "parent_record_sha256": "60a98accfab206cfa453c0eeca67f34d905a4b3e78012ef0f948d08cadf19b08",
+  "selected_nodes": [
+    {
+      "node_id": "jag_node_5cdd5b723d04f660685bbfb47ac66ad5c1812950984afe892e0ac973d56f4c46",
+      "kind": "javascript-module",
+      "identity": {
+        "strategy": "artifact-local-key",
+        "stability": "artifact-version",
+        "artifact_sha256": "561b6159c8ed0df35aa3301de343a7e1506238bde40627f553f1afbe3e83a2ef",
+        "namespace": "source-module",
+        "key": "09c937cda9660e854c586d8e4e3085e78b2573bcb5991fe62c6d2395bc8a6f1b:src/ipc/network/interpolate-vars.js"
+      },
+      "observations": [
+        {
+          "label": "src/ipc/network/interpolate-vars.js",
+          "source_map_reference": null,
+          "properties": {
+            "semantic_role": "source-module",
+            "path": "src/ipc/network/interpolate-vars.js",
+            "container_sha256": "09c937cda9660e854c586d8e4e3085e78b2573bcb5991fe62c6d2395bc8a6f1b",
+            "logical_module_key": "src/ipc/network/interpolate-vars.js",
+            "module_format": "commonjs",
+            "import_relationships": 5,
+            "export_relationships": 1,
+            "export_names": [
+              "default"
+            ],
+            "omitted_export_names": 0
+          },
+          "evidence": {
+            "authority": "ast-static-analysis",
+            "state": "observed",
+            "confidence": "exact",
+            "artifact": {
+              "available": true,
+              "artifact_id": "art_561b6159c8ed0df35aa3301de343a7e1506238bde40627f553f1afbe3e83a2ef",
+              "sha256": "561b6159c8ed0df35aa3301de343a7e1506238bde40627f553f1afbe3e83a2ef"
+            },
+            "location": {
+              "available": true,
+              "value": {
+                "kind": "source-range",
+                "source": "src/ipc/network/interpolate-vars.js",
+                "start": {
+                  "line": 1,
+                  "column": 0
+                },
+                "end": {
+                  "line": 425,
+                  "column": 0
+                }
+              }
+            },
+            "extractor": {
+              "name": "rea-javascript-artifact-reconstruction",
+              "version": "1",
+              "operation": "recover-source-module",
+              "executable_sha256": null
+            },
+            "coverage": {
+              "status": "complete",
+              "truncated": false,
+              "omitted_count": 0,
+              "limits": []
+            },
+            "limitations": [
+              "Cross-function mutation and dynamic property resolution remain unknown.",
+              "Local call, argument, return, and closure relations are static candidates and do not prove runtime invocation.",
+              "Promise ownership covers explicit unshadowed Promise construction, static factories, aggregation, chaining, and await syntax only.",
+              "Return sites include only direct callable returns; nested callable returns remain separate.",
+              "Values and aliases were recovered from inert syntax only; no JavaScript was executed."
+            ],
+            "evidence_ids": []
+          },
+          "observation_id": "jag_observation_034e5c1f7464258532a1bd6e020442381e2fb2aa761d45a5221b6b4fb7af09c7",
+          "identifier_strategy": {
+            "strategy": "semantic-content-sha256",
+            "stability": "observation-exact"
+          }
+        }
+      ]
+    },
+    {
+      "node_id": "jag_node_a7b412a0ad438bf1ecabb73f0ac948b2877c73059d6a5a1cea6d0bdfe8fd0dec",
+      "kind": "javascript-module",
+      "identity": {
+        "strategy": "artifact-local-key",
+        "stability": "artifact-version",
+        "artifact_sha256": "8081751bc859c71eb755dbb6882ba9152b57ccd3558760d97eca465c8b8fb7f5",
+        "namespace": "source-module",
+        "key": "09c937cda9660e854c586d8e4e3085e78b2573bcb5991fe62c6d2395bc8a6f1b:src/ipc/network/interpolate-string.js"
+      },
+      "observations": [
+        {
+          "label": "src/ipc/network/interpolate-string.js",
+          "source_map_reference": null,
+          "properties": {
+            "semantic_role": "source-module",
+            "path": "src/ipc/network/interpolate-string.js",
+            "container_sha256": "09c937cda9660e854c586d8e4e3085e78b2573bcb5991fe62c6d2395bc8a6f1b",
+            "logical_module_key": "src/ipc/network/interpolate-string.js",
+            "module_format": "commonjs",
+            "import_relationships": 4,
+            "export_relationships": 1,
+            "export_names": [
+              "default"
+            ],
+            "omitted_export_names": 0
+          },
+          "evidence": {
+            "authority": "ast-static-analysis",
+            "state": "observed",
+            "confidence": "exact",
+            "artifact": {
+              "available": true,
+              "artifact_id": "art_8081751bc859c71eb755dbb6882ba9152b57ccd3558760d97eca465c8b8fb7f5",
+              "sha256": "8081751bc859c71eb755dbb6882ba9152b57ccd3558760d97eca465c8b8fb7f5"
+            },
+            "location": {
+              "available": true,
+              "value": {
+                "kind": "source-range",
+                "source": "src/ipc/network/interpolate-string.js",
+                "start": {
+                  "line": 1,
+                  "column": 0
+                },
+                "end": {
+                  "line": 76,
+                  "column": 0
+                }
+              }
+            },
+            "extractor": {
+              "name": "rea-javascript-artifact-reconstruction",
+              "version": "1",
+              "operation": "recover-source-module",
+              "executable_sha256": null
+            },
+            "coverage": {
+              "status": "complete",
+              "truncated": false,
+              "omitted_count": 0,
+              "limits": []
+            },
+            "limitations": [
+              "Cross-function mutation and dynamic property resolution remain unknown.",
+              "Local call, argument, return, and closure relations are static candidates and do not prove runtime invocation.",
+              "Promise ownership covers explicit unshadowed Promise construction, static factories, aggregation, chaining, and await syntax only.",
+              "Return sites include only direct callable returns; nested callable returns remain separate.",
+              "Values and aliases were recovered from inert syntax only; no JavaScript was executed."
+            ],
+            "evidence_ids": []
+          },
+          "observation_id": "jag_observation_15de1e45ac5420250867802815eeaf1fc958839c9460d28a13f898022eb48b01",
+          "identifier_strategy": {
+            "strategy": "semantic-content-sha256",
+            "stability": "observation-exact"
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Dynamic IPC channel expressions remain unresolved and are never paired by textual similarity.",
+    "Electron API identity follows proven lexical module aliases. Reassigned bindings, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+    "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code.",
+    "src/ipc/network/prepare-request.js: Resource constraint during analyze_javascript_application: Semantic graph for src/ipc/network/prepare-request.js exceeds the parent's remaining result budget; static and module facts were retained"
+  ],
+  "scope": "Exact module records extracted from real seven-file REA analysis; omitted graph nodes and edges are not reconstructed."
+}

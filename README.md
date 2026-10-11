@@ -1,12 +1,29 @@
-# neatHack / developer agent feasibility workspace
+# Parity Medic
 
-The current recommendation is **Parity Medic**: repair a model-generated adapter by comparing it with a downloaded application's actual code. A real run improved from 25/50 to 50/50 matching fresh inputs across ten declared categories. See [the research decision](docs/rea-research/DECISION.md), [the runnable spike](prototypes/rea-parity/README.md), and the recorded evidence viewer at `http://127.0.0.1:8770` while its local server is running. This is a narrow feasibility proof, not a finished production app.
+A developer-agent workbench that repairs compatibility adapters against an application's shipped behavior. Start a comparison, inspect the mismatch, let the agent read and test the original code, and download the independently checked result with evidence.
+
+**Working local product:** http://127.0.0.1:8780 while the server is running. Request preparation improved **55/80 → 80/80** on fresh inputs across sixteen declared categories; another independently selected 80 inputs also matched. Three real DeepSeek calls used 28,418 tokens. These are finite generated comparisons against Bruno 4.2.1, not universal app compatibility or a general success rate.
 
 ```sh
-.venv/bin/python prototypes/rea-parity/agent.py --serve
+sh scripts/bootstrap-product.sh
+.venv/bin/python -m uvicorn app.main:create_app --factory --host 127.0.0.1 --port 8780 --workers 1 --no-access-log
 ```
 
-The new experiment is on `codex/rea-parity-spike`. The earlier Recall Relay experiment remains below and on its original branch.
+Local verification makes no model call. Live repair needs a private model key and explicit provider-data consent in the interface. Recorded examples are labelled and do not execute again when opened. The product includes durable history, input/source editing, comparison and mutation evidence, bounded repair, cancellation, review states, provider configuration and adapter/proof downloads.
+
+- [Operating guide and API](docs/product/OPERATING.md)
+- [Architecture and trust boundaries](docs/product/ARCHITECTURE.md)
+- [Review and actual delivery evidence](docs/product/REVIEW.md)
+- [Acceptance ledger](docs/product/GATES.md)
+- [Design system](DESIGN.md) and [saved reference decisions](design-references/parity-medic/README.md)
+
+Neatlogs hosted readback confirms the product trace is finalized with three LLM calls and eight spans. Entire Graph supplied product source-review evidence. cfo.ai account setup was reported complete by the user; a verified cfo.ai product business plan, public deployment, demo video and final hackathon submission remain separate delivery work. No new cloud resource was provisioned for this product.
+
+## Preserved research
+
+The original [Parity Medic spike](prototypes/rea-parity/README.md) remains unchanged. Its real interpolation repair improved 25/50 to 50/50 across ten categories. The [research decision](docs/rea-research/DECISION.md) explains how the user's REA repository supplied static artifact evidence and how the downloaded Bruno implementation supplies the oracle.
+
+The completed product is on `codex/parity-medic-product`. Earlier research is on `codex/rea-parity-spike`; the earlier Recall Relay experiment remains below.
 
 Sponsor setup plus a throwaway **Recall Relay** feasibility spike, started October 11 after the user's go-ahead. Real CPSC data, DeepSeek tool decisions and Neatlogs tracing; a clearly labelled synthetic store. No application framework or production retailer integration.
 

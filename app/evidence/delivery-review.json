@@ -1,0 +1,18 @@
+{
+  "secret_value_scan": {
+    "passed": true,
+    "files": 88,
+    "matches": []
+  },
+  "browser_download": {
+    "proof_state": "verified",
+    "passed": 32,
+    "total": 32,
+    "source_digest": "57232142937afbd8b15787adb2c27f7a477f868375a8734606aee43b5af0429f",
+    "source_matches_export": true,
+    "full_mit_notice": true
+  },
+  "screenshots": "Ignored private .local/design artifacts",
+  "deployment": "local_only",
+  "submission": "not_submitted"
+}
