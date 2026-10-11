@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "output": {
+      "available": true,
+      "mimeType": null,
+      "truncated": false,
+      "value": "{\"passed\":18,\"total\":20,\"failures\":[{\"category\":4,\"input\":{\"category\":4,\"str\":\"{{user.name}}\",\"options\":{\"envVars\":{\"user.name\":\"value_2_4\",\"user\":{\"name\":\"nested\"}}}},\"original\":{\"output\":\"value_2_4\",\"mutated\":false},\"candidate\":{\"output\":\"nested\",\"mutated\":false}},{\"category\":4,\"input\":{\"category\":4,\"str\":\"{{user.name}}\",\"options\":{\"envVars\":{\"user.name\":\"value_2_14\",\"user\":{\"name\":\"nested\"}}}},\"original\":{\"output\":\"value_2_14\",\"mutated\":false},\"candidate\":{\"output\":\"nested\",\"mutated\":false}}],\"oracle\":\"Bruno 4.2.1 shipped interpolateString in isolated QuickJS\",\"asar_sha256\":\"fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767\"}"
+    }
+  },
+  "spanId": "9fdbce8f85a5d635",
+  "traceId": "c405bfc5853fc69ad8cd142c99c8cccc"
+}

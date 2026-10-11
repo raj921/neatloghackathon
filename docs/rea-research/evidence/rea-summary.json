@@ -1,0 +1,115 @@
+{
+  "evidence_id": "ev_786fcdaf7943541b950452d849d9b0e3525832cbfaffaa91b1778e4b25bc0037",
+  "version": "4.2.1",
+  "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767",
+  "scope": "selected request-related modules; not the entire app",
+  "files": [
+    {
+      "path": "package.json",
+      "bytes": 2747,
+      "sha256": "ad9ae4eeba8e0174ddd81325cd31a2274640579bcd594cd0cb026238203cc06b"
+    },
+    {
+      "path": "src/index.js",
+      "bytes": 22080,
+      "sha256": "2bfc26adf4555f763bcdfae78cf5adc2d907f912040efd457c7d78a3b5131936"
+    },
+    {
+      "path": "src/preload.js",
+      "bytes": 917,
+      "sha256": "206bc4e907b97d1b1a6d9d25ae6aa474a8e6c48a1b38e1b60b2c769690b1e663"
+    },
+    {
+      "path": "src/ipc/network/interpolate-string.js",
+      "bytes": 1965,
+      "sha256": "8081751bc859c71eb755dbb6882ba9152b57ccd3558760d97eca465c8b8fb7f5"
+    },
+    {
+      "path": "src/ipc/network/interpolate-vars.js",
+      "bytes": 18850,
+      "sha256": "561b6159c8ed0df35aa3301de343a7e1506238bde40627f553f1afbe3e83a2ef"
+    },
+    {
+      "path": "src/ipc/network/prepare-request.js",
+      "bytes": 26715,
+      "sha256": "474b12a58b692c13795963c40109d496a605285a88e7cac4ab0f2cd0fedbf8c5"
+    },
+    {
+      "path": "src/ipc/network/index.js",
+      "bytes": 92440,
+      "sha256": "ffde677e9039b1d58465241db6280e7662a46d1ec4b56c5567f85e1b133d89c1"
+    },
+    {
+      "path": "src/ipc/network/interpolate-string.js",
+      "role": "scopes",
+      "sha256": "8081751bc859c71eb755dbb6882ba9152b57ccd3558760d97eca465c8b8fb7f5",
+      "bytes": 1965
+    },
+    {
+      "path": "node_modules/@usebruno/common/src/interpolate/index.ts",
+      "role": "interpolation",
+      "sha256": "4b4b56a518427fa7ad0603a9a2ebcb9cc4b88c29a733bf576382bb6536c73984",
+      "bytes": 4414
+    },
+    {
+      "path": "node_modules/@usebruno/common/dist/cjs/index.js",
+      "role": "common",
+      "sha256": "463068cb7e6853362a8883a3eab4074bf3cd3d6cfbc55b375308cea45c946419",
+      "bytes": 584868
+    },
+    {
+      "path": "node_modules/lodash/lodash.js",
+      "role": "lodash",
+      "sha256": "f5465f55566bf544aad0a31c6135889ca1ed81eea8f53ec61c6cbe86926f07cf",
+      "bytes": 545945
+    }
+  ],
+  "root_artifact_sha256": "09c937cda9660e854c586d8e4e3085e78b2573bcb5991fe62c6d2395bc8a6f1b",
+  "graph_id": "jag_f8e347cf3c12717ce1e0d59e78a5743a96c65db1395362fe537de21dea8c3fc3",
+  "statistics": {
+    "relevant_files": 7,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 165714,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 6,
+    "visited_ast_nodes": 18360,
+    "findings": 342,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "summary": {
+    "browser_windows": 2,
+    "explicit_web_preferences": 5,
+    "preload_entrypoints": 1,
+    "context_bridge_apis": 2,
+    "exposed_api_members": 5,
+    "ipc": {
+      "operations": 28,
+      "literal_channels": 25,
+      "dynamic_channel_operations": 3,
+      "renderer_transmissions": 2,
+      "renderer_listeners": 1,
+      "main_handlers": 25,
+      "paired_renderer_transmissions": 0,
+      "ambiguous_renderer_transmissions": 0,
+      "unpaired_literal_renderer_transmissions": 0
+    },
+    "sender_validation_observations": 0,
+    "utility_processes": 0,
+    "resolved_utility_entrypoints": 0,
+    "native_addon_bindings": 0,
+    "resolved_native_addon_bindings": 0
+  },
+  "limitations": [
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Dynamic IPC channel expressions remain unresolved and are never paired by textual similarity.",
+    "Electron API identity follows proven lexical module aliases. Reassigned bindings, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+    "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code.",
+    "src/ipc/network/prepare-request.js: Resource constraint during analyze_javascript_application: Semantic graph for src/ipc/network/prepare-request.js exceeds the parent's remaining result budget; static and module facts were retained"
+  ]
+}

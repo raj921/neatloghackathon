@@ -1,4 +1,12 @@
-# neatHack / Recall Relay feasibility workspace
+# neatHack / developer agent feasibility workspace
+
+The current recommendation is **Parity Medic**: repair a model-generated adapter by comparing it with a downloaded application's actual code. A real run improved from 25/50 to 50/50 matching fresh inputs across ten declared categories. See [the research decision](docs/rea-research/DECISION.md), [the runnable spike](prototypes/rea-parity/README.md), and the recorded evidence viewer at `http://127.0.0.1:8770` while its local server is running. This is a narrow feasibility proof, not a finished production app.
+
+```sh
+.venv/bin/python prototypes/rea-parity/agent.py --serve
+```
+
+The new experiment is on `codex/rea-parity-spike`. The earlier Recall Relay experiment remains below and on its original branch.
 
 Sponsor setup plus a throwaway **Recall Relay** feasibility spike, started October 11 after the user's go-ahead. Real CPSC data, DeepSeek tool decisions and Neatlogs tracing; a clearly labelled synthetic store. No application framework or production retailer integration.
 

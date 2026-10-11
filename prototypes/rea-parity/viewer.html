@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parity Medic — the app is the witness</title>
+<style>
+:root{--bg:#f5f5ef;--text:#202922;--muted:#59655d;--rule:#d8ded5;--accent:#235b43}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:32px 24px 64px}header{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:18px}.brand{font-weight:650}.tag{font-size:13px;color:var(--accent);border:1px solid var(--rule);border-radius:4px;padding:4px 10px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}h1{font:48px/1.1 Georgia,serif;margin:16px 0}h2{font-size:21px;font-weight:600;margin:0 0 18px}p{max-width:780px;margin:12px 0;color:var(--muted)}section{margin-top:40px}.summary{display:grid;grid-template-columns:1fr 48px 1fr;align-items:center;gap:16px}.score{border-top:2px solid var(--rule);padding:22px 0}.score:last-child{border-color:var(--accent)}.number{font-size:58px;font-weight:550;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.number small{font-size:24px;letter-spacing:0;color:var(--muted)}.arrow{font-size:28px;color:var(--muted)}.status{font-size:13px;color:#8b302c}.good{color:var(--accent)}.meta{display:flex;flex-wrap:wrap;gap:24px;padding:16px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:14px;font-variant-numeric:tabular-nums}.panel{background:white;border:1px solid var(--rule);border-radius:8px;padding:24px}.compare{display:grid;grid-template-columns:280px 1fr;gap:24px}.cases{display:grid;gap:8px;align-content:start}button{appearance:none;text-align:left;padding:12px 16px;min-height:44px;border:1px solid var(--rule);border-radius:4px;background:transparent;color:var(--text);font:inherit;cursor:pointer}button[aria-pressed=true]{background:#eef5ed;border-color:var(--accent);color:var(--accent)}button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.outputs{display:grid;grid-template-columns:1fr 1fr;gap:16px}.output{border:1px solid var(--rule);padding:16px;border-radius:4px}.output.wrong{background:#fff1ed}.output.right{background:#eef5ed}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em}pre,code{font:13px/1.5 ui-monospace,monospace}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:12px 0 0;max-height:260px;overflow:auto}.input{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}ol{padding-left:22px}li{margin:12px 0}.steps{font-variant-numeric:tabular-nums}.limit{border-left:3px solid var(--accent);padding-left:20px}a{color:var(--accent)}footer{margin-top:40px;border-top:1px solid var(--rule);padding-top:20px;font-size:13px;color:var(--muted)}#error{color:#8b302c}#content[hidden]{display:none}
+@media(max-width:800px){main{padding:24px 20px}h1{font-size:36px}.summary{grid-template-columns:1fr}.arrow{display:none}.number{font-size:48px}.compare,.outputs{grid-template-columns:1fr}.cases{grid-template-columns:1fr 1fr}.panel{padding:18px}header{align-items:center}.tag{max-width:160px;text-align:center}.meta{gap:12px 20px}}
+</style>
+<main>
+<header><span class="brand">Parity Medic <span aria-hidden="true">↗</span></span><span class="tag">Recorded real model run</span></header>
+<section><div class="eyebrow">Bruno 4.2.1 · Agent adapter verification</div><h1>The app is the witness.</h1><p>A coding agent wrote an adapter that looked correct. We ran the same inputs through the downloaded app, found the mismatches, and let the agent repair its code.</p></section>
+<p id="error" role="status">Loading recorded evidence…</p>
+<div id="content" hidden>
+<div class="summary"><div class="score"><div class="eyebrow">First-pass adapter</div><div class="number"><span id="before"></span><small> / <span class="total"></span></small></div><span class="status">Behavior mismatches found</span></div><div class="arrow" aria-hidden="true">→</div><div class="score"><div class="eyebrow">After evidence and repair</div><div class="number"><span id="after"></span><small> / <span class="total"></span></small></div><span class="status good" id="result-status"></span></div></div>
+<div class="meta"><span id="calls"></span><span id="seconds"></span><span id="tokens"></span><span>50 fresh inputs · 10 categories</span></div>
+<section><h2>A mismatch you can inspect</h2><div class="panel compare"><div class="cases" id="cases" aria-label="Counterexamples"></div><div><div class="outputs"><div class="output wrong"><span class="label">First-pass adapter</span><pre id="candidate"></pre></div><div class="output right"><span class="label">Downloaded app output</span><pre id="original"></pre></div></div><div class="input"><span class="label">Input given to both</span><pre id="input"></pre></div><p>After repair, the adapter matched the app on every input in this set.</p></div></div></section>
+<section><h2>The agent did not stop at “looks right.”</h2><ol class="steps" id="steps"></ol></section>
+<section class="limit"><h2>A bounded result, with an explicit limit.</h2><p>The oracle is Bruno’s shipped string-interpolation code running in an isolated interpreter. This run checks fresh names and values across ten declared categories. It does not certify the whole app, every future input, or live HTTP behavior.</p><p>Random mock-data placeholders need a different verifier: the app itself returns a different UUID each time. That category remains outside this adapter’s certified subset.</p></section>
+<footer>Evidence: <a href="/evidence.json">full local run record</a> · <a href="/trace.json">finalized Neatlogs export</a><br><span id="trace"></span><br>No model call is made when you open this page. New runs are launched from the local runner.</footer>
+</div>
+</main>
+<script>
+const show=(id,value)=>document.getElementById(id).textContent=value;
+const names={3:'Nested values',5:'Recursive variables',6:'Null and falsy values',7:'Object values',8:'Environment references'};
+fetch('/evidence.json').then(r=>{if(!r.ok)throw new Error('Recorded evidence is unavailable.');return r.json()}).then(data=>{
+ if(!data.baseline_fresh||!data.repaired_fresh)throw new Error('The run record is incomplete.');
+ show('before',data.baseline_fresh.passed);show('after',data.repaired_fresh.passed);
+ document.querySelectorAll('.total').forEach(el=>el.textContent=data.repaired_fresh.total);
+ show('result-status',data.repaired_fresh.passed===data.repaired_fresh.total?'Matched the original on this input set':'Some mismatches remain');
+ show('calls',data.model_calls+' model calls');show('seconds',data.elapsed_seconds+' seconds');show('tokens',data.total_tokens.toLocaleString()+' tokens');show('trace','Neatlogs trace: '+data.trace_id);
+ const items=data.baseline_fresh.failures;
+ function select(index){const f=items[index];show('candidate',JSON.stringify(f.candidate.output??f.candidate.error,null,2));show('original',JSON.stringify(f.original.output,null,2));show('input',JSON.stringify(f.input,null,2));document.querySelectorAll('#cases button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));}
+ items.forEach((f,i)=>{const b=document.createElement('button');b.textContent=names[f.category]||'Case '+f.category;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>select(i));document.getElementById('cases').append(b)});
+ const steps=['Compared the first-pass adapter: '+data.baseline_training.passed+'/'+data.baseline_training.total+' training inputs matched.','Read two recovered source files from the downloaded application.'];
+ data.tool_events.filter(e=>e.name==='test_adapter').forEach(e=>steps.push('Tested a revision: '+e.result.passed+'/'+e.result.total+' training inputs matched.'));
+ steps.push('Submitted the repaired adapter; the host checked both versions on '+data.repaired_fresh.total+' fresh inputs.');
+ steps.forEach(text=>{const li=document.createElement('li');li.textContent=text;document.getElementById('steps').append(li)});
+ if(items.length)select(0);show('error','');document.getElementById('content').hidden=false;
+}).catch(e=>show('error',e.message));
+</script>
+</html>

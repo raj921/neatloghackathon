@@ -1,0 +1,66 @@
+{
+  "version": "4.2.1",
+  "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767",
+  "scope": "selected request-related modules; not the entire app",
+  "files": [
+    {
+      "path": "package.json",
+      "bytes": 2747,
+      "sha256": "ad9ae4eeba8e0174ddd81325cd31a2274640579bcd594cd0cb026238203cc06b"
+    },
+    {
+      "path": "src/index.js",
+      "bytes": 22080,
+      "sha256": "2bfc26adf4555f763bcdfae78cf5adc2d907f912040efd457c7d78a3b5131936"
+    },
+    {
+      "path": "src/preload.js",
+      "bytes": 917,
+      "sha256": "206bc4e907b97d1b1a6d9d25ae6aa474a8e6c48a1b38e1b60b2c769690b1e663"
+    },
+    {
+      "path": "src/ipc/network/interpolate-string.js",
+      "bytes": 1965,
+      "sha256": "8081751bc859c71eb755dbb6882ba9152b57ccd3558760d97eca465c8b8fb7f5"
+    },
+    {
+      "path": "src/ipc/network/interpolate-vars.js",
+      "bytes": 18850,
+      "sha256": "561b6159c8ed0df35aa3301de343a7e1506238bde40627f553f1afbe3e83a2ef"
+    },
+    {
+      "path": "src/ipc/network/prepare-request.js",
+      "bytes": 26715,
+      "sha256": "474b12a58b692c13795963c40109d496a605285a88e7cac4ab0f2cd0fedbf8c5"
+    },
+    {
+      "path": "src/ipc/network/index.js",
+      "bytes": 92440,
+      "sha256": "ffde677e9039b1d58465241db6280e7662a46d1ec4b56c5567f85e1b133d89c1"
+    },
+    {
+      "path": "src/ipc/network/interpolate-string.js",
+      "role": "scopes",
+      "sha256": "8081751bc859c71eb755dbb6882ba9152b57ccd3558760d97eca465c8b8fb7f5",
+      "bytes": 1965
+    },
+    {
+      "path": "node_modules/@usebruno/common/src/interpolate/index.ts",
+      "role": "interpolation",
+      "sha256": "4b4b56a518427fa7ad0603a9a2ebcb9cc4b88c29a733bf576382bb6536c73984",
+      "bytes": 4414
+    },
+    {
+      "path": "node_modules/@usebruno/common/dist/cjs/index.js",
+      "role": "common",
+      "sha256": "463068cb7e6853362a8883a3eab4074bf3cd3d6cfbc55b375308cea45c946419",
+      "bytes": 584868
+    },
+    {
+      "path": "node_modules/lodash/lodash.js",
+      "role": "lodash",
+      "sha256": "f5465f55566bf544aad0a31c6135889ca1ed81eea8f53ec61c6cbe86926f07cf",
+      "bytes": 545945
+    }
+  ]
+}

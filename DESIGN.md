@@ -16,3 +16,5 @@ This direction serves one decision: which stock may be sold, which must be held,
 ## Prototype exception
 
 The state HTML is a throwaway, self-contained learning artifact on `codex/recall-relay-prototype`, not a shipped application or a real-model dashboard. Its controls intentionally expose illegal transitions so people can test the rules. The backend proof calls DeepSeek and Neatlogs separately; no credentials enter the HTML.
+
+The Parity Medic evidence viewer on `codex/rea-parity-spike` reuses these constraints. Its documented Georgia title exception and recorded-run components are in `prototypes/rea-parity/DESIGN.md`. Unlike the earlier simulation, it loads actual local run evidence and labels its measured scope permanently.

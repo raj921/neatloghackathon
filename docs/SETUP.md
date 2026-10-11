@@ -46,6 +46,13 @@ No first captured checkpoint is claimed yet. Automatic transcript pushing is dis
 
 Entire CLI login works through Google. The GitHub identity authorization page kept its Authorize button disabled after a reload, so the GitHub identity/app connection is not confirmed. A troubleshooting request was posted in `#neathack-entire`; Haimantika requested screenshots and an initial checkpoint attempt on October 10. Neither a hosted connection nor a genuine checkpoint is confirmed. Preserve an accessible checkpoint link and ID for the final submission; the current brief also accepts entire-graph output.
 
+On October 11, installed **Entire Graph v0.4.0** in the ignored project-local plugin directory and used ranked source search and a Python caller lookup to review the Parity Medic probe boundary. Real working-tree outputs are in `docs/rea-research/evidence/entire-search.json` and `entire-probe-callers.json`. This supplies graph evidence; it does not activate Codex hooks or fabricate a checkpoint. Run local graph commands with:
+
+```sh
+ENTIRE_PLUGIN_DIR="$PWD/.local/tools/entire-plugins" entire graph version
+ENTIRE_PLUGIN_DIR="$PWD/.local/tools/entire-plugins" entire graph search --repo . --query "adapter verification" --profile full
+```
+
 ## cfo.ai: completion reported by the user
 
 Raj confirmed on October 10 that he completed cfo.ai setup directly. Record this as user-confirmed completion; it supersedes the earlier pending payment-verification status. The agent did not submit payment information.

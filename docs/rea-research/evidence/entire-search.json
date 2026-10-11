@@ -1,0 +1,207 @@
+{
+  "query": "QuickJS adapter cannot access host environment or mutate the original oracle",
+  "repo_root": "/Users/rajkumar/neatloghackathon",
+  "commit": "0658f5217b1d3b81c37fc8e8ad3d189f312e7b20",
+  "tree": "a8bb6f563e2b3067472d79a6d3821dc024792981",
+  "profile": "full",
+  "results": [
+    {
+      "rank": 1,
+      "score": 23.46,
+      "file_path": "prototypes/rea-parity/parity.mjs",
+      "start_line": 81,
+      "end_line": 160,
+      "focus_line": 147,
+      "snippet_start_line": 144,
+      "snippet_end_line": 149,
+      "signals": [
+        "body",
+        "exact-code-token"
+      ],
+      "snippet": "      if (equal) passed++;\n      else if (failures.length < reveal) failures.push({ category: row.category, input: row, original: expected, candidate: actual });\n    }\n    return { passed, total: count, failures, oracle: 'Bruno 4.2.1 shipped interpolateString in isolated QuickJS', asar_sha256: APP_SHA };\n  } finally { original.close(); candidate.close(); }\n}"
+    },
+    {
+      "rank": 2,
+      "score": 23.1306,
+      "file_path": "prototypes/rea-parity/agent.py",
+      "start_line": 1,
+      "end_line": 26,
+      "focus_line": 4,
+      "snippet_start_line": 1,
+      "snippet_end_line": 6,
+      "language": "Python",
+      "signals": [
+        "body",
+        "exact-code-token"
+      ],
+      "snippet": "\"\"\"Parity Medic feasibility spike: real model repairs a narrow adapter against a shipped app.\n\nThe model receives source readback and training counterexamples through allowlisted tools.\nOnly generated adapter code is executed, in QuickJS with no host I/O bindings.\n\"\"\"\nimport argparse"
+    },
+    {
+      "rank": 3,
+      "score": 20.0669,
+      "file_path": "prototypes/rea-parity/repaired-adapter.js",
+      "start_line": 5,
+      "end_line": 147,
+      "focus_line": 120,
+      "snippet_start_line": 5,
+      "snippet_end_line": 147,
+      "symbol_start_line": 5,
+      "symbol_end_line": 147,
+      "language": "JavaScript",
+      "kind": "function",
+      "symbol_id": "gh/raj921/neatloghackathon:JavaScript:prototypes/rea-parity/repaired-adapter.js:function:adapter",
+      "symbol_name": "adapter",
+      "qualified_name": "adapter",
+      "signature": "function adapter(str, options)",
+      "signals": [
+        "path",
+        "body",
+        "symbol-name",
+        "complete-symbol"
+      ],
+      "snippet": "function adapter(str, options) {\n  options = options || {};\n\n  // ---- lodash get (path string, dot notation) ----\n  function get(obj, path) {\n    if (obj == null) return undefined;\n    if (typeof path !== 'string') return undefined;\n    // lodash: if the exact key exists on the object, return it directly.\n    if (Object.prototype.hasOwnProperty.call(Object(obj), path)) {\n      return obj[path];\n    }\n    var keys = [];\n    var re = /[^.[\\]]+|\\[(?:(-?\\d+(?:\\.\\d+)?)|([\"'])((?:(?!\\2)[^\\\\]|\\\\.)*?)\\2)\\]/g;\n    var m;\n    while ((m = re.exec(path)) !== null) {\n      if (m[1] !== undefined) keys.push(m[1]);\n      else if (m[3] !== undefined) keys.push(m[3].replace(/\\\\(.)/g, '$1'));\n      else keys.push(m[0]);\n    }\n    var cur = obj;\n    for (var i = 0; i < keys.length; i++) {\n      if (cur == null) return undefined;\n      cur = cur[keys[i]];\n    }\n    return cur;\n  }\n\n  function isPlainObject(v) {\n    if (v === null || typeof v !== 'object') return false;\n    var proto = Object.getPrototypeOf(v);\n    return proto === Object.prototype || proto === null;\n  }\n\n  // Mock data functions ({{$keyword}}) are not available in this environment;\n  // the original leaves unknown keywords untouched, which we replicate.\n  var MOCK_PATTERN = /\\{\\{\\$(\\w+)\\}\\}/g;\n  function prepareMock(s) {\n    return s.replace(MOCK_PATTERN, function (match) { return match; });\n  }\n  function prepareMockObj(obj) {\n    var processed = {};\n    for (var key in obj) {\n      if (!Object.prototype.hasOwnProperty.call(obj, key)) continue;\n      var value = obj[key];\n      if (typeof value === 'string') {\n        processed[key] = prepareMock(value);\n      } else if (isPlainObject(value)) {\n        processed[key] = prepareMockObj(value);\n      } else {\n        processed[key] = value;\n      }\n    }\n    return processed;\n  }\n\n  function replace(str, obj, visited, results) {\n    visited = visited || new Set();\n    results = results || new Map();\n    var resultStr = str;\n    var matchFound = true;\n    while (matchFound) {\n      var patternRegex = /\\{\\{([^}]+)\\}\\}/g;\n      matchFound = false;\n      resultStr = resultStr.replace(patternRegex, function (match, placeholder) {\n        var replacement = get(obj, placeholder);\n        if (typeof replacement === 'object' && replacement !== null) {\n          replacement = JSON.stringify(replacement);\n        }\n        if (results.has(match)) {\n          return results.get(match);\n        }\n        if (patternRegex.test(replacement) && !visited.has(match)) {\n          visited.add(match);\n          var result = replace(replacement, obj, visited, results);\n          results.set(match, result);\n          matchFound = true;\n          return result;\n        }\n        visited.add(match);\n        var result2 = replacement !== undefined ? replacement : match;\n        results.set(match, result2);\n        matchFound = true;\n        return result2;\n      });\n    }\n    return resultStr;\n  }\n\n  function interpolate(s, obj) {\n    if (!s || typeof s !== 'string') return s;\n    var preparedStr = prepareMock(s);\n    if (!obj || typeof obj !== 'object') return preparedStr;\n    var preparedObj = prepareMockObj(obj);\n    return replace(preparedStr, preparedObj);\n  }\n\n  var globalEnvironmentVariables = options.globalEnvironmentVariables;\n  var collectionVariables = options.collectionVariables;\n  var envVars = options.envVars;\n  var folderVariables = options.folderVariables;\n  var requestVariables = options.requestVariables;\n  var runtimeVariables = options.runtimeVariables;\n  var processEnvVars = options.processEnvVars;\n  var promptVariables = options.promptVariables;\n  var secretVariables = options.secretVariables || {};\n\n  processEnvVars = processEnvVars || {};\n  runtimeVariables = runtimeVariables || {};\n  globalEnvironmentVariables = globalEnvironmentVariables || {};\n  collectionVariables = collectionVariables || {};\n  folderVariables = folderVariables || {};\n  requestVariables = requestVariables || {};\n  promptVariables = promptVariables || {};\n\n  // clone envVars so we don't mutate the caller's object\n  envVars = envVars ? JSON.parse(JSON.stringify(envVars)) : {};\n\n  // envVars may themselves contain {{process.env.VAR}} references\n  for (var key in envVars) {\n    if (!Object.prototype.hasOwnProperty.call(envVars, key)) continue;\n    envVars[key] = interpolate(envVars[key], {\n      process: { env: Object.assign({}, processEnvVars) }\n    });\n  }\n\n  var combined = Object.assign(\n    {},\n    globalEnvironmentVariables,\n    collectionVariables,\n    envVars,\n    folderVariables,\n    requestVariables,\n    runtimeVariables,\n    promptVariables,\n    { process: { env: Object.assign({}, processEnvVars) } },\n    secretVariables\n  );\n\n  if (!str || !str.length || typeof str !== 'string') {\n    return str;\n  }\n  return interpolate(str, combined);\n}"
+    }
+  ],
+  "literal_cluster": {
+    "literal": "environment",
+    "hits": [
+      {
+        "file_path": "README.md",
+        "line": 18,
+        "role": "DOC"
+      },
+      {
+        "file_path": "design-references/README.md",
+        "line": 12,
+        "role": "DOC"
+      }
+    ],
+    "hits_total": 2,
+    "files_total": 2
+  },
+  "verify_command": {
+    "command": "node --check prototypes/rea-parity/parity.mjs",
+    "targets": "prototypes/rea-parity/parity.mjs",
+    "derived_from": "build check only - no runnable test command derivable; this parses the file, it runs no tests",
+    "tier": "build-check"
+  },
+  "stats": {
+    "files_scanned": 49,
+    "preselection_backend": "inventory",
+    "preselection_passes": 1,
+    "preselection_files_examined": 49,
+    "files_content_read_during_preselection": 0,
+    "files_content_read_during_query": 49,
+    "bytes_content_read_during_query": 350313,
+    "files_indexed": 49,
+    "symbols_considered": 820,
+    "lexical_candidates": 793,
+    "graph_candidates": 7,
+    "caller_boosted_candidates": 4,
+    "sparse_candidates": 0,
+    "sparse_files_content_read": 0,
+    "candidates_selected": 3,
+    "result_bytes": 6646,
+    "context_budget_bytes": 24576,
+    "complete_symbol_snippets": 1,
+    "literal_cluster_bytes": 181,
+    "literal_cluster_hits": 2,
+    "verify_command_bytes": 419,
+    "verify_tier": "build-check",
+    "context_block_bytes": 600,
+    "index_cache_hit": false,
+    "index_latency_ms": 292,
+    "query_latency_ms": 67,
+    "total_latency_ms": 409,
+    "search_latency_ms": 409,
+    "preselect_latency_ms": 49
+  },
+  "warnings": [
+    {
+      "code": "W_WORKTREE_SNAPSHOT",
+      "severity": "warning",
+      "effect_on_semantic_completeness": "snapshot records are read from the working tree because --worktree was requested"
+    }
+  ],
+  "partial_failures": [
+    {
+      "code": "E_MINIFIED",
+      "severity": "warning",
+      "file_path": "docs/evidence/neatlogs-baseline-seed-3.json",
+      "effect_on_semantic_completeness": "file record emitted but symbol parsing skipped",
+      "detail": "file appears minified/bundled (very long lines); not analyzed as source"
+    },
+    {
+      "code": "E_MINIFIED",
+      "severity": "warning",
+      "file_path": "docs/evidence/neatlogs-guarded-seed-1.json",
+      "effect_on_semantic_completeness": "file record emitted but symbol parsing skipped",
+      "detail": "file appears minified/bundled (very long lines); not analyzed as source"
+    },
+    {
+      "code": "E_MINIFIED",
+      "severity": "warning",
+      "file_path": "docs/evidence/neatlogs-guarded-seed-2.json",
+      "effect_on_semantic_completeness": "file record emitted but symbol parsing skipped",
+      "detail": "file appears minified/bundled (very long lines); not analyzed as source"
+    },
+    {
+      "code": "E_MINIFIED",
+      "severity": "warning",
+      "file_path": "docs/evidence/neatlogs-guarded-seed-3.json",
+      "effect_on_semantic_completeness": "file record emitted but symbol parsing skipped",
+      "detail": "file appears minified/bundled (very long lines); not analyzed as source"
+    }
+  ],
+  "completeness": {
+    "languages": {
+      "Bash": {
+        "files": 2,
+        "symbols": 0
+      },
+      "Git Ignore": {
+        "files": 2,
+        "symbols": 2
+      },
+      "HTML": {
+        "files": 2,
+        "symbols": 26
+      },
+      "JSON": {
+        "files": 22,
+        "symbols": 697
+      },
+      "JavaScript": {
+        "files": 1,
+        "symbols": 7
+      },
+      "Markdown": {
+        "files": 12,
+        "symbols": 68
+      },
+      "Pip Requirements": {
+        "files": 1,
+        "symbols": 1
+      },
+      "Python": {
+        "files": 4,
+        "symbols": 19
+      }
+    },
+    "relations": {
+      "CALLS": 56,
+      "CONFIGURES": 697,
+      "CONSTRUCTS": 2,
+      "CONTAINS": 38,
+      "DATA_FLOWS": 10,
+      "DEFINES": 820,
+      "EMITS": 4,
+      "EXTENDS": 1,
+      "FILE_CHANGES_WITH": 3,
+      "HANDLES_TOOL": 2,
+      "IMPORTS": 38,
+      "INHERITS": 1,
+      "SIMILAR_TO": 1
+    }
+  }
+}

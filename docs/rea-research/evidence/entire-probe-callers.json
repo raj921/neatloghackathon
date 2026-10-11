@@ -1,0 +1,245 @@
+{
+  "format_version": 1,
+  "repo_root": "/Users/rajkumar/neatloghackathon",
+  "commit": "0658f5217b1d3b81c37fc8e8ad3d189f312e7b20",
+  "tree": "a8bb6f563e2b3067472d79a6d3821dc024792981",
+  "profile": "full",
+  "relation": "CALLS",
+  "direction": "in",
+  "query": "probe",
+  "file": "prototypes/rea-parity/agent.py",
+  "index_cache_hit": false,
+  "index_latency_ms": 335,
+  "query_latency_ms": 0,
+  "total_latency_ms": 336,
+  "truncated": false,
+  "focus_matches_total": 1,
+  "focus_matches_truncated": false,
+  "disambiguation_required": false,
+  "matches": [
+    {
+      "symbol": {
+        "id": "gh/raj921/neatloghackathon:Python:prototypes/rea-parity/agent.py:function:probe",
+        "name": "probe",
+        "qualified_name": "probe",
+        "kind": "function",
+        "file_path": "prototypes/rea-parity/agent.py",
+        "start_line": 27,
+        "end_line": 35,
+        "language": "Python"
+      },
+      "incoming": [
+        {
+          "direction": "in",
+          "relation": "CALLS",
+          "endpoint": {
+            "id": "gh/raj921/neatloghackathon:Python:prototypes/rea-parity/agent.py:function:run",
+            "name": "run",
+            "qualified_name": "run",
+            "kind": "function",
+            "file_path": "prototypes/rea-parity/agent.py",
+            "start_line": 90,
+            "end_line": 164,
+            "language": "Python"
+          },
+          "confidence": 0.92,
+          "resolution": "exact",
+          "reason": "direct call expression resolved to same-file symbol",
+          "evidence": [
+            {
+              "kind": "call_site",
+              "file_path": "prototypes/rea-parity/agent.py",
+              "start_line": 90,
+              "end_line": 164,
+              "detail": "probe"
+            }
+          ],
+          "call_site": {
+            "file_path": "prototypes/rea-parity/agent.py",
+            "line": 106,
+            "additional_sites": 4,
+            "guards": [
+              {
+                "line": 93,
+                "text": "    with neatlogs.trace('Parity Medic / Bruno adapter', kind='WORKFLOW', version='feasibility-1',"
+              },
+              {
+                "line": 105,
+                "text": "        with neatlogs.trace('Original app differential check / first pass', kind='TOOL') as span:"
+              }
+            ]
+          }
+        },
+        {
+          "direction": "in",
+          "relation": "CALLS",
+          "endpoint": {
+            "id": "gh/raj921/neatloghackathon:Python:prototypes/rea-parity/agent.py:tool:run",
+            "name": "run",
+            "qualified_name": "run",
+            "kind": "tool",
+            "file_path": "prototypes/rea-parity/agent.py",
+            "start_line": 90,
+            "end_line": 164,
+            "language": "Python"
+          },
+          "confidence": 0.92,
+          "resolution": "exact",
+          "reason": "direct call expression resolved to same-file symbol",
+          "evidence": [
+            {
+              "kind": "call_site",
+              "file_path": "prototypes/rea-parity/agent.py",
+              "start_line": 90,
+              "end_line": 164,
+              "detail": "probe"
+            }
+          ],
+          "call_site": {
+            "file_path": "prototypes/rea-parity/agent.py",
+            "line": 106,
+            "additional_sites": 4,
+            "guards": [
+              {
+                "line": 93,
+                "text": "    with neatlogs.trace('Parity Medic / Bruno adapter', kind='WORKFLOW', version='feasibility-1',"
+              },
+              {
+                "line": 105,
+                "text": "        with neatlogs.trace('Original app differential check / first pass', kind='TOOL') as span:"
+              }
+            ]
+          }
+        },
+        {
+          "direction": "in",
+          "relation": "CALLS",
+          "endpoint": {
+            "id": "gh/raj921/neatloghackathon:file:prototypes/rea-parity/agent.py",
+            "name": "agent.py",
+            "kind": "file",
+            "file_path": "prototypes/rea-parity/agent.py",
+            "language": "Python"
+          },
+          "confidence": 0.8,
+          "resolution": "exact",
+          "reason": "top-level call expression resolved to symbol",
+          "evidence": [
+            {
+              "kind": "top_level_call_site",
+              "file_path": "prototypes/rea-parity/agent.py",
+              "detail": "probe"
+            }
+          ]
+        }
+      ],
+      "outgoing": []
+    }
+  ],
+  "warnings": [
+    {
+      "code": "W_WORKTREE_SNAPSHOT",
+      "severity": "warning",
+      "effect_on_semantic_completeness": "snapshot records are read from the working tree because --worktree was requested"
+    }
+  ],
+  "partial_failures": [
+    {
+      "code": "E_MINIFIED",
+      "severity": "warning",
+      "file_path": "docs/evidence/neatlogs-baseline-seed-3.json",
+      "effect_on_semantic_completeness": "file record emitted but symbol parsing skipped",
+      "detail": "file appears minified/bundled (very long lines); not analyzed as source"
+    },
+    {
+      "code": "E_MINIFIED",
+      "severity": "warning",
+      "file_path": "docs/evidence/neatlogs-guarded-seed-1.json",
+      "effect_on_semantic_completeness": "file record emitted but symbol parsing skipped",
+      "detail": "file appears minified/bundled (very long lines); not analyzed as source"
+    },
+    {
+      "code": "E_MINIFIED",
+      "severity": "warning",
+      "file_path": "docs/evidence/neatlogs-guarded-seed-2.json",
+      "effect_on_semantic_completeness": "file record emitted but symbol parsing skipped",
+      "detail": "file appears minified/bundled (very long lines); not analyzed as source"
+    },
+    {
+      "code": "E_MINIFIED",
+      "severity": "warning",
+      "file_path": "docs/evidence/neatlogs-guarded-seed-3.json",
+      "effect_on_semantic_completeness": "file record emitted but symbol parsing skipped",
+      "detail": "file appears minified/bundled (very long lines); not analyzed as source"
+    }
+  ],
+  "stats": {
+    "files": 51,
+    "parsed_files": 47,
+    "symbols": 1036,
+    "relations": 2083,
+    "partial_failures": 4,
+    "completeness_level": "ok"
+  },
+  "completeness": {
+    "languages": {
+      "Bash": {
+        "files": 2,
+        "symbols": 0
+      },
+      "Git Ignore": {
+        "files": 2,
+        "symbols": 2
+      },
+      "HTML": {
+        "files": 2,
+        "symbols": 26
+      },
+      "JSON": {
+        "files": 25,
+        "symbols": 891
+      },
+      "JavaScript": {
+        "files": 1,
+        "symbols": 7
+      },
+      "Markdown": {
+        "files": 14,
+        "symbols": 90
+      },
+      "Pip Requirements": {
+        "files": 1,
+        "symbols": 1
+      },
+      "Python": {
+        "files": 4,
+        "symbols": 19
+      }
+    },
+    "relations": {
+      "CALLS": 56,
+      "CONFIGURES": 891,
+      "CONSTRUCTS": 2,
+      "CONTAINS": 38,
+      "DATA_FLOWS": 10,
+      "DEFINES": 1036,
+      "EMITS": 4,
+      "EXTENDS": 1,
+      "FILE_CHANGES_WITH": 3,
+      "HANDLES_TOOL": 2,
+      "IMPORTS": 38,
+      "INHERITS": 1,
+      "SIMILAR_TO": 1
+    }
+  },
+  "completeness_scope": {
+    "language": "Python",
+    "language_files": 4,
+    "other_language_failures": 4,
+    "other_failure_languages": [
+      "JSON 4"
+    ],
+    "worktree_snapshot": true,
+    "level": "ok"
+  }
+}

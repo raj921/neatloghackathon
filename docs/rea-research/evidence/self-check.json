@@ -1,0 +1,116 @@
+{
+  "positive_control": "20/20 identical original-code outputs",
+  "negative_control": {
+    "passed": 4,
+    "total": 20,
+    "failures": [
+      {
+        "category": 0,
+        "input": {
+          "category": 0,
+          "str": "{{key_999_0}}",
+          "options": {
+            "collectionVariables": {
+              "key_999_0": "collection"
+            },
+            "envVars": {
+              "key_999_0": "environment"
+            },
+            "requestVariables": {
+              "key_999_0": "value_999_0"
+            }
+          }
+        },
+        "original": {
+          "output": "value_999_0",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "{{key_999_0}}",
+          "mutated": false
+        }
+      },
+      {
+        "category": 1,
+        "input": {
+          "category": 1,
+          "str": "{{key_999_1}}",
+          "options": {
+            "runtimeVariables": {
+              "key_999_1": "runtime"
+            },
+            "promptVariables": {
+              "key_999_1": "prompt"
+            },
+            "secretVariables": {
+              "key_999_1": "value_999_1"
+            }
+          }
+        },
+        "original": {
+          "output": "value_999_1",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "{{key_999_1}}",
+          "mutated": false
+        }
+      },
+      {
+        "category": 3,
+        "input": {
+          "category": 3,
+          "str": "{{user.name}}/{{user.age}}",
+          "options": {
+            "envVars": {
+              "user": {
+                "name": "value_999_3",
+                "age": 0
+              }
+            }
+          }
+        },
+        "original": {
+          "output": "value_999_3/0",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "{{user.name}}/{{user.age}}",
+          "mutated": false
+        }
+      }
+    ],
+    "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+    "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+  },
+  "candidate_host_bindings": [],
+  "infinite_loop": "interrupted within runtime deadline",
+  "rea_evidence_id": "ev_786fcdaf7943541b950452d849d9b0e3525832cbfaffaa91b1778e4b25bc0037",
+  "rea_static_only": true,
+  "unsupported_probe": {
+    "input": {
+      "str": "{{$randomUUID}}",
+      "options": {}
+    },
+    "observations": [
+      {
+        "output": "4bfdcc68-d2e7-416e-9ef2-5ed8e91b7fd4",
+        "mutated": false
+      },
+      {
+        "output": "bcb24528-2d36-454f-bdb2-21110bd1875f",
+        "mutated": false
+      }
+    ],
+    "decision": "needs_semantic_oracle",
+    "reason": "The original itself is nondeterministic. Exact-output equality is not a valid acceptance oracle."
+  },
+  "exported_adapter_replay": {
+    "source_sha256": "e8e42245db91d527a3c8c895f197ad0972f43554ee9cb2e9dede34b28fd6cf7d",
+    "passed": 50,
+    "total": 50,
+    "failures": [],
+    "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+    "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+  }
+}

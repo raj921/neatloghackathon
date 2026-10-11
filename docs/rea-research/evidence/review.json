@@ -1,0 +1,31 @@
+{
+  "reviewed_at": "2026-10-11T07:45:47.684445+00:00",
+  "claims": {
+    "first_fresh_matches": 25,
+    "repaired_fresh_matches": 50,
+    "fresh_inputs": 50,
+    "categories": 10,
+    "model_calls": 5,
+    "tokens": 21275,
+    "neatlogs_spans": 13
+  },
+  "secret_value_scan": "none found in task artifacts",
+  "source_fingerprints": {
+    "prototypes/rea-parity/agent.py": "78f78b64d242a11f6ced579bbc522b9752d31a79a665c2db5b69c67681a0c735",
+    "prototypes/rea-parity/parity.mjs": "4fec2f338621df20c36799dd3cdd5fe649576aa115c12472b6e852315f025151",
+    "prototypes/rea-parity/viewer.html": "42eeb57d1a974ab9b01090da72fabb530065a015324c01ef34a2d3a0fafd350f"
+  },
+  "browser": {
+    "desktop_data_loaded": true,
+    "case_button": "Environment references updated comparison",
+    "mobile_width": 390,
+    "document_width": 390,
+    "model_calls_on_load": 0
+  },
+  "server_routes": {
+    "/evidence.json": 200,
+    "/trace.json": 200,
+    "/.env": 404,
+    "/../.env": 404
+  }
+}

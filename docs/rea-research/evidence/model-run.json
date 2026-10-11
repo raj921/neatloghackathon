@@ -1,0 +1,396 @@
+{
+  "trace_id": "c405bfc5853fc69ad8cd142c99c8cccc",
+  "model": "deepseek-flash",
+  "submitted": true,
+  "scope": "Bruno string interpolation adapter; local WASM execution, no HTTP requests",
+  "baseline_training": {
+    "passed": 10,
+    "total": 20,
+    "failures": [
+      {
+        "category": 3,
+        "input": {
+          "category": 3,
+          "str": "{{user.name}}/{{user.age}}",
+          "options": {
+            "envVars": {
+              "user": {
+                "name": "value_1_3",
+                "age": 0
+              }
+            }
+          }
+        },
+        "original": {
+          "output": "value_1_3/0",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "{{user.name}}/{{user.age}}",
+          "mutated": false
+        }
+      },
+      {
+        "category": 5,
+        "input": {
+          "category": 5,
+          "str": "{{key_1_5}}",
+          "options": {
+            "envVars": {
+              "key_1_5": "{{next}}",
+              "next": "value_1_5"
+            }
+          }
+        },
+        "original": {
+          "output": "value_1_5",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "{{next}}",
+          "mutated": false
+        }
+      },
+      {
+        "category": 6,
+        "input": {
+          "category": 6,
+          "str": "{{a}}/{{b}}/{{c}}",
+          "options": {
+            "envVars": {
+              "a": 0,
+              "b": false,
+              "c": null
+            }
+          }
+        },
+        "original": {
+          "output": "0/false/null",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "0/false/",
+          "mutated": false
+        }
+      }
+    ],
+    "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+    "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+  },
+  "repaired_training": {
+    "passed": 20,
+    "total": 20,
+    "failures": [],
+    "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+    "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+  },
+  "baseline_fresh": {
+    "passed": 25,
+    "total": 50,
+    "failures": [
+      {
+        "category": 3,
+        "input": {
+          "category": 3,
+          "str": "{{user.name}}/{{user.age}}",
+          "options": {
+            "envVars": {
+              "user": {
+                "name": "value_1739_3",
+                "age": 0
+              }
+            }
+          }
+        },
+        "original": {
+          "output": "value_1739_3/0",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "{{user.name}}/{{user.age}}",
+          "mutated": false
+        }
+      },
+      {
+        "category": 5,
+        "input": {
+          "category": 5,
+          "str": "{{key_1739_5}}",
+          "options": {
+            "envVars": {
+              "key_1739_5": "{{next}}",
+              "next": "value_1739_5"
+            }
+          }
+        },
+        "original": {
+          "output": "value_1739_5",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "{{next}}",
+          "mutated": false
+        }
+      },
+      {
+        "category": 6,
+        "input": {
+          "category": 6,
+          "str": "{{a}}/{{b}}/{{c}}",
+          "options": {
+            "envVars": {
+              "a": 0,
+              "b": false,
+              "c": null
+            }
+          }
+        },
+        "original": {
+          "output": "0/false/null",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "0/false/",
+          "mutated": false
+        }
+      },
+      {
+        "category": 7,
+        "input": {
+          "category": 7,
+          "str": "{{key_1739_7}}",
+          "options": {
+            "envVars": {
+              "key_1739_7": {
+                "nested": "value_1739_7"
+              }
+            }
+          }
+        },
+        "original": {
+          "output": "{\"nested\":\"value_1739_7\"}",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "[object Object]",
+          "mutated": false
+        }
+      },
+      {
+        "category": 8,
+        "input": {
+          "category": 8,
+          "str": "{{key_1739_8}}",
+          "options": {
+            "envVars": {
+              "key_1739_8": "{{process.env.DEST}}"
+            },
+            "processEnvVars": {
+              "DEST": "value_1739_8"
+            }
+          }
+        },
+        "original": {
+          "output": "value_1739_8",
+          "mutated": false
+        },
+        "candidate": {
+          "output": "{{process.env.DEST}}",
+          "mutated": false
+        }
+      }
+    ],
+    "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+    "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+  },
+  "repaired_fresh": {
+    "passed": 50,
+    "total": 50,
+    "failures": [],
+    "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+    "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+  },
+  "model_calls": 5,
+  "total_tokens": 21275,
+  "usage": [
+    {
+      "prompt_tokens": 142,
+      "completion_tokens": 396,
+      "total_tokens": 538,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 142
+    },
+    {
+      "prompt_tokens": 1297,
+      "completion_tokens": 78,
+      "total_tokens": 1375,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1297
+    },
+    {
+      "prompt_tokens": 3428,
+      "completion_tokens": 1575,
+      "total_tokens": 5003,
+      "prompt_tokens_details": {
+        "cached_tokens": 1280
+      },
+      "prompt_cache_hit_tokens": 1280,
+      "prompt_cache_miss_tokens": 2148
+    },
+    {
+      "prompt_tokens": 5280,
+      "completion_tokens": 1234,
+      "total_tokens": 6514,
+      "prompt_tokens_details": {
+        "cached_tokens": 4992
+      },
+      "prompt_cache_hit_tokens": 4992,
+      "prompt_cache_miss_tokens": 288
+    },
+    {
+      "prompt_tokens": 6608,
+      "completion_tokens": 1237,
+      "total_tokens": 7845,
+      "prompt_tokens_details": {
+        "cached_tokens": 6400
+      },
+      "prompt_cache_hit_tokens": 6400,
+      "prompt_cache_miss_tokens": 208
+    }
+  ],
+  "elapsed_seconds": 20.509,
+  "tool_events": [
+    {
+      "step": 0,
+      "name": "read_evidence",
+      "result": {
+        "path": "node_modules/@usebruno/common/src/interpolate/index.ts",
+        "sha256": "4b4b56a518427fa7ad0603a9a2ebcb9cc4b88c29a733bf576382bb6536c73984",
+        "source": "/**\n * The interpolation function expects a string with placeholders and an object with the values to replace the placeholders.\n * The keys passed can have dot notation too.\n *\n * Ex: interpolate('Hello, my name is ${user.name} and I am ${user.age} years old', {\n *  \"user.name\": \"Bruno\",\n *  \"user\": {\n *   \"age\": 6\n *  }\n * });\n * Output: Hello, my name is Bruno and I am 6 years old\n */\n\nimport { mockDataFunctions } from '../utils/faker-functions';\nimport { get, isPlainObject, mapValues } from 'lodash-es';\n\n// regex to match {{$keyword}}\nconst MOCK_PATTERN = /\\{\\{\\$(\\w+)\\}\\}/g;\nconst JSON_SPECIAL_CHARS = /[\\\\\\n\\r\\t\\\"]/;\n\nconst escapeJSONString = (str: string): string => {\n  if (!JSON_SPECIAL_CHARS.test(str)) {\n    return str;\n  }\n\n  return str\n    .replace(/\\\\/g, '\\\\\\\\')\n    .replace(/\\n/g, '\\\\n')\n    .replace(/\\r/g, '\\\\r')\n    .replace(/\\t/g, '\\\\t')\n    .replace(/\\\"/g, '\\\\\"');\n};\n\nconst prepareMock = (str: string, escapeJSONStrings: boolean): string => {\n  return str.replace(MOCK_PATTERN, (match, keyword) => {\n    let generatedValue = mockDataFunctions[keyword as keyof typeof mockDataFunctions]?.();\n\n    if (generatedValue === undefined) {\n      return match;\n    }\n\n    generatedValue = String(generatedValue);\n\n    return escapeJSONStrings ? escapeJSONString(generatedValue) : generatedValue;\n  });\n};\n\nconst prepareMockObj = (\n  obj: Record<string, any>,\n  escapeJSONStrings: boolean\n): Record<string, any> => {\n  const processed: Record<string, any> = {};\n\n  for (const [key, value] of Object.entries(obj)) {\n    if (typeof value === 'string') {\n      processed[key] = prepareMock(value, escapeJSONStrings);\n    } else if (isPlainObject(value)) {\n      // plain object is used to skip special objects like Date, RegExp, etc.\n      processed[key] = prepareMockObj(value, escapeJSONStrings);\n    } else {\n      processed[key] = value;\n    }\n  }\n\n  return processed;\n};\n\nconst interpolate = (\n  str: string,\n  obj: Record<string, any>,\n  options: { escapeJSONStrings?: boolean } = { escapeJSONStrings: false }\n): string => {\n  if (!str || typeof str !== 'string') {\n    return str;\n  }\n\n  const { escapeJSONStrings } = options;\n\n  const preparedStr = prepareMock(str, escapeJSONStrings ?? false);\n\n  if (!obj || typeof obj !== 'object') {\n    return preparedStr;\n  }\n  // process the object with the mock data functions\n  const preparedObj = prepareMockObj(obj, escapeJSONStrings ?? false);\n  return replace(preparedStr, preparedObj);\n};\n\nconst replace = (\n  str: string,\n  obj: Record<string, any>,\n  visited = new Set<string>(),\n  results = new Map<string, string>()\n): string => {\n  let resultStr = str;\n  let matchFound = true;\n\n  while (matchFound) {\n    const patternRegex = /\\{\\{([^}]+)\\}\\}/g;\n    matchFound = false;\n    resultStr = resultStr.replace(patternRegex, (match, placeholder) => {\n      let replacement = get(obj, placeholder);\n      if (typeof replacement === 'object' && replacement !== null) {\n        replacement = JSON.stringify(replacement);\n      }\n\n      if (results.has(match)) {\n        return results.get(match);\n      }\n\n      if (patternRegex.test(replacement) && !visited.has(match)) {\n        visited.add(match);\n        const result = replace(replacement, obj, visited, results);\n        results.set(match, result);\n\n        matchFound = true;\n        return result;\n      }\n\n      visited.add(match);\n      const result = replacement !== undefined ? replacement : match;\n      results.set(match, result);\n\n      matchFound = true;\n      return result;\n    });\n  }\n\n  return resultStr;\n};\n\nexport const interpolateObject = (obj: unknown, variables: Record<string, any>): unknown => {\n  const seen = new WeakSet<object>();\n  const walk = (value: unknown): unknown => {\n    if (value == null) return value;\n    if (typeof value === 'string') {\n      return interpolate(value, variables);\n    }\n    if (typeof value === 'object') {\n      if (seen.has(value as object)) {\n        throw new Error('Circular reference detected during interpolation.');\n      }\n      seen.add(value as object);\n      try {\n        if (Array.isArray(value)) {\n          return value.map(walk);\n        }\n        if (isPlainObject(value)) {\n          return mapValues(value as Record<string, unknown>, walk);\n        }\n        return value;\n      } finally {\n        seen.delete(value as object);\n      }\n    }\n    return value;\n  };\n  return walk(obj);\n};\n\nexport default interpolate;\n"
+      }
+    },
+    {
+      "step": 0,
+      "name": "read_evidence",
+      "result": {
+        "path": "src/ipc/network/interpolate-string.js",
+        "sha256": "8081751bc859c71eb755dbb6882ba9152b57ccd3558760d97eca465c8b8fb7f5",
+        "source": "const { forOwn, cloneDeep } = require('lodash');\nconst { interpolate, interpolateObject: interpolateObjectCommon } = require('@usebruno/common');\n\nconst buildCombinedVars = ({\n  globalEnvironmentVariables,\n  collectionVariables,\n  envVars,\n  folderVariables,\n  requestVariables,\n  runtimeVariables,\n  processEnvVars,\n  promptVariables,\n  secretVariables = {}\n}) => {\n  processEnvVars = processEnvVars || {};\n  runtimeVariables = runtimeVariables || {};\n  globalEnvironmentVariables = globalEnvironmentVariables || {};\n  collectionVariables = collectionVariables || {};\n  folderVariables = folderVariables || {};\n  requestVariables = requestVariables || {};\n  promptVariables = promptVariables || {};\n\n  // we clone envVars because we don't want to modify the original object\n  envVars = envVars ? cloneDeep(envVars) : {};\n\n  // envVars can inturn have values as {{process.env.VAR_NAME}}\n  // so we need to interpolate envVars first with processEnvVars\n  forOwn(envVars, (value, key) => {\n    envVars[key] = interpolate(value, {\n      process: {\n        env: {\n          ...processEnvVars\n        }\n      }\n    });\n  });\n\n  return {\n    ...globalEnvironmentVariables,\n    ...collectionVariables,\n    ...envVars,\n    ...folderVariables,\n    ...requestVariables,\n    ...runtimeVariables,\n    ...promptVariables,\n    process: {\n      env: {\n        ...processEnvVars\n      }\n    },\n    ...secretVariables\n  };\n};\n\nconst interpolateString = (str, interpolationOptions) => {\n  if (!str || !str.length || typeof str !== 'string') {\n    return str;\n  }\n\n  const combinedVars = buildCombinedVars(interpolationOptions);\n  return interpolate(str, combinedVars);\n};\n\n/**\n * Recursively interpolates all string values in an object\n */\nconst interpolateObject = (obj, interpolationOptions) => {\n  const combinedVars = buildCombinedVars(interpolationOptions);\n  return interpolateObjectCommon(obj, combinedVars);\n};\n\nmodule.exports = {\n  interpolateString,\n  interpolateObject\n};\n"
+      }
+    },
+    {
+      "step": 1,
+      "name": "test_adapter",
+      "result": {
+        "passed": 18,
+        "total": 20,
+        "failures": [
+          {
+            "category": 4,
+            "input": {
+              "category": 4,
+              "str": "{{user.name}}",
+              "options": {
+                "envVars": {
+                  "user.name": "value_2_4",
+                  "user": {
+                    "name": "nested"
+                  }
+                }
+              }
+            },
+            "original": {
+              "output": "value_2_4",
+              "mutated": false
+            },
+            "candidate": {
+              "output": "nested",
+              "mutated": false
+            }
+          },
+          {
+            "category": 4,
+            "input": {
+              "category": 4,
+              "str": "{{user.name}}",
+              "options": {
+                "envVars": {
+                  "user.name": "value_2_14",
+                  "user": {
+                    "name": "nested"
+                  }
+                }
+              }
+            },
+            "original": {
+              "output": "value_2_14",
+              "mutated": false
+            },
+            "candidate": {
+              "output": "nested",
+              "mutated": false
+            }
+          }
+        ],
+        "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+        "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+      }
+    },
+    {
+      "step": 2,
+      "name": "test_adapter",
+      "result": {
+        "passed": 20,
+        "total": 20,
+        "failures": [],
+        "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+        "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+      }
+    },
+    {
+      "step": 3,
+      "name": "submit_adapter",
+      "result": {
+        "passed": 20,
+        "total": 20,
+        "failures": [],
+        "oracle": "Bruno 4.2.1 shipped interpolateString in isolated QuickJS",
+        "asar_sha256": "fe9b4c89660ac3f1291707746f76b9b5850edda368a5e0250055687ab02ec767"
+      }
+    }
+  ],
+  "baseline_source": "function adapter(str, options) {\n  if (typeof str !== 'string') {\n    return str;\n  }\n\n  options = options || {};\n\n  // Ordered list of variable sources. Later sources take precedence\n  // (i.e. are checked first) matching Bruno's interpolation precedence.\n  var sources = [\n    options.processEnvVars,\n    options.globalEnvironmentVariables,\n    options.collectionVariables,\n    options.envVars,\n    options.folderVariables,\n    options.requestVariables,\n    options.runtimeVariables,\n    options.promptVariables,\n    options.secretVariables\n  ];\n\n  function lookup(name) {\n    // Iterate from highest precedence to lowest.\n    for (var i = sources.length - 1; i >= 0; i--) {\n      var src = sources[i];\n      if (src && typeof src === 'object' && Object.prototype.hasOwnProperty.call(src, name)) {\n        var val = src[name];\n        if (val === undefined || val === null) {\n          return '';\n        }\n        return String(val);\n      }\n    }\n    return undefined;\n  }\n\n  // Replace {{variable}} placeholders. Variable names may contain\n  // letters, digits, underscores, dots, hyphens and spaces.\n  return str.replace(/\\{\\{\\s*([^{}]+?)\\s*\\}\\}/g, function (match, rawName) {\n    var name = rawName.trim();\n    var resolved = lookup(name);\n    if (resolved === undefined) {\n      // Leave unresolved placeholders untouched.\n      return match;\n    }\n    return resolved;\n  });\n}\n",
+  "repaired_source": "function adapter(str, options) {\n  options = options || {};\n\n  // ---- lodash get (path string, dot notation) ----\n  function get(obj, path) {\n    if (obj == null) return undefined;\n    if (typeof path !== 'string') return undefined;\n    // lodash: if the exact key exists on the object, return it directly.\n    if (Object.prototype.hasOwnProperty.call(Object(obj), path)) {\n      return obj[path];\n    }\n    var keys = [];\n    var re = /[^.[\\]]+|\\[(?:(-?\\d+(?:\\.\\d+)?)|([\"'])((?:(?!\\2)[^\\\\]|\\\\.)*?)\\2)\\]/g;\n    var m;\n    while ((m = re.exec(path)) !== null) {\n      if (m[1] !== undefined) keys.push(m[1]);\n      else if (m[3] !== undefined) keys.push(m[3].replace(/\\\\(.)/g, '$1'));\n      else keys.push(m[0]);\n    }\n    var cur = obj;\n    for (var i = 0; i < keys.length; i++) {\n      if (cur == null) return undefined;\n      cur = cur[keys[i]];\n    }\n    return cur;\n  }\n\n  function isPlainObject(v) {\n    if (v === null || typeof v !== 'object') return false;\n    var proto = Object.getPrototypeOf(v);\n    return proto === Object.prototype || proto === null;\n  }\n\n  // Mock data functions ({{$keyword}}) are not available in this environment;\n  // the original leaves unknown keywords untouched, which we replicate.\n  var MOCK_PATTERN = /\\{\\{\\$(\\w+)\\}\\}/g;\n  function prepareMock(s) {\n    return s.replace(MOCK_PATTERN, function (match) { return match; });\n  }\n  function prepareMockObj(obj) {\n    var processed = {};\n    for (var key in obj) {\n      if (!Object.prototype.hasOwnProperty.call(obj, key)) continue;\n      var value = obj[key];\n      if (typeof value === 'string') {\n        processed[key] = prepareMock(value);\n      } else if (isPlainObject(value)) {\n        processed[key] = prepareMockObj(value);\n      } else {\n        processed[key] = value;\n      }\n    }\n    return processed;\n  }\n\n  function replace(str, obj, visited, results) {\n    visited = visited || new Set();\n    results = results || new Map();\n    var resultStr = str;\n    var matchFound = true;\n    while (matchFound) {\n      var patternRegex = /\\{\\{([^}]+)\\}\\}/g;\n      matchFound = false;\n      resultStr = resultStr.replace(patternRegex, function (match, placeholder) {\n        var replacement = get(obj, placeholder);\n        if (typeof replacement === 'object' && replacement !== null) {\n          replacement = JSON.stringify(replacement);\n        }\n        if (results.has(match)) {\n          return results.get(match);\n        }\n        if (patternRegex.test(replacement) && !visited.has(match)) {\n          visited.add(match);\n          var result = replace(replacement, obj, visited, results);\n          results.set(match, result);\n          matchFound = true;\n          return result;\n        }\n        visited.add(match);\n        var result2 = replacement !== undefined ? replacement : match;\n        results.set(match, result2);\n        matchFound = true;\n        return result2;\n      });\n    }\n    return resultStr;\n  }\n\n  function interpolate(s, obj) {\n    if (!s || typeof s !== 'string') return s;\n    var preparedStr = prepareMock(s);\n    if (!obj || typeof obj !== 'object') return preparedStr;\n    var preparedObj = prepareMockObj(obj);\n    return replace(preparedStr, preparedObj);\n  }\n\n  var globalEnvironmentVariables = options.globalEnvironmentVariables;\n  var collectionVariables = options.collectionVariables;\n  var envVars = options.envVars;\n  var folderVariables = options.folderVariables;\n  var requestVariables = options.requestVariables;\n  var runtimeVariables = options.runtimeVariables;\n  var processEnvVars = options.processEnvVars;\n  var promptVariables = options.promptVariables;\n  var secretVariables = options.secretVariables || {};\n\n  processEnvVars = processEnvVars || {};\n  runtimeVariables = runtimeVariables || {};\n  globalEnvironmentVariables = globalEnvironmentVariables || {};\n  collectionVariables = collectionVariables || {};\n  folderVariables = folderVariables || {};\n  requestVariables = requestVariables || {};\n  promptVariables = promptVariables || {};\n\n  // clone envVars so we don't mutate the caller's object\n  envVars = envVars ? JSON.parse(JSON.stringify(envVars)) : {};\n\n  // envVars may themselves contain {{process.env.VAR}} references\n  for (var key in envVars) {\n    if (!Object.prototype.hasOwnProperty.call(envVars, key)) continue;\n    envVars[key] = interpolate(envVars[key], {\n      process: { env: Object.assign({}, processEnvVars) }\n    });\n  }\n\n  var combined = Object.assign(\n    {},\n    globalEnvironmentVariables,\n    collectionVariables,\n    envVars,\n    folderVariables,\n    requestVariables,\n    runtimeVariables,\n    promptVariables,\n    { process: { env: Object.assign({}, processEnvVars) } },\n    secretVariables\n  );\n\n  if (!str || !str.length || typeof str !== 'string') {\n    return str;\n  }\n  return interpolate(str, combined);\n}",
+  "trace_flush_ok": true,
+  "delivery_diagnostics": {
+    "span_queue_drops": 0,
+    "log_queue_drops": 0,
+    "span_export_failures": 0,
+    "log_export_failures": 0,
+    "masked_span_drops": 0,
+    "masked_log_drops": 0,
+    "span_capture_truncations": 0,
+    "log_capture_truncations": 0,
+    "span_overflow_exports": 0,
+    "span_overflow_failures": 0,
+    "span_overflow_unavailable": 0,
+    "log_overflow_exports": 0,
+    "log_overflow_failures": 0,
+    "log_overflow_unavailable": 0,
+    "span_upload_authority_available": false,
+    "log_upload_authority_available": false,
+    "span_upload_authority_reason": "backend_upload_contract_unavailable",
+    "log_upload_authority_reason": "backend_upload_contract_unavailable",
+    "span_media_uploads": 0,
+    "span_media_upload_failures": 0,
+    "log_media_uploads": 0,
+    "log_media_upload_failures": 0,
+    "upload_last_failure_reason": ""
+  }
+}
