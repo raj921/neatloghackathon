@@ -1,6 +1,15 @@
-# neatHack setup workspace
+# neatHack / Recall Relay feasibility workspace
 
-Setup and credentials only. No product idea, UI, agent workflow, or application framework has been implemented.
+Sponsor setup plus a throwaway **Recall Relay** feasibility spike, started October 11 after the user's go-ahead. Real CPSC data, DeepSeek tool decisions and Neatlogs tracing; a clearly labelled synthetic store. No application framework or production retailer integration.
+
+See [the spike verdict](docs/RECALL-SPIKE.md). The prototype is kept on `codex/recall-relay-prototype`.
+
+```sh
+.venv/bin/python prototypes/recall-relay/agent.py --self-check
+.venv/bin/python prototypes/recall-relay/agent.py --mode guarded --seed 3
+```
+
+Open `prototypes/recall-relay/state-walkthrough.html` directly for a self-contained **simulation** of the state transitions. It does not call the model or replay actual runs. Actual run records are under `docs/evidence/`.
 
 See [the setup record](docs/SETUP.md) for verified accounts, tools, credential locations, remaining activation steps, and official references.
 

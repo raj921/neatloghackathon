@@ -1,0 +1,475 @@
+{
+  "generated_at": "2026-10-11T07:03:43.970043+00:00",
+  "mode": "baseline",
+  "seed": 1,
+  "model": "deepseek-flash",
+  "trace_id": "f73cf7cb586e83da333cdedf220e21d8",
+  "source_sha256": "e8ca382097ff93ba822326e420bfe14b0c4bc96e8aa0175009a2e1413fec44f5",
+  "synthetic_store": true,
+  "injected_fault": "one timeout after first decision commit",
+  "finished": true,
+  "verification": {
+    "passed": true,
+    "correct_lot_decisions": 5,
+    "lot_count": 5,
+    "incorrect_lot_ids": [],
+    "incorrect_order_ids": [],
+    "draft_recipients_correct": true,
+    "duplicate_mutations": 0,
+    "meaning": "Measured against host-owned synthetic fixture labels, not retailer validation"
+  },
+  "error": null,
+  "elapsed_seconds": 12.52,
+  "model_calls": 8,
+  "usage": [
+    {
+      "prompt_tokens": 1301,
+      "completion_tokens": 36,
+      "total_tokens": 1337,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1301
+    },
+    {
+      "prompt_tokens": 1626,
+      "completion_tokens": 84,
+      "total_tokens": 1710,
+      "prompt_tokens_details": {
+        "cached_tokens": 1280
+      },
+      "prompt_cache_hit_tokens": 1280,
+      "prompt_cache_miss_tokens": 346
+    },
+    {
+      "prompt_tokens": 1971,
+      "completion_tokens": 474,
+      "total_tokens": 2445,
+      "prompt_tokens_details": {
+        "cached_tokens": 1664
+      },
+      "prompt_cache_hit_tokens": 1664,
+      "prompt_cache_miss_tokens": 307
+    },
+    {
+      "prompt_tokens": 2498,
+      "completion_tokens": 65,
+      "total_tokens": 2563,
+      "prompt_tokens_details": {
+        "cached_tokens": 2304
+      },
+      "prompt_cache_hit_tokens": 2304,
+      "prompt_cache_miss_tokens": 194
+    },
+    {
+      "prompt_tokens": 3028,
+      "completion_tokens": 282,
+      "total_tokens": 3310,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "prompt_cache_hit_tokens": 2560,
+      "prompt_cache_miss_tokens": 468
+    },
+    {
+      "prompt_tokens": 3428,
+      "completion_tokens": 835,
+      "total_tokens": 4263,
+      "prompt_tokens_details": {
+        "cached_tokens": 3200
+      },
+      "prompt_cache_hit_tokens": 3200,
+      "prompt_cache_miss_tokens": 228
+    },
+    {
+      "prompt_tokens": 4325,
+      "completion_tokens": 31,
+      "total_tokens": 4356,
+      "prompt_tokens_details": {
+        "cached_tokens": 4096
+      },
+      "prompt_cache_hit_tokens": 4096,
+      "prompt_cache_miss_tokens": 229
+    },
+    {
+      "prompt_tokens": 5405,
+      "completion_tokens": 34,
+      "total_tokens": 5439,
+      "prompt_tokens_details": {
+        "cached_tokens": 4352
+      },
+      "prompt_cache_hit_tokens": 4352,
+      "prompt_cache_miss_tokens": 1053
+    }
+  ],
+  "total_tokens": 25423,
+  "decisions": {
+    "lot-a": "hold",
+    "lot-b": "clear",
+    "lot-c": "hold",
+    "lot-d": "review",
+    "lot-e": "clear"
+  },
+  "orders": {
+    "order-1": "paused",
+    "order-2": "ready",
+    "order-3": "paused",
+    "order-4": "review"
+  },
+  "drafts": {
+    "order-1": "Important safety notice regarding your order (order-1): VEEKTOMX VT103 Mini Power Bank.\n\nThis product is subject to an official recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nYour order has been paused and will not ship. The recalled power bank is a VEEKTOMX VT103 with model number \"VT103\" imprinted on the back and NO serial number on the bottom-right corner of the back.\n\nRemedy (per the official notice): Consumers should immediately stop using the recalled power banks and contact Shenzhen Baihang to verify the power bank is part of the recall and receive a free replacement power bank.\n\nDisposal: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact that office ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.\n\nPlease contact us to arrange resolution. This is a draft notice and has not been sent.",
+    "order-3": "Important safety notice regarding your order (order-3): Travel Essentials Bundle (KIT-7), which contains a VEEKTOMX VT103 Mini Power Bank.\n\nThe VEEKTOMX VT103 Mini Power Bank included in this bundle is subject to an official recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nYour order has been paused and will not ship. The recalled power bank is a VEEKTOMX VT103 with model number \"VT103\" imprinted on the back and NO serial number on the bottom-right corner of the back.\n\nRemedy (per the official notice): Consumers should immediately stop using the recalled power banks and contact Shenzhen Baihang to verify the power bank is part of the recall and receive a free replacement power bank.\n\nDisposal: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact that office ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.\n\nPlease contact us to arrange resolution. This is a draft notice and has not been sent."
+  },
+  "events": [
+    {
+      "step": 1,
+      "tool": "get_inventory",
+      "arguments": {},
+      "result": {
+        "synthetic": true,
+        "lots": {
+          "lot-a": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 8
+          },
+          "lot-b": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 6
+          },
+          "lot-c": {
+            "name": "Travel essentials bundle",
+            "brand": "Store bundle",
+            "model": "KIT-7",
+            "units": 3
+          },
+          "lot-d": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 4
+          },
+          "lot-e": {
+            "name": "VEEKTOMX slim charger",
+            "brand": "VEEKTOMX",
+            "model": "VT104",
+            "units": 9
+          }
+        },
+        "decisions": {},
+        "orders": {
+          "order-1": "lot-a",
+          "order-2": "lot-b",
+          "order-3": "lot-c",
+          "order-4": "lot-d"
+        },
+        "order_states": {
+          "order-1": "ready",
+          "order-2": "ready",
+          "order-3": "ready",
+          "order-4": "ready"
+        },
+        "drafts": {}
+      }
+    },
+    {
+      "step": 2,
+      "tool": "inspect_items",
+      "arguments": {
+        "lot_ids": [
+          "lot-a",
+          "lot-b",
+          "lot-c",
+          "lot-d",
+          "lot-e"
+        ]
+      },
+      "result": {
+        "lot-a": {
+          "brand": "VEEKTOMX",
+          "model": "VT103",
+          "serial_present": false,
+          "observation": "Receiving inspection: back casing VT103; bottom right has no serial number."
+        },
+        "lot-b": {
+          "brand": "VEEKTOMX",
+          "model": "VT103",
+          "serial_present": true,
+          "observation": "Receiving inspection: back casing VT103; serial VN-7123 visible at bottom right."
+        },
+        "lot-c": {
+          "brand": "VEEKTOMX",
+          "model": "VT103",
+          "serial_present": false,
+          "observation": "Bundle component inspection: VEEKTOMX VT103; no bottom-right serial number."
+        },
+        "lot-d": {
+          "brand": "VEEKTOMX",
+          "model": "VT103",
+          "serial_present": null,
+          "observation": "Sealed packaging. Back casing has not been photographed. Catalog serial field is blank, not proof of absence."
+        },
+        "lot-e": {
+          "brand": "VEEKTOMX",
+          "model": "VT104",
+          "serial_present": true,
+          "observation": "Back casing VT104, serial VN-8300. Different model."
+        }
+      }
+    },
+    {
+      "step": 3,
+      "tool": "decide_items",
+      "arguments": {
+        "operation_key": "recall-veektomx-vt103-001",
+        "decisions": [
+          {
+            "lot_id": "lot-a",
+            "status": "hold",
+            "reason": "Confirmed affected: VEEKTOMX VT103 with no serial number on bottom-right of back casing, matching recall criteria."
+          },
+          {
+            "lot_id": "lot-b",
+            "status": "clear",
+            "reason": "Excluded: VEEKTOMX VT103 but serial VN-7123 present on bottom-right; recall covers units WITHOUT a serial number."
+          },
+          {
+            "lot_id": "lot-c",
+            "status": "hold",
+            "reason": "Confirmed affected bundle: contains VEEKTOMX VT103 component with no bottom-right serial number."
+          },
+          {
+            "lot_id": "lot-d",
+            "status": "review",
+            "reason": "Missing evidence: sealed packaging, back casing not photographed, catalog serial field blank (not proof of absence). Need casing photo or serial identifier."
+          },
+          {
+            "lot_id": "lot-e",
+            "status": "clear",
+            "reason": "Excluded: VEEKTOMX VT104, different model, not covered by recall."
+          }
+        ]
+      },
+      "result": {
+        "error": "INJECTED timeout after commit; acknowledgement lost.",
+        "operation_key": "recall-veektomx-vt103-001",
+        "outcome": "unknown_to_client"
+      }
+    },
+    {
+      "step": 4,
+      "tool": "read_operation",
+      "arguments": {
+        "operation_key": "recall-veektomx-vt103-001"
+      },
+      "result": {
+        "status": "committed",
+        "request": "[{\"lot_id\": \"lot-a\", \"reason\": \"Confirmed affected: VEEKTOMX VT103 with no serial number on bottom-right of back casing, matching recall criteria.\", \"status\": \"hold\"}, {\"lot_id\": \"lot-b\", \"reason\": \"Excluded: VEEKTOMX VT103 but serial VN-7123 present on bottom-right; recall covers units WITHOUT a serial number.\", \"status\": \"clear\"}, {\"lot_id\": \"lot-c\", \"reason\": \"Confirmed affected bundle: contains VEEKTOMX VT103 component with no bottom-right serial number.\", \"status\": \"hold\"}, {\"lot_id\": \"lot-d\", \"reason\": \"Missing evidence: sealed packaging, back casing not photographed, catalog serial field blank (not proof of absence). Need casing photo or serial identifier.\", \"status\": \"review\"}, {\"lot_id\": \"lot-e\", \"reason\": \"Excluded: VEEKTOMX VT104, different model, not covered by recall.\", \"status\": \"clear\"}]",
+        "decisions": [
+          {
+            "lot_id": "lot-a",
+            "status": "hold",
+            "reason": "Confirmed affected: VEEKTOMX VT103 with no serial number on bottom-right of back casing, matching recall criteria."
+          },
+          {
+            "lot_id": "lot-b",
+            "status": "clear",
+            "reason": "Excluded: VEEKTOMX VT103 but serial VN-7123 present on bottom-right; recall covers units WITHOUT a serial number."
+          },
+          {
+            "lot_id": "lot-c",
+            "status": "hold",
+            "reason": "Confirmed affected bundle: contains VEEKTOMX VT103 component with no bottom-right serial number."
+          },
+          {
+            "lot_id": "lot-d",
+            "status": "review",
+            "reason": "Missing evidence: sealed packaging, back casing not photographed, catalog serial field blank (not proof of absence). Need casing photo or serial identifier."
+          },
+          {
+            "lot_id": "lot-e",
+            "status": "clear",
+            "reason": "Excluded: VEEKTOMX VT104, different model, not covered by recall."
+          }
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "tool": "set_order_disposition",
+      "arguments": {
+        "order_id": "order-1",
+        "status": "paused"
+      },
+      "result": {
+        "order_id": "order-1",
+        "status": "paused",
+        "synthetic": true
+      }
+    },
+    {
+      "step": 5,
+      "tool": "set_order_disposition",
+      "arguments": {
+        "order_id": "order-2",
+        "status": "ready"
+      },
+      "result": {
+        "order_id": "order-2",
+        "status": "ready",
+        "synthetic": true
+      }
+    },
+    {
+      "step": 5,
+      "tool": "set_order_disposition",
+      "arguments": {
+        "order_id": "order-3",
+        "status": "paused"
+      },
+      "result": {
+        "order_id": "order-3",
+        "status": "paused",
+        "synthetic": true
+      }
+    },
+    {
+      "step": 5,
+      "tool": "set_order_disposition",
+      "arguments": {
+        "order_id": "order-4",
+        "status": "review"
+      },
+      "result": {
+        "order_id": "order-4",
+        "status": "review",
+        "synthetic": true
+      }
+    },
+    {
+      "step": 6,
+      "tool": "draft_notice",
+      "arguments": {
+        "order_id": "order-1",
+        "body": "Important safety notice regarding your order (order-1): VEEKTOMX VT103 Mini Power Bank.\n\nThis product is subject to an official recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nYour order has been paused and will not ship. The recalled power bank is a VEEKTOMX VT103 with model number \"VT103\" imprinted on the back and NO serial number on the bottom-right corner of the back.\n\nRemedy (per the official notice): Consumers should immediately stop using the recalled power banks and contact Shenzhen Baihang to verify the power bank is part of the recall and receive a free replacement power bank.\n\nDisposal: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact that office ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.\n\nPlease contact us to arrange resolution. This is a draft notice and has not been sent."
+      },
+      "result": {
+        "order_id": "order-1",
+        "status": "draft_only",
+        "sent": false
+      }
+    },
+    {
+      "step": 6,
+      "tool": "draft_notice",
+      "arguments": {
+        "order_id": "order-3",
+        "body": "Important safety notice regarding your order (order-3): Travel Essentials Bundle (KIT-7), which contains a VEEKTOMX VT103 Mini Power Bank.\n\nThe VEEKTOMX VT103 Mini Power Bank included in this bundle is subject to an official recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nYour order has been paused and will not ship. The recalled power bank is a VEEKTOMX VT103 with model number \"VT103\" imprinted on the back and NO serial number on the bottom-right corner of the back.\n\nRemedy (per the official notice): Consumers should immediately stop using the recalled power banks and contact Shenzhen Baihang to verify the power bank is part of the recall and receive a free replacement power bank.\n\nDisposal: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact that office ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.\n\nPlease contact us to arrange resolution. This is a draft notice and has not been sent."
+      },
+      "result": {
+        "order_id": "order-3",
+        "status": "draft_only",
+        "sent": false
+      }
+    },
+    {
+      "step": 7,
+      "tool": "get_inventory",
+      "arguments": {},
+      "result": {
+        "synthetic": true,
+        "lots": {
+          "lot-a": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 8
+          },
+          "lot-b": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 6
+          },
+          "lot-c": {
+            "name": "Travel essentials bundle",
+            "brand": "Store bundle",
+            "model": "KIT-7",
+            "units": 3
+          },
+          "lot-d": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 4
+          },
+          "lot-e": {
+            "name": "VEEKTOMX slim charger",
+            "brand": "VEEKTOMX",
+            "model": "VT104",
+            "units": 9
+          }
+        },
+        "decisions": {
+          "lot-a": "hold",
+          "lot-b": "clear",
+          "lot-c": "hold",
+          "lot-d": "review",
+          "lot-e": "clear"
+        },
+        "orders": {
+          "order-1": "lot-a",
+          "order-2": "lot-b",
+          "order-3": "lot-c",
+          "order-4": "lot-d"
+        },
+        "order_states": {
+          "order-1": "paused",
+          "order-2": "ready",
+          "order-3": "paused",
+          "order-4": "review"
+        },
+        "drafts": {
+          "order-1": "Important safety notice regarding your order (order-1): VEEKTOMX VT103 Mini Power Bank.\n\nThis product is subject to an official recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nYour order has been paused and will not ship. The recalled power bank is a VEEKTOMX VT103 with model number \"VT103\" imprinted on the back and NO serial number on the bottom-right corner of the back.\n\nRemedy (per the official notice): Consumers should immediately stop using the recalled power banks and contact Shenzhen Baihang to verify the power bank is part of the recall and receive a free replacement power bank.\n\nDisposal: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact that office ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.\n\nPlease contact us to arrange resolution. This is a draft notice and has not been sent.",
+          "order-3": "Important safety notice regarding your order (order-3): Travel Essentials Bundle (KIT-7), which contains a VEEKTOMX VT103 Mini Power Bank.\n\nThe VEEKTOMX VT103 Mini Power Bank included in this bundle is subject to an official recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nYour order has been paused and will not ship. The recalled power bank is a VEEKTOMX VT103 with model number \"VT103\" imprinted on the back and NO serial number on the bottom-right corner of the back.\n\nRemedy (per the official notice): Consumers should immediately stop using the recalled power banks and contact Shenzhen Baihang to verify the power bank is part of the recall and receive a free replacement power bank.\n\nDisposal: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact that office ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.\n\nPlease contact us to arrange resolution. This is a draft notice and has not been sent."
+        }
+      }
+    },
+    {
+      "step": 8,
+      "tool": "finish",
+      "arguments": {},
+      "result": {
+        "status": "contained_pending_human_evidence",
+        "verification": {
+          "passed": true,
+          "correct_lot_decisions": 5,
+          "lot_count": 5,
+          "incorrect_lot_ids": [],
+          "incorrect_order_ids": [],
+          "draft_recipients_correct": true,
+          "duplicate_mutations": 0,
+          "meaning": "Measured against host-owned synthetic fixture labels, not retailer validation"
+        },
+        "note": "Missing casing photo remains unresolved; not all products cleared."
+      }
+    }
+  ],
+  "final_text": null,
+  "estimated_inference_cost_usd": 0.00178187,
+  "cost_basis": {
+    "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "checked": "2026-10-11",
+    "rates_per_million": {
+      "cache_hit": 0.003,
+      "cache_miss": 0.15,
+      "output": 0.6
+    },
+    "schedule": "Sunday off-peak",
+    "invoice_verified": false
+  }
+}

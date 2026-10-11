@@ -19,7 +19,7 @@ Checked on October 10, 2026, IST. Team: **rajkumar guthla**. Team-leader account
 
 ## Credentials and local files
 
-- `.env`: actual Neatlogs project SDK key and Crustdata API key, with file permissions `600`.
+- `.env`: actual Neatlogs project SDK key, Crustdata API key and user-selected DeepSeek API key, with file permissions `600`.
 - `.secrets/crustdata-account.json`: email and generated Crustdata password, ignored by Git, permissions `600`.
 - Neatlogs OAuth and Entire CLI tokens: macOS Keychain.
 - AWS event keys: `~/.aws/credentials`, separate `neathack` profile; region in `~/.aws/config`. Files have permissions `600`. Existing default profile retained.
@@ -31,7 +31,7 @@ Checked on October 10, 2026, IST. Team: **rajkumar guthla**. Team-leader account
 
 ### Codex hook trust and first checkpoint
 
-The hook definitions are installed and Neatlogs Codex configuration doctor passes. Entire reports that its seven Codex hooks need approval. Restart/reload Codex, open `/hooks`, and review/trust both Entire and Neatlogs definitions before starting the next coding session. Tool installation does not prove that this current session was captured.
+The hook definitions are installed and Neatlogs Codex configuration doctor passes. On October 11 Entire reports that **eleven** Codex hooks need approval. Restart/reload Codex, open `/hooks`, and review/trust both Entire and Neatlogs definitions before starting the next coding session. Tool installation does not prove that this current session was captured.
 
 After a fresh captured coding session and a commit, verify a genuine checkpoint:
 
@@ -44,7 +44,7 @@ No first captured checkpoint is claimed yet. Automatic transcript pushing is dis
 
 ### Entire repository connection
 
-Entire CLI login works through Google. The GitHub identity authorization page kept its Authorize button disabled after a reload, so the GitHub identity/app connection is not confirmed. A troubleshooting request was posted in `#neathack-entire`; response pending. Connect GitHub and grant the Entire app access to only `raj921/neatloghackathon` before using the hosted checkpoint viewer or mirror. Preserve an accessible checkpoint link and ID for the final submission.
+Entire CLI login works through Google. The GitHub identity authorization page kept its Authorize button disabled after a reload, so the GitHub identity/app connection is not confirmed. A troubleshooting request was posted in `#neathack-entire`; Haimantika requested screenshots and an initial checkpoint attempt on October 10. Neither a hosted connection nor a genuine checkpoint is confirmed. Preserve an accessible checkpoint link and ID for the final submission; the current brief also accepts entire-graph output.
 
 ## cfo.ai: completion reported by the user
 
@@ -67,7 +67,9 @@ Non-secret verification evidence: `docs/aws-access-check.json`. The original Dis
 
 ### Model provider
 
-No model provider was selected or new inference key created. The event AWS access does not supply Bedrock. Choose a provider when selecting the agent stack; its model API credentials and usage are separate from neatlogs/Crustdata. No model call or idea code was run during setup.
+The user selected **DeepSeek**, stored `DEEPSEEK_API_KEY` privately in `.env`, and a real `deepseek-flash` call returned `READY` on October 10. October 11: the Recall Relay spike ran real model/tool loops; see `docs/RECALL-SPIKE.md`. This key and usage are separate from neatlogs/Crustdata/AWS.
+
+**New official resource verified October 11:** the event now advertises one shared **$20 LiteLLM budget** for Nova and Claude per fully checked-in team, subject to key availability, at https://neatlogs.com/hackathon/models. This was not in the earlier setup record. It has **not been claimed**; the working prototype continues to use the user's chosen DeepSeek API. AWS Bedrock remains excluded.
 
 ## Official sources reviewed
 
@@ -84,4 +86,4 @@ Recent event emails in the registered Gmail account were reviewed, including the
 - [AWS sponsor channel](https://discord.com/channels/1528866100207419472/1558110929038614658)
 - [cfo.ai sponsor channel](https://discord.com/channels/1528866100207419472/1558110926064975966)
 
-All trace evidence so far is a **synthetic setup probe**, not a real application workflow. No demo, product, business plan, or submission has been created.
+October 11 update: a real model-driven Recall Relay spike and a separate simulated state walkthrough now exist on the prototype branch. The store, receiving observations and orders are synthetic; the official recall is real. Neatlogs readback for actual runs is recorded in `docs/evidence/`. A production product, Entire checkpoint, cfo.ai product business plan, demo video, public build post and final submission are still outstanding. The live event page now labels October 12 11:55 PM IST as a **planned close**, with the final cutoff announced on Discord.

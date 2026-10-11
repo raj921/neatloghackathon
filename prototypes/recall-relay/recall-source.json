@@ -1,0 +1,83 @@
+{
+  "retrieved_at": "2026-10-11T07:02:54.022240+00:00",
+  "api_url": "https://www.saferproducts.gov/RestWebServices/Recall?ProductName=Power%20Banks&format=json",
+  "record_sha256": "e8ca382097ff93ba822326e420bfe14b0c4bc96e8aa0175009a2e1413fec44f5",
+  "record": {
+    "RecallID": 10706,
+    "RecallNumber": "26399",
+    "RecallDate": "2026-04-09T00:00:00",
+    "Description": "This recall involves VEEKTOMX VT103 Small Portable Charger Mini Power Banks. The power banks are white, pink, or purple. The recalled power banks have model number \"VT103\" imprinted on the back of the power bank and do NOT contain a serial number on the bottom right corner of the back of the power bank. Note: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries, because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact that office ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.",
+    "URL": "https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon",
+    "Title": "Shenzhen Baihang Recalls VEEKTOMX Mini Power Banks, Due to Fire and Burn Hazards; Sold on Amazon",
+    "ConsumerContact": "Veektomx at recall@veektomx.com or online at veektomx.com and click on \"Important Recall Information\" to learn more.",
+    "LastPublishDate": "2026-04-10T00:00:00",
+    "Products": [
+      {
+        "Name": "VEEKTOMX Portable Charger Mini Power Banks",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": "About 8,000"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/Picture13_4.png",
+        "Caption": "Recalled VEEKTOMX Mini Power Bank (White)"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/Picture14_4.png",
+        "Caption": "Recalled VEEKTOMX Mini Power Banks are labeled VT03 and do not have a serial number on the bottom right corner of the power bank"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/Picture15_3.png",
+        "Caption": "VT03 power banks with a serial number displayed on the casing are not subject to this recall"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "Shenzhen Baihang has received three reports of fires resulting in minor property damage. No injuries have been reported."
+      }
+    ],
+    "Manufacturers": [],
+    "Retailers": [
+      {
+        "Name": "Amazon.com between January 2024 and September 2024, for between $24 and $30.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [
+      {
+        "Name": "Shenzhen Baihang Technology Co., Ltd., of China",
+        "CompanyID": ""
+      }
+    ],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "China"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The lithium-ion battery in the recalled power banks can overheat and ignite, posing fire and burn hazards to consumers.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately stop using the recalled power banks and contact Shenzhen Baihang to verify power bank is part of the recall and receive a free replacement power bank."
+      }
+    ],
+    "RemedyOptions": [
+      {
+        "Option": "Replace"
+      }
+    ]
+  }
+}

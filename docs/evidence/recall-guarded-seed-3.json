@@ -1,0 +1,491 @@
+{
+  "generated_at": "2026-10-11T07:07:50.693744+00:00",
+  "mode": "guarded",
+  "seed": 3,
+  "model": "deepseek-flash",
+  "trace_id": "78ed52f18fd05a80230441848255861e",
+  "source_sha256": "e8ca382097ff93ba822326e420bfe14b0c4bc96e8aa0175009a2e1413fec44f5",
+  "synthetic_store": true,
+  "injected_fault": "one timeout after first decision commit",
+  "finished": true,
+  "verification": {
+    "passed": true,
+    "correct_lot_decisions": 5,
+    "lot_count": 5,
+    "incorrect_lot_ids": [],
+    "incorrect_order_ids": [],
+    "draft_recipients_correct": true,
+    "duplicate_mutations": 0,
+    "meaning": "Measured against host-owned synthetic fixture labels, not retailer validation"
+  },
+  "error": null,
+  "elapsed_seconds": 10.208,
+  "model_calls": 7,
+  "usage": [
+    {
+      "prompt_tokens": 1301,
+      "completion_tokens": 33,
+      "total_tokens": 1334,
+      "prompt_tokens_details": {
+        "cached_tokens": 1152
+      },
+      "prompt_cache_hit_tokens": 1152,
+      "prompt_cache_miss_tokens": 149
+    },
+    {
+      "prompt_tokens": 1625,
+      "completion_tokens": 94,
+      "total_tokens": 1719,
+      "prompt_tokens_details": {
+        "cached_tokens": 1408
+      },
+      "prompt_cache_hit_tokens": 1408,
+      "prompt_cache_miss_tokens": 217
+    },
+    {
+      "prompt_tokens": 1976,
+      "completion_tokens": 656,
+      "total_tokens": 2632,
+      "prompt_tokens_details": {
+        "cached_tokens": 1792
+      },
+      "prompt_cache_hit_tokens": 1792,
+      "prompt_cache_miss_tokens": 184
+    },
+    {
+      "prompt_tokens": 2799,
+      "completion_tokens": 68,
+      "total_tokens": 2867,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "prompt_cache_hit_tokens": 2560,
+      "prompt_cache_miss_tokens": 239
+    },
+    {
+      "prompt_tokens": 3374,
+      "completion_tokens": 591,
+      "total_tokens": 3965,
+      "prompt_tokens_details": {
+        "cached_tokens": 2816
+      },
+      "prompt_cache_hit_tokens": 2816,
+      "prompt_cache_miss_tokens": 558
+    },
+    {
+      "prompt_tokens": 4027,
+      "completion_tokens": 39,
+      "total_tokens": 4066,
+      "prompt_tokens_details": {
+        "cached_tokens": 3840
+      },
+      "prompt_cache_hit_tokens": 3840,
+      "prompt_cache_miss_tokens": 187
+    },
+    {
+      "prompt_tokens": 4847,
+      "completion_tokens": 34,
+      "total_tokens": 4881,
+      "prompt_tokens_details": {
+        "cached_tokens": 3968
+      },
+      "prompt_cache_hit_tokens": 3968,
+      "prompt_cache_miss_tokens": 879
+    }
+  ],
+  "total_tokens": 21464,
+  "decisions": {
+    "lot-a": "hold",
+    "lot-b": "clear",
+    "lot-c": "hold",
+    "lot-d": "review",
+    "lot-e": "clear"
+  },
+  "orders": {
+    "order-1": "paused",
+    "order-2": "ready",
+    "order-3": "paused",
+    "order-4": "review"
+  },
+  "drafts": {
+    "order-1": "Important safety notice regarding your order (order-1).\n\nThe VEEKTOMX VT103 Mini Power Bank in this order is part of a recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nThis item matches the recalled product: model number \"VT103\" on the back and no serial number on the bottom-right corner of the back.\n\nWhat to do: Immediately stop using the power bank. Contact Shenzhen Baihang to verify that your power bank is part of the recall and to receive a free replacement power bank, as directed in the official notice.\n\nYour order has been paused while we complete recall containment. We will follow up with next steps. Please do not dispose of the unit in the trash or general recycling; refer to the official notice for disposal guidance.",
+    "order-3": "Important safety notice regarding your order (order-3).\n\nThis order contains a VEEKTOMX VT103 Mini Power Bank (part of the KIT-7 bundle) that is part of a recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nThe included power bank matches the recalled product: model number \"VT103\" on the back and no serial number on the bottom-right corner of the back.\n\nWhat to do: Immediately stop using the power bank. Contact Shenzhen Baihang to verify that your power bank is part of the recall and to receive a free replacement power bank, as directed in the official notice.\n\nYour order has been paused while we complete recall containment. We will follow up with next steps. Please do not dispose of the unit in the trash or general recycling; refer to the official notice for disposal guidance."
+  },
+  "events": [
+    {
+      "step": 1,
+      "tool": "get_inventory",
+      "arguments": {},
+      "result": {
+        "synthetic": true,
+        "lots": {
+          "lot-a": {
+            "name": "Portable charging accessory / white",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 11
+          },
+          "lot-b": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 10
+          },
+          "lot-c": {
+            "name": "Weekend kit / promotional",
+            "brand": "Store bundle",
+            "model": "KIT-7",
+            "units": 8
+          },
+          "lot-d": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 10
+          },
+          "lot-e": {
+            "name": "VEEKTOMX slim charger",
+            "brand": "VEEKTOMX",
+            "model": "VT104",
+            "units": 16
+          }
+        },
+        "decisions": {},
+        "orders": {
+          "order-1": "lot-a",
+          "order-2": "lot-b",
+          "order-3": "lot-c",
+          "order-4": "lot-d"
+        },
+        "order_states": {
+          "order-1": "ready",
+          "order-2": "ready",
+          "order-3": "ready",
+          "order-4": "ready"
+        },
+        "drafts": {}
+      }
+    },
+    {
+      "step": 2,
+      "tool": "inspect_items",
+      "arguments": {
+        "lot_ids": [
+          "lot-a",
+          "lot-b",
+          "lot-c",
+          "lot-d",
+          "lot-e"
+        ]
+      },
+      "result": {
+        "lot-a": {
+          "brand": "VEEKTOMX",
+          "model": "VT103",
+          "serial_present": false,
+          "observation": "Receiving inspection: back casing VT103; bottom right has no serial number."
+        },
+        "lot-b": {
+          "brand": "VEEKTOMX",
+          "model": "VT103",
+          "serial_present": true,
+          "observation": "VT103; etched serial QZ-9942 on lower-right rear casing."
+        },
+        "lot-c": {
+          "brand": "VEEKTOMX",
+          "model": "VT103",
+          "serial_present": false,
+          "observation": "Bundle component inspection: VEEKTOMX VT103; no bottom-right serial number."
+        },
+        "lot-d": {
+          "brand": "VEEKTOMX",
+          "model": "VT103",
+          "serial_present": null,
+          "observation": "Sealed packaging. Back casing has not been photographed. Catalog serial field is blank, not proof of absence."
+        },
+        "lot-e": {
+          "brand": "VEEKTOMX",
+          "model": "VT104",
+          "serial_present": true,
+          "observation": "Back casing VT104, serial VN-8300. Different model."
+        }
+      }
+    },
+    {
+      "step": 3,
+      "tool": "decide_items",
+      "arguments": {
+        "operation_key": "recall-veektomx-vt103-001",
+        "decisions": [
+          {
+            "lot_id": "lot-a",
+            "status": "hold",
+            "reason": "VEEKTOMX VT103, no serial number on bottom-right rear casing \u2014 matches recall definition (affected)."
+          },
+          {
+            "lot_id": "lot-b",
+            "status": "clear",
+            "reason": "VEEKTOMX VT103 with etched serial QZ-9942 present \u2014 excluded by recall (recall covers units WITHOUT a serial number)."
+          },
+          {
+            "lot_id": "lot-c",
+            "status": "hold",
+            "reason": "Bundle KIT-7 contains VEEKTOMX VT103 component with no bottom-right serial number \u2014 confirmed affected component."
+          },
+          {
+            "lot_id": "lot-d",
+            "status": "review",
+            "reason": "Sealed packaging; back casing not photographed. Catalog serial field blank is not proof of absence. Need casing photo/serial evidence before deciding."
+          },
+          {
+            "lot_id": "lot-e",
+            "status": "clear",
+            "reason": "VEEKTOMX VT104 with serial VN-8300 \u2014 different model, not covered by VT103 recall."
+          }
+        ]
+      },
+      "result": {
+        "error": "INJECTED timeout after commit; acknowledgement lost.",
+        "operation_key": "recall-veektomx-vt103-001",
+        "outcome": "unknown_to_client"
+      }
+    },
+    {
+      "step": 3,
+      "tool": "set_order_disposition",
+      "arguments": {
+        "order_id": "order-1",
+        "status": "paused"
+      },
+      "result": {
+        "order_id": "order-1",
+        "status": "paused",
+        "synthetic": true
+      }
+    },
+    {
+      "step": 3,
+      "tool": "set_order_disposition",
+      "arguments": {
+        "order_id": "order-2",
+        "status": "ready"
+      },
+      "result": {
+        "order_id": "order-2",
+        "status": "ready",
+        "synthetic": true
+      }
+    },
+    {
+      "step": 3,
+      "tool": "set_order_disposition",
+      "arguments": {
+        "order_id": "order-3",
+        "status": "paused"
+      },
+      "result": {
+        "order_id": "order-3",
+        "status": "paused",
+        "synthetic": true
+      }
+    },
+    {
+      "step": 3,
+      "tool": "set_order_disposition",
+      "arguments": {
+        "order_id": "order-4",
+        "status": "review"
+      },
+      "result": {
+        "order_id": "order-4",
+        "status": "review",
+        "synthetic": true
+      }
+    },
+    {
+      "step": 4,
+      "tool": "read_operation",
+      "arguments": {
+        "operation_key": "recall-veektomx-vt103-001"
+      },
+      "result": {
+        "status": "committed",
+        "request": "[{\"lot_id\": \"lot-a\", \"reason\": \"VEEKTOMX VT103, no serial number on bottom-right rear casing \\u2014 matches recall definition (affected).\", \"status\": \"hold\"}, {\"lot_id\": \"lot-b\", \"reason\": \"VEEKTOMX VT103 with etched serial QZ-9942 present \\u2014 excluded by recall (recall covers units WITHOUT a serial number).\", \"status\": \"clear\"}, {\"lot_id\": \"lot-c\", \"reason\": \"Bundle KIT-7 contains VEEKTOMX VT103 component with no bottom-right serial number \\u2014 confirmed affected component.\", \"status\": \"hold\"}, {\"lot_id\": \"lot-d\", \"reason\": \"Sealed packaging; back casing not photographed. Catalog serial field blank is not proof of absence. Need casing photo/serial evidence before deciding.\", \"status\": \"review\"}, {\"lot_id\": \"lot-e\", \"reason\": \"VEEKTOMX VT104 with serial VN-8300 \\u2014 different model, not covered by VT103 recall.\", \"status\": \"clear\"}]",
+        "decisions": [
+          {
+            "lot_id": "lot-a",
+            "status": "hold",
+            "reason": "VEEKTOMX VT103, no serial number on bottom-right rear casing \u2014 matches recall definition (affected)."
+          },
+          {
+            "lot_id": "lot-b",
+            "status": "clear",
+            "reason": "VEEKTOMX VT103 with etched serial QZ-9942 present \u2014 excluded by recall (recall covers units WITHOUT a serial number)."
+          },
+          {
+            "lot_id": "lot-c",
+            "status": "hold",
+            "reason": "Bundle KIT-7 contains VEEKTOMX VT103 component with no bottom-right serial number \u2014 confirmed affected component."
+          },
+          {
+            "lot_id": "lot-d",
+            "status": "review",
+            "reason": "Sealed packaging; back casing not photographed. Catalog serial field blank is not proof of absence. Need casing photo/serial evidence before deciding."
+          },
+          {
+            "lot_id": "lot-e",
+            "status": "clear",
+            "reason": "VEEKTOMX VT104 with serial VN-8300 \u2014 different model, not covered by VT103 recall."
+          }
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "tool": "draft_notice",
+      "arguments": {
+        "order_id": "order-1",
+        "body": "Important safety notice regarding your order (order-1).\n\nThe VEEKTOMX VT103 Mini Power Bank in this order is part of a recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nThis item matches the recalled product: model number \"VT103\" on the back and no serial number on the bottom-right corner of the back.\n\nWhat to do: Immediately stop using the power bank. Contact Shenzhen Baihang to verify that your power bank is part of the recall and to receive a free replacement power bank, as directed in the official notice.\n\nYour order has been paused while we complete recall containment. We will follow up with next steps. Please do not dispose of the unit in the trash or general recycling; refer to the official notice for disposal guidance."
+      },
+      "result": {
+        "order_id": "order-1",
+        "status": "draft_only",
+        "sent": false
+      }
+    },
+    {
+      "step": 5,
+      "tool": "draft_notice",
+      "arguments": {
+        "order_id": "order-3",
+        "body": "Important safety notice regarding your order (order-3).\n\nThis order contains a VEEKTOMX VT103 Mini Power Bank (part of the KIT-7 bundle) that is part of a recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nThe included power bank matches the recalled product: model number \"VT103\" on the back and no serial number on the bottom-right corner of the back.\n\nWhat to do: Immediately stop using the power bank. Contact Shenzhen Baihang to verify that your power bank is part of the recall and to receive a free replacement power bank, as directed in the official notice.\n\nYour order has been paused while we complete recall containment. We will follow up with next steps. Please do not dispose of the unit in the trash or general recycling; refer to the official notice for disposal guidance."
+      },
+      "result": {
+        "order_id": "order-3",
+        "status": "draft_only",
+        "sent": false
+      }
+    },
+    {
+      "step": 6,
+      "tool": "get_inventory",
+      "arguments": {},
+      "result": {
+        "synthetic": true,
+        "lots": {
+          "lot-a": {
+            "name": "Portable charging accessory / white",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 11
+          },
+          "lot-b": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 10
+          },
+          "lot-c": {
+            "name": "Weekend kit / promotional",
+            "brand": "Store bundle",
+            "model": "KIT-7",
+            "units": 8
+          },
+          "lot-d": {
+            "name": "VEEKTOMX mini charger",
+            "brand": "VEEKTOMX",
+            "model": "VT103",
+            "units": 10
+          },
+          "lot-e": {
+            "name": "VEEKTOMX slim charger",
+            "brand": "VEEKTOMX",
+            "model": "VT104",
+            "units": 16
+          }
+        },
+        "decisions": {
+          "lot-a": "hold",
+          "lot-b": "clear",
+          "lot-c": "hold",
+          "lot-d": "review",
+          "lot-e": "clear"
+        },
+        "orders": {
+          "order-1": "lot-a",
+          "order-2": "lot-b",
+          "order-3": "lot-c",
+          "order-4": "lot-d"
+        },
+        "order_states": {
+          "order-1": "paused",
+          "order-2": "ready",
+          "order-3": "paused",
+          "order-4": "review"
+        },
+        "drafts": {
+          "order-1": "Important safety notice regarding your order (order-1).\n\nThe VEEKTOMX VT103 Mini Power Bank in this order is part of a recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nThis item matches the recalled product: model number \"VT103\" on the back and no serial number on the bottom-right corner of the back.\n\nWhat to do: Immediately stop using the power bank. Contact Shenzhen Baihang to verify that your power bank is part of the recall and to receive a free replacement power bank, as directed in the official notice.\n\nYour order has been paused while we complete recall containment. We will follow up with next steps. Please do not dispose of the unit in the trash or general recycling; refer to the official notice for disposal guidance.",
+          "order-3": "Important safety notice regarding your order (order-3).\n\nThis order contains a VEEKTOMX VT103 Mini Power Bank (part of the KIT-7 bundle) that is part of a recall by Shenzhen Baihang due to fire and burn hazards. Official recall notice: https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon\n\nThe included power bank matches the recalled product: model number \"VT103\" on the back and no serial number on the bottom-right corner of the back.\n\nWhat to do: Immediately stop using the power bank. Contact Shenzhen Baihang to verify that your power bank is part of the recall and to receive a free replacement power bank, as directed in the official notice.\n\nYour order has been paused while we complete recall containment. We will follow up with next steps. Please do not dispose of the unit in the trash or general recycling; refer to the official notice for disposal guidance."
+        }
+      }
+    },
+    {
+      "step": 7,
+      "tool": "finish",
+      "arguments": {},
+      "result": {
+        "status": "contained_pending_human_evidence",
+        "verification": {
+          "passed": true,
+          "correct_lot_decisions": 5,
+          "lot_count": 5,
+          "incorrect_lot_ids": [],
+          "incorrect_order_ids": [],
+          "draft_recipients_correct": true,
+          "duplicate_mutations": 0,
+          "meaning": "Measured against host-owned synthetic fixture labels, not retailer validation"
+        },
+        "note": "Missing casing photo remains unresolved; not all products cleared."
+      }
+    }
+  ],
+  "final_text": null,
+  "trace_flush_ok": true,
+  "delivery_diagnostics": {
+    "span_queue_drops": 0,
+    "log_queue_drops": 0,
+    "span_export_failures": 0,
+    "log_export_failures": 0,
+    "masked_span_drops": 0,
+    "masked_log_drops": 0,
+    "span_capture_truncations": 0,
+    "log_capture_truncations": 0,
+    "span_overflow_exports": 0,
+    "span_overflow_failures": 0,
+    "span_overflow_unavailable": 0,
+    "log_overflow_exports": 0,
+    "log_overflow_failures": 0,
+    "log_overflow_unavailable": 0,
+    "span_upload_authority_available": false,
+    "log_upload_authority_available": false,
+    "span_upload_authority_reason": "backend_upload_contract_unavailable",
+    "log_upload_authority_reason": "backend_upload_contract_unavailable",
+    "span_media_uploads": 0,
+    "span_media_upload_failures": 0,
+    "log_media_uploads": 0,
+    "log_media_upload_failures": 0,
+    "upload_last_failure_reason": ""
+  },
+  "estimated_inference_cost_usd": 0.00132356,
+  "cost_basis": {
+    "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "checked": "2026-10-11",
+    "rates_per_million": {
+      "cache_hit": 0.003,
+      "cache_miss": 0.15,
+      "output": 0.6
+    },
+    "schedule": "Sunday off-peak",
+    "invoice_verified": false
+  }
+}

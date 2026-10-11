@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recall Relay · containment walkthrough</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#202922;background:#f5f5ef;line-height:1.5;font-variant-numeric:tabular-nums}*{box-sizing:border-box}body{margin:0}main{max-width:1120px;margin:auto;padding:40px 24px}h1{font-size:36px;line-height:1.15;margin:8px 0 16px;letter-spacing:-1px}h2{font-size:20px;margin:0 0 16px}h3{font-size:16px;margin:20px 0 8px}p{margin:0 0 16px}.kicker,small,.muted{font-size:14px;color:#59655d}.kicker{letter-spacing:2px;text-transform:uppercase}.tag{display:inline-block;border:1px solid #235b43;color:#235b43;padding:4px 8px;font-size:13px;border-radius:4px;margin-bottom:12px}header{max-width:760px;margin-bottom:40px}.grid{display:grid;grid-template-columns:1fr 2fr;gap:24px}section{background:white;border:1px solid #d8ded5;border-radius:8px;padding:24px;margin-bottom:24px}a{color:#235b43;text-underline-offset:3px}button{background:white;border:1px solid #235b43;color:#235b43;min-height:44px;padding:10px 14px;border-radius:4px;font:inherit;cursor:pointer}button:hover,button[aria-selected=true]{background:#235b43;color:white}button:focus-visible,a:focus-visible{outline:3px solid #235b43;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.buttons{display:flex;flex-wrap:wrap;gap:8px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;border-bottom:1px solid #d8ded5;padding:12px 8px;vertical-align:top}th{font-weight:500;color:#59655d}code{font-size:12px}.scroll{overflow:auto}#announcement{padding:16px 0;min-height:56px}ol{padding-left:24px}.ledger{font-size:14px;max-height:250px;overflow:auto}.steps{margin-top:16px}footer{font-size:14px;color:#59655d}@media(max-width:800px){.grid{display:block}main{padding:24px 16px}h1{font-size:30px}section{padding:16px}}
+</style>
+<main>
+<header><div class="kicker">Recall Relay / case 26-399</div><h1>Contain the recall.<br>Keep uncertainty visible.</h1><span class="tag">SIMULATION · throwaway state walkthrough</span><p>Can we hold the right stock, recover a lost acknowledgement, and finish without pretending missing evidence is resolved?</p><p class="muted">These buttons explore a local state model. They do not call AI, change real stock, or send messages. Real DeepSeek runs are recorded separately in the repository.</p></header>
+<div class="grid"><div><section><h2>The official rule</h2><p>VEEKTOMX <strong>VT103</strong> mini power banks without a serial number on the lower-right back casing are recalled.</p><p>A blank catalog field does not tell us whether a physical serial exists.</p><a href="https://www.cpsc.gov/Recalls/2026/Shenzhen-Baihang-Recalls-VEEKTOMX-Mini-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon" target="_blank" rel="noopener">Read CPSC notice ↗</a><p class="muted" style="margin-top:16px">The page’s image captions say VT03 while its description says VT103. A VT03 item would need manufacturer clarification.</p></section><section><h2>Current case</h2><p id="phase"></p><dl id="summary"></dl><h3>What still needs a person</h3><p>Open lot D’s packaging and photograph the lower-right back casing. Fulfilment stays blocked while the serial evidence is unknown.</p></section></div>
+<div><section><h2>Stock and order state</h2><div class="scroll"><table><thead><tr><th>Lot / item</th><th>Evidence</th><th>Stock</th><th>Order</th></tr></thead><tbody id="stock"></tbody></table></div><div id="announcement" role="status" aria-live="polite"></div></section>
+<section><h2>Try any action</h2><p class="muted">Try finishing too early or repeating a request. The state should protect you.</p><div class="buttons" id="freeplay"></div></section>
+<section><h2>Guided walkthroughs</h2><div class="buttons" role="tablist" id="tabs"></div><p id="scenario" style="margin-top:16px"></p><div class="buttons steps" id="steps"></div></section>
+<section><h2>Action history</h2><ol id="ledger" class="ledger"></ol></section></div></div>
+<footer>In-memory only. Reload or reset to start again. Containment complete means the immediate stock and order decisions are consistent; it does not mean the unresolved item is safe.</footer>
+</main>
+<script id="portable-logic">
+// Portable pure reducer: no DOM, network or provider access.
+const RecallState = (() => {
+ const initial = () => ({inspected:false, decisions:false, acknowledgement:false, operations:0, orders:false, drafts:false, finished:false, log:[]});
+ const reduce = (previous, action) => {
+  const s=structuredClone(previous); let message='';
+  if(action==='reset')return initial();
+  if(s.finished){s.log.push('Case is contained; reset to explore again.');return s;}
+  switch(action){
+   case 'inspect':s.inspected=true;message='Casing and bundle evidence read. Lot D still lacks a casing photo.';break;
+   case 'decide':
+    if(!s.inspected){message='Blocked: inspect physical identifiers first.';break;}
+    if(s.decisions){s.acknowledgement=true;message='Same operation key replayed. Existing result returned; no second change.';break;}
+    s.decisions=true;s.operations++;message='Decisions committed: A + C held; B + E clear; D under review. Injected timeout lost the acknowledgement.';break;
+   case 'readback':
+    if(!s.decisions){message='No committed operation was found.';break;}
+    s.acknowledgement=true;message='Readback confirms the stock decision already committed. No retry needed.';break;
+   case 'orders':
+    if(!s.decisions||!s.acknowledgement){message='Blocked: confirm the stock operation first.';break;}
+    s.orders=true;message='Orders for A + C paused; B ready; D blocked for review.';break;
+   case 'drafts':
+    if(!s.orders){message='Blocked: reconcile orders first.';break;}
+    s.drafts=true;message='Two source-linked notices drafted for A + C. No message sent.';break;
+   case 'finish':
+    if(!(s.inspected&&s.decisions&&s.acknowledgement&&s.orders&&s.drafts&&s.operations===1)){message='Blocked: independent checks are incomplete.';break;}
+    s.finished=true;message='Containment complete with one explicit unresolved evidence request for lot D.';break;
+  }
+  s.log.push(message);return s;
+ };
+ return {initial,reduce};
+})();
+</script>
+<script>
+let state=RecallState.initial(), selected=0, nextStep=0;
+const actions={inspect:'Inspect identifiers',decide:'Commit stock decisions',readback:'Read operation outcome',orders:'Reconcile orders',drafts:'Draft customer notices',finish:'Verify containment',reset:'Reset case'};
+const scenarios=[
+ {title:'Contain the case',description:'Follow the source through stock, orders and draft notices. Watch the missing serial evidence stay unresolved.',steps:['inspect','decide','readback','orders','drafts','finish']},
+ {title:'Lost acknowledgement',description:'The change succeeds but its acknowledgement times out. Repeat the same request and check that only one change exists.',steps:['inspect','decide','decide','readback','orders','drafts','finish']},
+ {title:'Try an unsafe shortcut',description:'Try finishing before inspection, and try changing stock without identifiers. Both transitions must be blocked.',steps:['finish','decide','inspect','decide','readback','orders','drafts','finish']}];
+const el=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function act(action){state=RecallState.reduce(state,action);render();}
+function render(){
+ el('phase').textContent=state.finished?'Contained · human evidence still required':state.decisions?'Containment in progress':'Awaiting identifier inspection';
+ el('summary').innerHTML=`<dt>Stock mutations</dt><dd>${state.operations}</dd><dt>Acknowledgement</dt><dd>${state.acknowledgement?'Confirmed':state.decisions?'Lost; readback needed':'Not started'}</dd><dt>Customer notices</dt><dd>${state.drafts?'2 drafts · 0 sent':'0 drafts · 0 sent'}</dd>`;
+ const rows=[['A','VT103 · 8 units','No physical serial','Hold','Paused'],['B','VT103 · 6 units','Physical serial present','Clear for this recall','Ready'],['C','Travel bundle · 3 units','VT103 component; no serial','Hold','Paused'],['D','VT103 · 4 units','Casing photo missing','Review · blocked','Review · blocked'],['E','VT104 · 9 units','Different physical model','Clear for this recall','No open order']];
+ el('stock').innerHTML=rows.map(([lot,name,evidence,stock,order])=>`<tr><td><strong>Lot ${lot}</strong><br>${name}</td><td>${state.inspected?evidence:'Not inspected'}</td><td>${state.decisions?stock:'Undecided'}</td><td>${state.orders?order:lot==='E'?'No open order':'Ready'}</td></tr>`).join('');
+ el('announcement').textContent=state.log.at(-1)||'Start with inspection, or try a shortcut.';
+ el('ledger').innerHTML=state.log.map(x=>`<li>${esc(x)}</li>`).join('');
+ el('scenario').textContent=scenarios[selected].description;
+ el('tabs').innerHTML=scenarios.map((x,i)=>`<button role="tab" aria-selected="${selected===i}" data-scenario="${i}">${x.title}</button>`).join('');
+ el('steps').innerHTML=scenarios[selected].steps.map((x,i)=>`<button data-step="${i}" ${i!==nextStep?'disabled':''}>${i+1}. ${actions[x]}</button>`).join('');
+}
+el('freeplay').innerHTML=Object.entries(actions).map(([a,label])=>`<button data-action="${a}">${label}</button>`).join('');
+el('freeplay').onclick=e=>{if(e.target.dataset.action){if(e.target.dataset.action==='reset')nextStep=0;act(e.target.dataset.action);}};
+el('tabs').onclick=e=>{if(e.target.dataset.scenario!==undefined){selected=Number(e.target.dataset.scenario);state=RecallState.initial();nextStep=0;render();}};
+el('steps').onclick=e=>{if(e.target.dataset.step!==undefined){const action=scenarios[selected].steps[nextStep++];act(action);}};
+render();
+</script></html>
