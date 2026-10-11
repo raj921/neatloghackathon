@@ -30,10 +30,23 @@ Screenshots and the browser-downloaded code/proof are private ignored QA artifac
 
 All 48 saved browser bookmark entries were inventoried; relevant design entries were opened. Refero, MotionSites, ThreeUI, CollectUI and saved motion references informed composition and interactions. Required project reference sites were consulted. Variant's stored authentication error was not treated as design evidence. Six decisions are preserved in `design-references/parity-medic/README.md`; private bookmark details remain ignored.
 
-`DESIGN.md` was written before the product screen implementation. The product uses self-hosted OFL Uncut Sans, restrained sage/white surfaces, readable code, prominent actual measurements, accessible status words and reduced-motion handling. Native frontend modules avoid a build dependency; FastAPI/OpenAPI, SQLite and standalone adapters provide clear replacement boundaries.
+`DESIGN.md` was written before the product screen implementation. The initial product used sage/white surfaces; the subsequent 21st.dev redesign uses graphite surfaces, warm action accents and sans-serif run headings. Self-hosted OFL Uncut Sans, readable code, actual measurements, accessible status words and reduced-motion handling remain shared constraints. Native frontend modules avoid a build dependency; FastAPI/OpenAPI, SQLite and standalone adapters provide clear replacement boundaries.
 
 ## Sponsor and delivery boundaries
 
 Neatlogs records real model/tool activity, and the older spike has a real failing candidate trace. [Entire Graph product search](../../app/evidence/entire-product-search.json) supplied source-review evidence from the working tree; it does not prove a checkpoint or captured coding session. The user reported cfo.ai account setup complete; an actual cfo.ai product business plan has not been verified. AWS/Crustdata credentials remain setup resources and were not added artificially to this product. No public deployment, public repository conversion, social post, demo-video submission or hackathon receipt is claimed.
 
 This is a completed local product with a production foundation and explicit operating boundaries. A multi-user hosted service, arbitrary app feature discovery and broader reference-app support require separate validated work.
+
+
+## 21st.dev UI redesign review
+
+The follow-up redesign is documented in [its gates](ui-redesign/GATES.md) and the updated design references. Four relevant 21st.dev previews were inspected through Ego Browser: dashboard sidebar, status badges, history table and timeline. Native HTML/CSS adapts their patterns to this product; no React migration, copied component source or paid copy-prompt quota is claimed.
+
+The workbench now leads with the run name and state, one measured result row, and a behavior/code comparison. The navigator filters disagreements and exposes every generated input within each behavior. The initial selection shows an actual disagreement where one exists. Selected items scroll inside their own list without moving the document. JSON tokens are escaped before highlighting; line numbers are hidden from accessibility text. Complete source revisions appear side by side with clear labels. Recorded activity identifies import-time timestamps, local duration is labelled as local verification, and unknown/current counts do not invent results.
+
+Ego checks covered 1440×1000 desktop and 390×844 mobile light/dark screenshots. At 320px, review, settings and history also fit the document width; the history table scrolls within its frame. Native mobile dialogs fit, Escape restores focus, arrow keys change evidence tabs, and reduced motion disables transitions. Invalid JSON preserves the form. History search found the created record and displayed an honest empty state for an unmatched query. Case selection inspected the fifth header-substitution input and its actual repaired output. A matching run produces an empty disagreement view with a route back to all behaviors.
+
+Local UI re-verification `804506d524d9467bb08242d844b7ce83` passed **33/33** using the previously repaired source and one synthetic custom input, with **zero model calls**. Literal `<adapter>` in its title and `<em>literal</em>` in its output remained text, with no injected elements. Browser downloads of adapter/proof preserved source equality, source digest and the full MIT notice. Random review attempt `c83cdc1d06254196bf33535a3ecbebaf` remained Needs review with no adapter download and zero model calls. Its provider disclosure was opened and cancelled; required consent stayed unchecked. No paid repair was submitted for this redesign.
+
+JavaScript syntax and diff whitespace checks passed. Private screenshots/downloads remain ignored under `.local/design/`. The backend, provider configuration, verification engine and existing paid evidence were not changed or rerun. This verifies the redesigned local UI; no public deployment is implied.

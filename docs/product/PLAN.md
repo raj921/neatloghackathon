@@ -10,7 +10,7 @@ Build a single-operator product for a developer wrapping Bruno's deterministic b
 4. An agent may report victory prematurely: only host verification sets verified state. Wrong held-out outputs cannot produce a verified repair download.
 5. Duplicate clicks or restarts can burn money: SQLite states and idempotency keys, one worker, bounded calls, explicit interrupted state and manual new attempt.
 6. User payloads may hold secrets: synthetic examples; custom JSON verification stays local unless the user chooses repair with clear provider disclosure. Guest processes never inherit keys.
-7. Decoration may hide evidence: editorial light workbench, readable code, dominant before/after result, accessible states and purposeful motion.
+7. Decoration may hide evidence: focused graphite workbench, readable code, measured before/after row, accessible states and purposeful motion.
 
 ## Build sequence (Solo)
 
