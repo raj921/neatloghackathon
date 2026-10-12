@@ -22,6 +22,8 @@ FastAPI, SQLite, a bounded Node/QuickJS verifier, DeepSeek tool calls, Neatlogs 
 
 - October 12: Completed the sponsor revision in ChatCut with Peter narration, exported and inspected the 178.090667-second final video, and published it with the cfo.ai PDF/workbook to Vercel. Public playback and document access verified. [Deployment receipt](docs/submission/DEPLOYMENT.md). Rechecked official website and Discord; submission post still pending, window opens 19:00 IST.
 
+- October 12 evening: Fresh Discord organizer verification found that the quote must tag @neatlogs, @EntireHQ and @arithecfo, and that a separate submission form is mandatory. Updated the prepared copy and submission gates. Posted one help question for the official launch/form links. [Evening rule refresh](docs/submission/RULES-UPDATE.md).
+
 ## Demo and reproduction
 
 [Public 2:58 demo](https://parity-medic-demo.vercel.app/demo.mp4). [Vercel media deployment](https://parity-medic-demo.vercel.app/) serves the video and business documents; the interactive backend remains local. See [operating instructions](docs/product/OPERATING.md) to run locally. Opening recorded evidence does not make paid calls. Actual live model evidence is identified separately from synthetic verification inputs.

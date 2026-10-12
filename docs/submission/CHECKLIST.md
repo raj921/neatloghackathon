@@ -7,13 +7,13 @@ Source: [official event](https://neatlogs.com/hackathon), with [organizer announ
 - Build a substantial end-to-end agent during the event; publish dated code commits.
 - Teams have 1–4 registered members, a consistent team name and one team per person.
 - Use Neatlogs, Entire and cfo.ai. Preserve before/after numbers, failure recovery, traces, graph/checkpoint evidence and a financial plan covering pricing, costs, revenue and runway.
-- Submit one project through a public X quote post attaching the official submission post. Include team, builder name, project, public repository and demo link.
+- Submit one project through a public X quote post attaching the official submission post. Include team, builder name, project, public repository and demo link. The October 12 15:01 organizer update additionally requires tagging @neatlogs, @EntireHQ and @arithecfo, and completing a submission form; both steps are mandatory.
 - One video, at most three minutes, must explain the problem and all three required tools, with their implementation and results. Today's organizer announcement additionally asks for critical-incident investigation and resolution in Neatlogs.
 - Publish genuine build updates tagged #neatHack. No spam, plagiarism, harassment, purchased likes or bots.
 - Submission opens October 12 at 19:00 IST; planned close 23:55 IST. Discord controls the final cutoff. Draft creation alone is not submission.
 - AWS, Crustdata and model credits are optional; they do not replace the three mandatory tools.
 
-Evening refresh: see [RULES-UPDATE.md](RULES-UPDATE.md). Public requirements and delivery links were rechecked around 18:57 IST. New Discord messages have not yet been verified because the previous browser session is unavailable.
+Evening refresh: see [RULES-UPDATE.md](RULES-UPDATE.md). Public requirements and delivery links were rechecked around 18:57 IST. Fresh Discord verification at approximately 19:05 IST found mandatory sponsor tags and a separate submission form. The prepared quote and gates were updated; actual post/form receipts remain pending.
 
 ## Project evidence and remaining work
 

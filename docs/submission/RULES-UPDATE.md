@@ -21,3 +21,15 @@ The public page now says `Submission link coming soon` instead of `Submissions o
 ## Required next update
 
 Read the latest organizer announcements when browser access resumes, check the exact submission page/post and final cutoff, adapt SUBMISSION.md to any confirmed new fields, and preserve the published quote receipt. Do not remove the CFO plan or replace the final sponsor-inclusive video with the obsolete initial cut. Whether other participants omitted their plans is unknown.
+
+## Discord verified · approximately 19:05 IST
+
+Fresh browser session authorized by the builder. Organizer Mufassir Kazi's 15:01 announcement (edited 15:04) adds two mandatory details: tag @neatlogs, @EntireHQ and @arithecfo in the quote of the official launch post, and complete the submission form. Both are mandatory; a form alone is not detected as submission. Confirmed announced window remains 19:00–23:55 IST.
+
+Direct organizer source: https://discord.com/channels/1528866100207419472/1555114630966153265/1559136523172192307
+
+The quote copy was corrected to include all three tags and shortened to fit the standard post limit. G9 now tracks the actual form confirmation separately. Our business plan was not missing. Recent help/CFO messages show participants confused about X-only submission and having signup/access questions; they do not establish that any team's final business plan is absent. No deadline extension or business-plan waiver was found in the inspected organizer messages.
+
+The rules channel remains sparse; current operational instructions are in announcements. The 17:52 announcement links https://x.com/neatlogs/status/2109620501274620160, a demo-advice post, not an identified official launch post for quoting. Do not submit against it without confirmation.
+
+A single help question was posted and read back at 19:05 IST asking where the official launch post and form links are available. Receipt: https://discord.com/channels/1528866100207419472/1555143727247396866/1559197890042134528. No reply is claimed before it is observed.
