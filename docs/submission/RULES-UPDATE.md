@@ -32,4 +32,6 @@ The quote copy was corrected to include all three tags and shortened to fit the 
 
 The rules channel remains sparse; current operational instructions are in announcements. The 17:52 announcement links https://x.com/neatlogs/status/2109620501274620160, a demo-advice post, not an identified official launch post for quoting. Do not submit against it without confirmation.
 
-A single help question was posted and read back at 19:05 IST asking where the official launch post and form links are available. Receipt: https://discord.com/channels/1528866100207419472/1555143727247396866/1559197890042134528. No reply is claimed before it is observed.
+A single help question was posted and read back at 19:05 IST asking where the official launch post and form links are available. Receipt: https://discord.com/channels/1528866100207419472/1555143727247396866/1559197891283648583. No reply is claimed before it is observed.
+
+At approximately 19:12 IST, a bounded wait found no new organizer announcement, and the posted help question had no reply. Its receipt above uses the final server-assigned message ID after page reload. Final quote and form remain unsubmitted.
