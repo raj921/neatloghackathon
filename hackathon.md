@@ -34,6 +34,6 @@ Supported scope is deterministic string interpolation and JSON request preparati
 
 ## Submission
 
-See [acceptance ledger](docs/submission/GATES.md) and [rules/evidence checklist](docs/submission/CHECKLIST.md). As of October 12 at about 10:46 IST: not submitted, repository public, cfo.ai plan exported and inspected, final 178.09-second video public on Vercel. Interactive backend deployment remains pending. The official submission post is not yet live. Final publication must be checked against the current organizer instructions and confirmed cutoff.
+See [acceptance ledger](docs/submission/GATES.md) and [rules/evidence checklist](docs/submission/CHECKLIST.md). Confirmed October 12 at 21:54 IST: submitted. The official [quote post](https://x.com/RajKuma39078041/status/2109680625846534477) includes all three sponsor tags and the native final video. The authenticated form showed SUBMISSION RECEIVED, ID `1a1e8e1b-ecca-4511-bb8b-a8e9c76d1cbd`. [Receipt](docs/submission/SUBMISSION.md). Repository and media are public. Interactive backend deployment remains pending.
 
 Sources: [official event](https://neatlogs.com/hackathon), [registration page](https://luma.com/s5blr882), [organizer announcements](https://discord.com/channels/1528866100207419472/1555114630966153265).

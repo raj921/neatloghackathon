@@ -1,0 +1,120 @@
+[p1 "Submit your project | neatHack" | space "Check latest neatHack rules and submit Parity Medic"(1): 2 managed, 0 untracked — p1* "Submit your project | neatHack", p2 "Raj Kumar on X: \"#neatHack @neatlogs @EntireHQ @arithecfo Team: rajkumar guth..."]
+root
+  container
+    container
+      canvas
+      container
+        container "Submission navigation"
+          anchor [ref=1, url=https://neatlogs.com/hackathon]
+            text "#neat"
+            text "Hack"
+          anchor [ref=2, url=https://neatlogs.com/hackathon]
+            text "← Back to hackathon"
+        container
+          paragraph
+            text "THE FINAL STEP"
+          heading
+            text "Submit your"
+            text "neatHack project."
+          paragraph
+            text "You’ve built something. Now show us what it can do."
+          container "Submission window"
+            heading
+              text "Submission window"
+            text "October 2026"
+            unordered_list
+              list_item
+                text "Opens"
+              list_item
+                text "7:00 PM"
+                text "Mon 12 Oct"
+              list_item
+                text "Closes"
+              list_item
+                text "11:55 PM"
+                text "Mon 12 Oct"
+            text "All times in IST (UTC+5:30)"
+            anchor [ref=3, url=https://neatlogs.com/discord]
+              text "Discord ↗"
+        ordered_list "Submission steps"
+          list_item
+            button [ref=4]
+              svg_root
+              text "Quote post"
+          list_item
+            button [ref=5]
+              svg_root
+              text "Project & team"
+          list_item
+            button [ref=6]
+              svg_root
+              text "Review & submit"
+        container
+          container "Project submission"
+            svg_root
+            paragraph
+              text "SUBMISSION RECEIVED"
+            heading [ref=7]
+              text "You built it. You shipped it."
+            paragraph
+              text "rajkumar guthla’s project is submitted for every teammate. No one else needs to submit."
+            container
+              text "Parity Medic"
+              text "1a1e8e1b-ecca-4511-bb8b-a8e9c76d1cbd"
+            button [ref=8]
+              text "Review submission"
+              svg_root
+            anchor [ref=9, url=https://neatlogs.com/hackathon]
+              svg_root
+              text "Back to neatHack"
+          container
+            container "Before you submit"
+              heading
+                text "Before you submit"
+              unordered_list
+                list_item
+                  svg_root
+                  container
+                    text "Quote-tweet + form"
+                    paragraph
+                      text "Both required. Tag all three:"
+                      text "@neatlogs · @EntireHQ · @arithecfo"
+                list_item
+                  svg_root
+                  container
+                    text "Public GitHub repo"
+                    paragraph
+                      text "Check all links before submitting."
+                list_item
+                  svg_root
+                  container
+                    text "Bonus: a clear demo"
+                    paragraph
+                      text "Show the problem, why it matters, and how your solution works."
+                list_item
+                  svg_root
+                  container
+                    container
+                      text "Closes"
+                      container
+                        text "Oct 12"
+                        text "·"
+                        text "11:55 PM"
+                        text "IST"
+                    paragraph
+                      anchor [ref=10, url=https://neatlogs.com/discord]
+                        text "Discord"
+                      text "has the final say on deadlines."
+              paragraph
+                text "First 50 quote-tweets"
+                text "get engagement from neatlogs and cfo.ai."
+            paragraph
+              text "Continue saves your draft. Your leader submits for everyone."
+            button [ref=11]
+              text "Sign out"
+        container
+          text "That’s it. Go show us what you built. #neatHack"
+          anchor [ref=12, url=https://neatlogs.com/discord]
+            text "Need a hand? Discord ↗"
+    alert
+    svg_root

@@ -35,3 +35,14 @@ The rules channel remains sparse; current operational instructions are in announ
 A single help question was posted and read back at 19:05 IST asking where the official launch post and form links are available. Receipt: https://discord.com/channels/1528866100207419472/1555143727247396866/1559197891283648583. No reply is claimed before it is observed.
 
 At approximately 19:12 IST, a bounded wait found no new organizer announcement, and the posted help question had no reply. Its receipt above uses the final server-assigned message ID after page reload. Final quote and form remain unsubmitted.
+
+## Final organizer links and submission · verified 21:44–21:54 IST
+
+The October 12 19:19 announcement (edited 19:21) released the official launch quote source and form:
+https://discord.com/channels/1528866100207419472/1555114630966153265/1559201307846516889
+
+Quote source: https://x.com/bettersayAJ/status/2109639214723932495
+Form: https://neatlogs.com/submission
+Deadline: October 12, 23:55 IST. No extension was found in the inspected announcements. The form explicitly asks to attach the demo video before posting.
+
+Published the tagged quote with the full final 178-second MP4 at 21:50 IST. The authenticated form receipt was verified at 21:54 IST after the builder completed submission: Parity Medic, team rajkumar guthla, submission ID `1a1e8e1b-ecca-4511-bb8b-a8e9c76d1cbd`. See SUBMISSION.md and its evidence links. No duplicate submission was made.

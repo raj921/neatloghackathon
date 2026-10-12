@@ -1,12 +1,12 @@
-# Prepared submission · not published
+# Submitted · confirmed October 12, 2026
 
 Team: rajkumar guthla. Builder: Raj Kumar. Project: Parity Medic.
 
-Updated October 12 at approximately 19:05 IST against the latest organizer announcement. The official launch post and submission form are both required; their links are still awaited. Announced window is 19:00–23:55 IST. Keep checking announcements for their release or any changed cutoff.
+Official quote published at 21:50 IST. The authenticated submission page showed SUBMISSION RECEIVED at 21:54 IST, before the confirmed 23:55 IST deadline. Both required steps are complete. Submission ID: `1a1e8e1b-ecca-4511-bb8b-a8e9c76d1cbd`.
 
 ## Quote-post copy
 
-Use this only as a quote of the official Neatlogs submission post, after reconciling the final format. Do not publish it as an ordinary standalone post and call it submitted.
+Published as a quote of Ajay’s official launch post, with the final 178-second MP4 uploaded natively. All three tags were read back on the actual published post.
 
 ```text
 #neatHack @neatlogs @EntireHQ @arithecfo
@@ -25,11 +25,14 @@ Organizer Mufassir Kazi announced at 15:01 IST (edited 15:04): both the tagged q
 
 ## Final publication receipt
 
-- Submission form URL and confirmation: pending
-- Official post URL: pending
-- Confirmed final cutoff: pending final announcement
-- Submitted quote URL: pending
-- Submitted timestamp: pending
-- Quote attachment, body and public link readback: pending
+- Official launch post: https://x.com/bettersayAJ/status/2109639214723932495
+- Published quote: https://x.com/RajKuma39078041/status/2109680625846534477
+- Quote timestamp displayed by X: October 12, 2026, 21:50 IST
+- Form: https://neatlogs.com/submission
+- Submission ID: `1a1e8e1b-ecca-4511-bb8b-a8e9c76d1cbd`
+- Authenticated receipt observed October 12 at 21:54 IST: “SUBMISSION RECEIVED”; “rajkumar guthla’s project is submitted for every teammate. No one else needs to submit.”
+- Receipt: [provider page snapshot](evidence/submission-receipt.txt), [screenshot](evidence/submission-receipt.png)
+- Published post readback: @neatlogs, @EntireHQ and @arithecfo, team/builder, repository, demo and plan links, official launch quote. X’s uploaded video duration was 178.066 seconds; the local export is 178.090667 seconds.
+- Public repository and video returned unauthenticated HTTP 200 immediately before form submission. The Vercel deployment remains media-only; interactive backend hosting is not claimed.
 
-After publication, verify the attached official post and working links, save the actual receipt, and update G7. A draft or build update is not a final submission.
+The browser switched to user control during final submission. The builder reported completing it; the authenticated page was then reopened and its actual received status verified. No duplicate submission was made. The observed receipt time is not asserted as the server’s exact submission timestamp.

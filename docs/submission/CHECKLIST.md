@@ -2,7 +2,7 @@
 
 ## Confirmed requirements
 
-Source: [official event](https://neatlogs.com/hackathon), with [organizer announcements](https://discord.com/channels/1528866100207419472/1555114630966153265) checked this morning.
+Source: [official event](https://neatlogs.com/hackathon), with [organizer announcements](https://discord.com/channels/1528866100207419472/1555114630966153265) checked again around 21:44 IST.
 
 - Build a substantial end-to-end agent during the event; publish dated code commits.
 - Teams have 1–4 registered members, a consistent team name and one team per person.
@@ -31,6 +31,7 @@ Evening refresh: see [RULES-UPDATE.md](RULES-UPDATE.md). Public requirements and
 | Demo | Revised 178-second editable cut includes the actual Neatlogs incident and correction, Entire graph and cfo.ai outputs. Composed frames and synchronization inspected. Final cloud export inspected: 178.090667 seconds. [Public demo](https://parity-medic-demo.vercel.app/demo.mp4) plays without signing in; see [final review](../demo/FINAL-REVIEW.md). |
 | Vercel | [Production media deployment](https://parity-medic-demo.vercel.app/) is public and serves the demo, plan and workbook. Interactive backend remains local: SQLite and a background worker require persistent hosting. See [deployment receipt](DEPLOYMENT.md). |
 | Build in public | [Published #neatHack build update](https://x.com/RajKuma39078041/status/2109504063452905617), read back October 12; not a final quote submission. |
-| Final quote post | Not published. Await official submission post and window. Recheck instructions and final cutoff immediately before publication. |
+| Final quote post | [Published at 21:50 IST](https://x.com/RajKuma39078041/status/2109680625846534477), all three tags and native final MP4 verified. Quotes Ajay’s official launch post. |
+| Official form | Authenticated SUBMISSION RECEIVED observed at 21:54 IST. ID `1a1e8e1b-ecca-4511-bb8b-a8e9c76d1cbd`; [receipt](SUBMISSION.md). |
 
-No submission receipt is claimed. Preserve the final public X URL and verify its attached official post and working repository/demo links before marking submitted.
+Both mandatory submission steps are verified. The interactive backend remains local; G8 is still unmet. Eight of nine delivery gates are met, with no abandoned gates.
