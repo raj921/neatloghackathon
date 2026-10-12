@@ -18,7 +18,7 @@ Local verification makes no model call. Live repair needs a private model key an
 - [Latest UI and backend verification](docs/product/workbench-improvements/REVIEW.md)
 - [Design system](DESIGN.md) and [saved reference decisions](design-references/parity-medic/README.md)
 
-Neatlogs hosted readback confirms the product trace is finalized with three LLM calls and eight spans. Entire Graph supplied product source-review evidence. cfo.ai account setup was reported complete by the user; a verified cfo.ai product business plan, public deployment, demo video and final hackathon submission remain separate delivery work. No new cloud resource was provisioned for this product.
+Neatlogs hosted readback confirms the product trace is finalized with three LLM calls and eight spans. Entire Graph supplied product source-review evidence. The repository became public on October 12. cfo.ai plan generation and Neatlogs incident review are in progress; the local demo still needs sponsor revisions and a public URL. Deployment and final submission are pending. No new cloud resource has been provisioned. See the dated [build log](hackathon.md) and [submission checklist](docs/submission/CHECKLIST.md) for current evidence.
 
 ## Preserved research
 

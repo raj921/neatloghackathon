@@ -11,7 +11,7 @@ Scope: Prepare a truthful, rule-compliant public project and demo, deploy on Ver
 - [ ] G3: One public demo of at most three minutes accurately shows the agent and all three required sponsors, including Neatlogs critical-incident investigation and resolution.
   EVIDENCE: Existing 171.307-second local cut needs sponsor revisions and a public URL.
 - [ ] G4: A public repository contains the hackathon-period implementation, reproducible instructions, licensing and sanitized supporting evidence.
-  EVIDENCE: Repository currently private; publication and history review pending.
+  EVIDENCE: Public repository HTTP 200; default branch codex/parity-medic-product. History reviewed for credential formats and private paths. Supporting sponsor evidence remains in progress.
 - [ ] G5: The Vercel URL is publicly accessible and accurately states the functionality available there.
   EVIDENCE: Vercel account access confirmed; persistent backend hosting choice pending.
 - [ ] G6: Genuine building-in-public evidence is published with the event tag.
