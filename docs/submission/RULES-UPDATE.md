@@ -14,6 +14,10 @@ No rule change is claimed from Discord: the previous Ego TaskSpace is unavailabl
 
 The interactive backend remains local. The Vercel URL hosts the actual video and financial documents; it is not presented as a live repair service. Public website rules do not expressly require a hosted interactive backend, but the user's deployment request remains unfinished.
 
+## Opening-time public check · 19:00 IST
+
+The public page now says `Submission link coming soon` instead of `Submissions opening soon`. No official submission status URL or actionable submission link was present in the fetched HTML. The clock has reached the planned opening; the required official post is still pending on this public surface. No final submission was published.
+
 ## Required next update
 
 Read the latest organizer announcements when browser access resumes, check the exact submission page/post and final cutoff, adapt SUBMISSION.md to any confirmed new fields, and preserve the published quote receipt. Do not remove the CFO plan or replace the final sponsor-inclusive video with the obsolete initial cut. Whether other participants omitted their plans is unknown.
