@@ -8,7 +8,7 @@ Registered team: rajkumar guthla. Builder: Raj Kumar. Registration and completed
 
 ## Actual stack
 
-FastAPI, SQLite, a bounded Node/QuickJS verifier, DeepSeek tool calls, Neatlogs traces and Entire Graph source analysis. Bruno 4.2.1 is the first reference. cfo.ai business-plan generation is in progress.
+FastAPI, SQLite, a bounded Node/QuickJS verifier, DeepSeek tool calls, Neatlogs traces and Entire Graph source analysis. Bruno 4.2.1 is the first reference. Ari in cfo.ai generated a hypothetical business plan and financial model on October 12.
 
 ## Build log
 
@@ -28,6 +28,6 @@ Supported scope is deterministic string interpolation and JSON request preparati
 
 ## Submission
 
-See [acceptance ledger](docs/submission/GATES.md) and [rules/evidence checklist](docs/submission/CHECKLIST.md). As of October 12 morning IST: not submitted, repository public, cfo.ai plan pending, public hosting pending and demo revision pending. The official submission post is not yet live. Final publication must be checked against the current organizer instructions and confirmed cutoff.
+See [acceptance ledger](docs/submission/GATES.md) and [rules/evidence checklist](docs/submission/CHECKLIST.md). As of October 12 morning IST: not submitted, repository public, cfo.ai plan exported and inspected, public hosting pending and demo revision pending. The official submission post is not yet live. Final publication must be checked against the current organizer instructions and confirmed cutoff.
 
 Sources: [official event](https://neatlogs.com/hackathon), [registration page](https://luma.com/s5blr882), [organizer announcements](https://discord.com/channels/1528866100207419472/1555114630966153265).

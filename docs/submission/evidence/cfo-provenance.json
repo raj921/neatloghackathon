@@ -1,0 +1,23 @@
+{
+  "project": "Parity Medic",
+  "generator": "Ari in cfo.ai",
+  "generated_date": "2026-10-12",
+  "facts_source": "User-provided prepared Parity Medic brief in this chat; no independent evidence inspection",
+  "inputs": "All other commercial and financial assumptions labelled hypothetical",
+  "verified_customers": false,
+  "verified_funding": false,
+  "starting_cash_hypothetical_usd": 5000,
+  "checks": [
+    "Native scenario and sensitivity reads",
+    "Independent cost and runway arithmetic for six cases",
+    "First and last projected cash checks",
+    "Repair-cost driver test and restoration",
+    "Canvas light/dark render at 1200 px",
+    "Recalculated final XLSX: 21 financial cells match native engine; no errors",
+    "Final PDF text and page completeness"
+  ],
+  "artifacts": {
+    "Parity_Medic_business_plan.pdf": "45b9501b52d562c6a52773ff7e4e6d28b19584f3cbbd29494c843039eaef250a",
+    "Parity_Medic_financial_model.xlsx": "d22a4bc2f22c4416b14b71090c8525cb4beac5ac06037362eee5003b54dd6503"
+  }
+}

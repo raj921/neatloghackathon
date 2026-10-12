@@ -23,12 +23,12 @@ Source: [official event](https://neatlogs.com/hackathon), with [organizer announ
 | Publication review | Inspected 176 distinct history blobs for recognized key/private-key formats: no matches. No `.env`, `.secrets`, `.local` or `.entire/logs` paths in Git history. Current authentication-link pattern inspection found no matches. This is a bounded review, not a security certification. |
 | Repair evidence | [Actual request repair](../../app/evidence/request-live.json): 55/80 before, 80/80 after, separate 80/80 replay, 3 calls, 28,418 tokens. Finite supported comparisons only. |
 | Failure and recovery | [Diagnostic attempt](../../app/evidence/repair-diagnostic.json): reasoning exhausted output budget; no candidate accepted. [Product review](../product/REVIEW.md) records the non-thinking/required-tool correction and successful rerun. |
-| Neatlogs | [Remote readback](../../app/evidence/neatlogs-request-readback.json). October 12 incident investigation requested against actual failed/successful traces; result pending. No fabricated incident claimed. |
+| Neatlogs | [Remote readback](../../app/evidence/neatlogs-request-readback.json). Actual incident `15b2ca92-b68d-46b9-82bd-0e1bdcecf35b` created from saved failed traces October 12. Incident explanation overstates the retry/cause evidence; correction requests encountered connection failures. A native incident investigation is in progress. |
 | Entire | [Product source graph](../../app/evidence/entire-product-search.json). Graph output qualifies; no checkpoint is claimed. |
-| cfo.ai | Actual Ari generation requested October 12; generated artifact inspection/export pending. Prepared input alone does not satisfy this requirement. |
+| cfo.ai | [Ari-generated plan](evidence/business-plan.pdf), [financial model](evidence/financial-model.xlsx) and [provenance](evidence/cfo-provenance.json) downloaded and inspected October 12. Prices, customers and starting cash are hypothetical. [Shared page](https://cfo.ai/s/jmbAAAxR7or4ofo6). |
 | Demo | Existing local 171.307-second cut requires incident and cfo.ai footage/narration revisions. Public link pending. |
 | Vercel | Account access confirmed. Hosting pending: local SQLite and a background worker cannot safely be treated as durable Vercel Functions. |
-| Build in public | Public repository exists; verified #neatHack post pending. |
+| Build in public | [Published #neatHack build update](https://x.com/RajKuma39078041/status/2109504063452905617), read back October 12; not a final quote submission. |
 | Final quote post | Not published. Await official submission post and window. Recheck instructions and final cutoff immediately before publication. |
 
 No submission receipt is claimed. Preserve the final public X URL and verify its attached official post and working repository/demo links before marking submitted.
