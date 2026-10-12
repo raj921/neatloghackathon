@@ -13,6 +13,8 @@ Source: [official event](https://neatlogs.com/hackathon), with [organizer announ
 - Submission opens October 12 at 19:00 IST; planned close 23:55 IST. Discord controls the final cutoff. Draft creation alone is not submission.
 - AWS, Crustdata and model credits are optional; they do not replace the three mandatory tools.
 
+Evening refresh: see [RULES-UPDATE.md](RULES-UPDATE.md). Public requirements and delivery links were rechecked around 18:57 IST. New Discord messages have not yet been verified because the previous browser session is unavailable.
+
 ## Project evidence and remaining work
 
 | Item | Current evidence / action |
