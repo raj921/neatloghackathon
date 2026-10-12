@@ -1,3 +1,7 @@
+# Original cut review · see final revision
+
+This is evidence for the initial local product demo. [SPONSOR-REVISION.md](SPONSOR-REVISION.md) records the 178-second submission revision, actual cfo.ai output and Neatlogs critical incident. The completed export and public hosting receipts are in [FINAL-REVIEW.md](FINAL-REVIEW.md).
+
 # Demo review
 
 Editable project: https://app.chatcut.io/editor/5c1e344c-57fe-4f06-ac53-9ae1ae8a0398

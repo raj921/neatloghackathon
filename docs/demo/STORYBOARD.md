@@ -1,3 +1,7 @@
+# Original product cut · superseded for submission
+
+This document preserves the initial 171-second cut. The final submission arrangement and sponsor evidence are in [SPONSOR-REVISION.md](SPONSOR-REVISION.md). Do not use the obsolete sponsor narration below.
+
 # Parity Medic demo
 
 Current visual cut: 2:51.23 (5,137 frames).

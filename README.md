@@ -18,7 +18,7 @@ Local verification makes no model call. Live repair needs a private model key an
 - [Latest UI and backend verification](docs/product/workbench-improvements/REVIEW.md)
 - [Design system](DESIGN.md) and [saved reference decisions](design-references/parity-medic/README.md)
 
-Neatlogs hosted readback confirms the product trace is finalized with three LLM calls and eight spans. Entire Graph supplied product source-review evidence. The repository became public on October 12. cfo.ai plan generation and Neatlogs incident review are in progress; the local demo still needs sponsor revisions and a public URL. Deployment and final submission are pending. No new cloud resource has been provisioned. See the dated [build log](hackathon.md) and [submission checklist](docs/submission/CHECKLIST.md) for current evidence.
+Neatlogs hosted readback confirms the product trace is finalized with three LLM calls and eight spans. Entire Graph supplied product source-review evidence. The repository became public on October 12. The actual cfo.ai plan and workbook are exported; a Neatlogs critical incident was investigated, reviewed and resolved against recorded rerun evidence. The final [2:58 demo](https://parity-medic-demo.vercel.app/demo.mp4) includes all three sponsors and is public on Vercel alongside the [business plan](https://parity-medic-demo.vercel.app/business-plan.pdf) and [financial workbook](https://parity-medic-demo.vercel.app/financial-model.xlsx). This deployment hosts media; the interactive backend remains local. Final submission awaits the official window. No AWS resource has been provisioned. See the dated [build log](hackathon.md) and [submission checklist](docs/submission/CHECKLIST.md) for current evidence.
 
 ## Preserved research
 

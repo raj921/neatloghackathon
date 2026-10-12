@@ -20,9 +20,11 @@ FastAPI, SQLite, a bounded Node/QuickJS verifier, DeepSeek tool calls, Neatlogs 
 
 - October 12: Published [#neatHack build update](https://x.com/RajKuma39078041/status/2109504063452905617). Exported and inspected the actual [cfo.ai plan](docs/submission/evidence/business-plan.pdf), workbook and provenance. Neatlogs critical incident `15b2ca92-b68d-46b9-82bd-0e1bdcecf35b` was investigated; its unsupported causal claims were corrected in a posted comment, and it was resolved on recorded successful rerun evidence. [Review](docs/submission/evidence/REVIEW.md) preserves chronology and limitations.
 
+- October 12: Completed the sponsor revision in ChatCut with Peter narration, exported and inspected the 178.090667-second final video, and published it with the cfo.ai PDF/workbook to Vercel. Public playback and document access verified. [Deployment receipt](docs/submission/DEPLOYMENT.md). Rechecked official website and Discord; submission post still pending, window opens 19:00 IST.
+
 ## Demo and reproduction
 
-Public demo: pending. Public deployed URL: pending. See [operating instructions](docs/product/OPERATING.md) to run locally. Opening recorded evidence does not make paid calls. Actual live model evidence is identified separately from synthetic verification inputs.
+[Public 2:58 demo](https://parity-medic-demo.vercel.app/demo.mp4). [Vercel media deployment](https://parity-medic-demo.vercel.app/) serves the video and business documents; the interactive backend remains local. See [operating instructions](docs/product/OPERATING.md) to run locally. Opening recorded evidence does not make paid calls. Actual live model evidence is identified separately from synthetic verification inputs.
 
 ## Known limits
 
@@ -30,6 +32,6 @@ Supported scope is deterministic string interpolation and JSON request preparati
 
 ## Submission
 
-See [acceptance ledger](docs/submission/GATES.md) and [rules/evidence checklist](docs/submission/CHECKLIST.md). As of October 12 morning IST: not submitted, repository public, cfo.ai plan exported and inspected, public hosting pending and demo revision pending. The official submission post is not yet live. Final publication must be checked against the current organizer instructions and confirmed cutoff.
+See [acceptance ledger](docs/submission/GATES.md) and [rules/evidence checklist](docs/submission/CHECKLIST.md). As of October 12 at about 10:46 IST: not submitted, repository public, cfo.ai plan exported and inspected, final 178.09-second video public on Vercel. Interactive backend deployment remains pending. The official submission post is not yet live. Final publication must be checked against the current organizer instructions and confirmed cutoff.
 
 Sources: [official event](https://neatlogs.com/hackathon), [registration page](https://luma.com/s5blr882), [organizer announcements](https://discord.com/channels/1528866100207419472/1555114630966153265).
