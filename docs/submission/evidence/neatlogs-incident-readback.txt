@@ -1,0 +1,108 @@
+r
+Raj's project
+console
+chats
+setup
+1/2
+home
+incidents
+traces
+detections
+alerts
+analytics
+evals
+experiments
+beta
+activity
+2
+R
+Raj Kumar
+Incidents
+Parity Medic Failures: Adapter generation truncated at 5,000 max output tokens (DeepSeek-Flash)
+Resolved
+Resolve
+Parity Medic Failures: Adapter generation truncated at 5,000 max output tokens (DeepSeek-Flash)
+
+Adapter generation is being truncated at 5,000 max output tokens during the Parity Medic Failures: Adapter generation truncated at 5,000 max output tokens (DeepSeek-Flash) operation. This issue was observed on October 12, 2026, and has affected 3 failing traces.
+
+How often
+
+Not measurable yet
+
+All
+3
+Signals
+2
+Investigations
+1
+
+Issue created
+Parity Medic Failures: Adapter generation truncated at 5,000 max output tokens (DeepSeek-Flash)
+
+12 Oct, 10:04
+R
+Investigation
+v1
+6m ago
+Collapse
+74%
+
+Medium confidence
+
+Strong evidence, low pattern history.
+
+Root cause
+
+The adapter generation phase in the parity-medic workflow is failing because the deepseek-flash model configuration enforces a hard limit of 5,000 max output tokens. When the generated adapter code exceeds this limit, the output is truncated, resulting in invalid code that fails downstream testing. This truncation also triggers an infinite retry loop in some cases, leading to high latency and excessive token consumption without successful submission.
+
+Evidence & reasoning
+
+In the successful run View trace Oct 11 10:05 UTC, the second LLM call completed successfully because it only required 1,827 output tokens, allowing it to pass all 32/32 tests in test_adapter and proceed to submit_adapter. However, in other runs, the generation hit the hard 5,000-token limit on the second LLM call. This truncation caused the agent to enter an infinite retry loop in one instance (making 4 additional failing calls, consuming 78,377 tokens over 116.8s), or to terminate immediately in others after consuming 18,073 tokens, without ever testing or submitting the adapter.
+
+Recommended action
+Recommended action
+Adjust DeepSeek-Flash token limits and add retry safeguards
+
+Steps
+
+Increase the max_tokens or max_completion_tokens parameter for the deepseek-flash model configuration in the adapter-generation stage from 5000 to at least 8000 (or 10000 if supported).
+
+Optimize the adapter generation prompt to encourage more concise, modular code generation to keep the output size well within limits.
+
+Implement a strict retry cap (e.g., maximum of 2 retries) and loop-detection logic in the agent's orchestration layer to prevent expensive infinite retry loops when generation fails.
+
+Verification
+
+Trigger the parity-medic workflow with a complex repair request that previously caused truncation.
+
+Verify in the trace logs that the deepseek-flash call successfully generates the complete adapter beyond 5,000 tokens without truncation.
+
+Confirm that test_adapter and submit_adapter execute successfully.
+
+Simulate a generation failure and verify that the agent terminates after the maximum retry limit instead of looping indefinitely.
+
+Risk assessment
+
+Increasing the token limit may slightly increase latency and cost per LLM call if the model generates excessively verbose code. This risk is mitigated by prompt optimization and the strict retry cap.
+
+Rollback plan
+
+Revert the max_tokens configuration for deepseek-flash back to 5000 and restore the original retry logic in the orchestration code.
+
+Nothing dates these.
+
+A chat thread cites this incident — its contents are visible only to its owner.
+Fix in
+Push to
+Investigate again
+Resolved
+
+Raised by Neatlogs 15m ago
+
+Raised
+Investigated
+Resolved
+1
+Copilot
+High
+Priority
